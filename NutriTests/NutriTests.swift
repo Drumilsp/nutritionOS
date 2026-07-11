@@ -43,7 +43,7 @@ struct NutriTests {
             configuration: .testing
         )
 
-        #expect(container.schema.entities.isEmpty)
+        #expect(container.schema.entities.isEmpty == false)
     }
 
     @MainActor

@@ -14,7 +14,7 @@ struct ModelContainerFactory {
     // MARK: - Initialization
 
     /// Creates a stateless model container factory.
-    init() { }
+    nonisolated init() { }
 
     // MARK: - Internal Methods
 
@@ -24,7 +24,15 @@ struct ModelContainerFactory {
     ) -> ModelContainer {
         do {
             return try ModelContainer(
-                for: Schema([]),
+                for: Schema([
+                    DailyLogEntity.self,
+                    FoodEntity.self,
+                    LoggedFoodEntity.self,
+                    LoggedMealEntity.self,
+                    MealEntity.self,
+                    MealItemEntity.self,
+                    NutrientValueEntity.self
+                ]),
                 configurations: [configuration.modelConfiguration]
             )
         } catch {

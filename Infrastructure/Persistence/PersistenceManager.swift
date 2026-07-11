@@ -25,9 +25,17 @@ final class PersistenceManager {
     // MARK: - Initialization
 
     /// Creates a persistence manager from immutable configuration values.
+    convenience init(configuration: PersistenceConfiguration) {
+        self.init(
+            configuration: configuration,
+            modelContainerFactory: ModelContainerFactory()
+        )
+    }
+
+    /// Creates a persistence manager from immutable configuration values.
     init(
         configuration: PersistenceConfiguration,
-        modelContainerFactory: ModelContainerFactory = ModelContainerFactory()
+        modelContainerFactory: ModelContainerFactory
     ) {
         self.modelContainerFactory = modelContainerFactory
 
