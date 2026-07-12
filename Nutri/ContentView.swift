@@ -8,17 +8,26 @@
 import SwiftUI
 
 struct ContentView: View {
+
+    // MARK: - Properties
+
+    private let dependencies: AppDependencies
+
+    // MARK: - Initialization
+
+    init(dependencies: AppDependencies) {
+        self.dependencies = dependencies
+    }
+
+    // MARK: - Body
+
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world!")
-        }
-        .padding()
+        DashboardView(
+            viewModel: dependencies.makeDashboardViewModel()
+        )
     }
 }
 
 #Preview {
-    ContentView()
+    ContentView(dependencies: AppDependencies(persistenceConfiguration: .testing))
 }

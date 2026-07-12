@@ -57,4 +57,16 @@ struct AppDependencies {
             persistenceManager: persistenceManager
         )
     }
+
+    // MARK: - Factory Methods
+
+    /// Creates the Dashboard ViewModel with its approved use case dependency.
+    func makeDashboardViewModel() -> DashboardViewModel {
+        DashboardViewModel(
+            getDashboardDataUseCase: GetDashboardDataUseCase(
+                dailyLogRepository: dailyLogRepository,
+                settingsRepository: settingsRepository
+            )
+        )
+    }
 }

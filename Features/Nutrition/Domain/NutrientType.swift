@@ -26,6 +26,7 @@ struct NutrientType: Hashable, Identifiable {
 
     static let calories = NutrientType(id: "calories", name: "Calories")
     static let protein = NutrientType(id: "protein", name: "Protein")
+    static let carbohydrates = NutrientType(id: "carbohydrates", name: "Carbohydrates")
     static let fat = NutrientType(id: "fat", name: "Fat")
     static let fibre = NutrientType(id: "fibre", name: "Fibre")
 }

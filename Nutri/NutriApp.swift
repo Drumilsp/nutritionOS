@@ -18,7 +18,7 @@ struct NutriApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ContentView(dependencies: dependencies)
         }
     }
 }
