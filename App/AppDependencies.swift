@@ -25,6 +25,9 @@ struct AppDependencies {
     /// Provides daily log persistence.
     let dailyLogRepository: any DailyLogRepository
 
+    /// Provides settings persistence.
+    let settingsRepository: any SettingsRepository
+
     // MARK: - Initialization
 
     /// Creates application dependencies with production persistence.
@@ -48,6 +51,9 @@ struct AppDependencies {
             persistenceManager: persistenceManager
         )
         self.dailyLogRepository = SwiftDataDailyLogRepository(
+            persistenceManager: persistenceManager
+        )
+        self.settingsRepository = SwiftDataSettingsRepository(
             persistenceManager: persistenceManager
         )
     }

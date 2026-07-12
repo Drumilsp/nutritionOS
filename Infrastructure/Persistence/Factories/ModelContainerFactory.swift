@@ -25,13 +25,16 @@ struct ModelContainerFactory {
         do {
             return try ModelContainer(
                 for: Schema([
+                    AppPreferencesEntity.self,
                     DailyLogEntity.self,
                     FoodEntity.self,
+                    GoalSettingsEntity.self,
                     LoggedFoodEntity.self,
                     LoggedMealEntity.self,
                     MealEntity.self,
                     MealItemEntity.self,
-                    NutrientValueEntity.self
+                    NutrientValueEntity.self,
+                    UserProfileEntity.self
                 ]),
                 configurations: [configuration.modelConfiguration]
             )

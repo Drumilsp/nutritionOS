@@ -12,6 +12,11 @@ enum ValidationError: Error, Equatable {
     case emptyName
     case invalidQuantity
     case invalidNutrition
+    case invalidDateOfBirth
+    case invalidHeight
+    case invalidWeight
+    case invalidGoal
+    case invalidPreference
     case duplicateFood
     case duplicateMeal
     case mealHasNoItems
