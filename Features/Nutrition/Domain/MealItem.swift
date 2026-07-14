@@ -15,16 +15,19 @@ final class MealItem: Identifiable {
     let id: UUID
     let foodReference: Food
     var quantity: Double
+    var servingUnit: ServingUnit
 
     // MARK: - Initialization
 
     init(
         id: UUID = UUID(),
         foodReference: Food,
-        quantity: Double
+        quantity: Double,
+        servingUnit: ServingUnit? = nil
     ) {
         self.id = id
         self.foodReference = foodReference
         self.quantity = quantity
+        self.servingUnit = servingUnit ?? foodReference.referenceUnit
     }
 }

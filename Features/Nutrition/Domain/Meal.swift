@@ -18,6 +18,7 @@ final class Meal: Identifiable {
     var notes: String?
     var isFavorite: Bool
     var isArchived: Bool
+    var lastUsedAt: Date?
     let createdAt: Date
     var updatedAt: Date
 
@@ -30,6 +31,7 @@ final class Meal: Identifiable {
         notes: String? = nil,
         isFavorite: Bool = false,
         isArchived: Bool = false,
+        lastUsedAt: Date? = nil,
         createdAt: Date = Date(),
         updatedAt: Date = Date()
     ) {
@@ -39,6 +41,7 @@ final class Meal: Identifiable {
         self.notes = notes
         self.isFavorite = isFavorite
         self.isArchived = isArchived
+        self.lastUsedAt = lastUsedAt
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }

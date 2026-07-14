@@ -136,6 +136,36 @@ struct UseCaseLayerTests {
         #expect(searchResults.count == 2)
     }
 
+    @MainActor
+    @Test func mealRepositorySearchesRanksFavoritesAndTracksRecentUsage() async throws {
+        let dependencies = AppDependencies(persistenceConfiguration: .testing)
+        let food = try await dependencies.foodRepository.save(makeFood(name: "Rice"))
+        let favoriteMeal = try await dependencies.mealRepository.save(
+            Meal(name: "Rice Bowl", mealItems: [MealItem(foodReference: food, quantity: 100)], isFavorite: true)
+        )
+        let exactMeal = try await dependencies.mealRepository.save(
+            Meal(name: "Rice", mealItems: [MealItem(foodReference: food, quantity: 100)])
+        )
+
+        _ = try await dependencies.mealRepository.markUsed(id: favoriteMeal.id, at: Date())
+        let results = try await dependencies.mealRepository.searchMeals(query: "rice")
+        let recentlyUsed = try await dependencies.mealRepository.recentlyUsedMeals(limit: 20)
+
+        #expect(results.first?.id == exactMeal.id)
+        #expect(recentlyUsed.first?.id == favoriteMeal.id)
+    }
+
+    @MainActor
+    @Test func mealValidationAndCalculationUseReferencedFoodNutrition() async throws {
+        let food = makeFood(name: "Oats", calories: 100, protein: 5)
+        let meal = Meal(name: "Oats Bowl", mealItems: [MealItem(foodReference: food, quantity: 200)])
+        let invalidMeal = Meal(name: "", mealItems: [])
+
+        #expect(MealValidator().validate(invalidMeal).errors == [.emptyName, .mealHasNoItems])
+        #expect(meal.nutritionProfile().value(for: .calories) == 200)
+        #expect(meal.nutritionProfile().value(for: .protein) == 10)
+    }
+
     @Test func dailyLogValidatorRejectsInvalidHistoryRange() throws {
         let validator = DailyLogValidator()
         let startDate = Date(timeIntervalSince1970: 20)

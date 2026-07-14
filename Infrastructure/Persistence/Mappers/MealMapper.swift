@@ -20,6 +20,7 @@ enum MealMapper {
             notes: entity.notes,
             isFavorite: entity.isFavorite,
             isArchived: entity.isArchived,
+            lastUsedAt: entity.lastUsedAt,
             createdAt: entity.createdAt,
             updatedAt: entity.updatedAt
         )
@@ -33,7 +34,8 @@ enum MealMapper {
         return MealItem(
             id: entity.id,
             foodReference: FoodMapper.toDomain(foodReference),
-            quantity: entity.quantity
+            quantity: entity.quantity,
+            servingUnit: ServingUnit(name: entity.servingUnitName)
         )
     }
 
@@ -47,6 +49,7 @@ enum MealMapper {
             notes: meal.notes,
             isFavorite: meal.isFavorite,
             isArchived: meal.isArchived,
+            lastUsedAt: meal.lastUsedAt,
             createdAt: meal.createdAt,
             updatedAt: meal.updatedAt
         )
@@ -56,7 +59,8 @@ enum MealMapper {
         MealItemEntity(
             id: mealItem.id,
             foodReference: FoodMapper.toEntity(mealItem.foodReference),
-            quantity: mealItem.quantity
+            quantity: mealItem.quantity,
+            servingUnitName: mealItem.servingUnit.name
         )
     }
 
@@ -66,6 +70,7 @@ enum MealMapper {
         entity.notes = meal.notes
         entity.isFavorite = meal.isFavorite
         entity.isArchived = meal.isArchived
+        entity.lastUsedAt = meal.lastUsedAt
         entity.updatedAt = meal.updatedAt
     }
 }

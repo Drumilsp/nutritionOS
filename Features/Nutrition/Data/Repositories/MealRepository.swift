@@ -14,7 +14,11 @@ protocol MealRepository {
     func allMeals() async throws -> [Meal]
     func searchMeals(query: String) async throws -> [Meal]
     func favoriteMeals() async throws -> [Meal]
+    func recentlyUsedMeals(limit: Int) async throws -> [Meal]
     func update(_ meal: Meal) async throws -> Meal
     func archiveMeal(id: UUID) async throws -> Meal
     func restoreMeal(id: UUID) async throws -> Meal
+    func setFavorite(id: UUID, isFavorite: Bool) async throws -> Meal
+    func markUsed(id: UUID, at date: Date) async throws -> Meal
+    func deleteMeal(id: UUID) async throws
 }

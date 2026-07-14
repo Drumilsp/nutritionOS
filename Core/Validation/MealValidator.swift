@@ -40,6 +40,10 @@ struct MealValidator {
             errors.append(.invalidQuantity)
         }
 
+        if meal.mealItems.contains(where: { !ServingUnit.validNames.contains($0.servingUnit.name) }) {
+            errors.append(.invalidServingUnit)
+        }
+
         if meal.mealItems.contains(where: { containsInvalidNutrition($0.foodReference.nutritionProfile) }) {
             errors.append(.invalidNutrition)
         }

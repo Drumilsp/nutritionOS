@@ -20,6 +20,7 @@ final class MealEntity {
     var notes: String?
     var isFavorite: Bool
     var isArchived: Bool
+    var lastUsedAt: Date?
     var createdAt: Date
     var updatedAt: Date
 
@@ -32,6 +33,7 @@ final class MealEntity {
         notes: String?,
         isFavorite: Bool,
         isArchived: Bool,
+        lastUsedAt: Date?,
         createdAt: Date,
         updatedAt: Date
     ) {
@@ -41,6 +43,7 @@ final class MealEntity {
         self.notes = notes
         self.isFavorite = isFavorite
         self.isArchived = isArchived
+        self.lastUsedAt = lastUsedAt
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }

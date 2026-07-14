@@ -56,7 +56,9 @@ struct LogMealUseCase {
             notes: TextNormalizer.normalizedOptionalText(notes)
         )
 
-        return try await dailyLogRepository.addLoggedMeal(loggedMeal, to: logDate)
+        let updatedLog = try await dailyLogRepository.addLoggedMeal(loggedMeal, to: logDate)
+        _ = try await mealRepository.markUsed(id: mealID, at: dateProvider.now)
+        return updatedLog
     }
 
     // MARK: - Private Methods

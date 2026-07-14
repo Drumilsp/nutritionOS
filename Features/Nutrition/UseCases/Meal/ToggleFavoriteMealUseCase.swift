@@ -28,17 +28,6 @@ struct ToggleFavoriteMealUseCase {
 
     func execute(id: UUID) async throws -> Meal {
         let meal = try await mealRepository.meal(id: id)
-        let updatedMeal = Meal(
-            id: meal.id,
-            name: meal.name,
-            mealItems: meal.mealItems,
-            notes: meal.notes,
-            isFavorite: !meal.isFavorite,
-            isArchived: meal.isArchived,
-            createdAt: meal.createdAt,
-            updatedAt: dateProvider.now
-        )
-
-        return try await mealRepository.update(updatedMeal)
+        return try await mealRepository.setFavorite(id: meal.id, isFavorite: !meal.isFavorite)
     }
 }

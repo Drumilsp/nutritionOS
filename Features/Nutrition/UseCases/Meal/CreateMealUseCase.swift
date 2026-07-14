@@ -42,6 +42,7 @@ struct CreateMealUseCase {
                 notes: meal.notes,
                 isFavorite: meal.isFavorite,
                 isArchived: false,
+                lastUsedAt: nil,
                 createdAt: now,
                 updatedAt: now
             )

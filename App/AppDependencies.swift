@@ -97,4 +97,32 @@ struct AppDependencies {
             updateFoodUseCase: UpdateFoodUseCase(foodRepository: foodRepository)
         )
     }
+
+    func makeMealListViewModel() -> MealListViewModel {
+        MealListViewModel(
+            getMealsUseCase: GetMealsUseCase(mealRepository: mealRepository),
+            searchMealsUseCase: SearchMealsUseCase(mealRepository: mealRepository),
+            getFavoriteMealsUseCase: GetFavoriteMealsUseCase(mealRepository: mealRepository),
+            getRecentlyUsedMealsUseCase: GetRecentlyUsedMealsUseCase(mealRepository: mealRepository)
+        )
+    }
+
+    func makeMealDetailViewModel() -> MealDetailViewModel {
+        MealDetailViewModel(
+            getMealDetailUseCase: GetMealDetailUseCase(mealRepository: mealRepository),
+            favoriteMealUseCase: FavoriteMealUseCase(mealRepository: mealRepository),
+            archiveMealUseCase: ArchiveMealUseCase(mealRepository: mealRepository),
+            duplicateMealUseCase: DuplicateMealUseCase(mealRepository: mealRepository),
+            deleteMealUseCase: DeleteMealUseCase(mealRepository: mealRepository)
+        )
+    }
+
+    func makeMealEditorViewModel(meal: Meal, isEditingExistingMeal: Bool) -> MealEditorViewModel {
+        MealEditorViewModel(
+            meal: meal,
+            isEditingExistingMeal: isEditingExistingMeal,
+            createMealUseCase: CreateMealUseCase(mealRepository: mealRepository),
+            updateMealUseCase: UpdateMealUseCase(mealRepository: mealRepository)
+        )
+    }
 }

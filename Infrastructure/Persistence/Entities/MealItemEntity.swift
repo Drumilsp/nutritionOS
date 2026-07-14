@@ -17,16 +17,19 @@ final class MealItemEntity {
     var id: UUID
     var foodReference: FoodEntity?
     var quantity: Double
+    var servingUnitName: String
 
     // MARK: - Initialization
 
     init(
         id: UUID,
         foodReference: FoodEntity?,
-        quantity: Double
+        quantity: Double,
+        servingUnitName: String
     ) {
         self.id = id
         self.foodReference = foodReference
         self.quantity = quantity
+        self.servingUnitName = servingUnitName
     }
 }

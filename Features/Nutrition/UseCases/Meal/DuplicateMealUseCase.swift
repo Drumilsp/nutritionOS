@@ -48,6 +48,7 @@ struct DuplicateMealUseCase {
             notes: sourceMeal.notes,
             isFavorite: false,
             isArchived: false,
+            lastUsedAt: nil,
             createdAt: now,
             updatedAt: now
         )
