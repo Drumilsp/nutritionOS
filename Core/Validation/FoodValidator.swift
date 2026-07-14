@@ -21,8 +21,10 @@ struct FoodValidator {
             referenceUnit: food.referenceUnit,
             nutritionProfile: food.nutritionProfile,
             notes: TextNormalizer.normalizedOptionalText(food.notes),
+            isSystemFood: food.isSystemFood,
             isFavorite: food.isFavorite,
             isArchived: food.isArchived,
+            lastUsedAt: food.lastUsedAt,
             createdAt: food.createdAt,
             updatedAt: updatedAt ?? food.updatedAt
         )
@@ -37,6 +39,10 @@ struct FoodValidator {
 
         if food.referenceQuantity <= 0 || !food.referenceQuantity.isFinite {
             errors.append(.invalidQuantity)
+        }
+
+        if !ServingUnit.validNames.contains(food.referenceUnit.name) {
+            errors.append(.invalidServingUnit)
         }
 
         if containsInvalidNutrition(food.nutritionProfile) {

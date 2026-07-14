@@ -21,8 +21,10 @@ final class FoodEntity {
     var referenceUnitName: String
     @Relationship(deleteRule: .cascade) var nutrientValues: [NutrientValueEntity]
     var notes: String?
+    var isSystemFood: Bool
     var isFavorite: Bool
     var isArchived: Bool
+    var lastUsedAt: Date?
     var createdAt: Date
     var updatedAt: Date
 
@@ -36,8 +38,10 @@ final class FoodEntity {
         referenceUnitName: String,
         nutrientValues: [NutrientValueEntity],
         notes: String?,
+        isSystemFood: Bool,
         isFavorite: Bool,
         isArchived: Bool,
+        lastUsedAt: Date?,
         createdAt: Date,
         updatedAt: Date
     ) {
@@ -48,8 +52,10 @@ final class FoodEntity {
         self.referenceUnitName = referenceUnitName
         self.nutrientValues = nutrientValues
         self.notes = notes
+        self.isSystemFood = isSystemFood
         self.isFavorite = isFavorite
         self.isArchived = isArchived
+        self.lastUsedAt = lastUsedAt
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }

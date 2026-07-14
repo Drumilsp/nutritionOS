@@ -23,8 +23,10 @@ enum FoodMapper {
                 nutrientValues: entity.nutrientValues.map { toDomain($0) }
             ),
             notes: entity.notes,
+            isSystemFood: entity.isSystemFood,
             isFavorite: entity.isFavorite,
             isArchived: entity.isArchived,
+            lastUsedAt: entity.lastUsedAt,
             createdAt: entity.createdAt,
             updatedAt: entity.updatedAt
         )
@@ -53,8 +55,10 @@ enum FoodMapper {
             referenceUnitName: food.referenceUnit.name,
             nutrientValues: food.nutritionProfile.nutrientValues.map { toEntity($0) },
             notes: food.notes,
+            isSystemFood: food.isSystemFood,
             isFavorite: food.isFavorite,
             isArchived: food.isArchived,
+            lastUsedAt: food.lastUsedAt,
             createdAt: food.createdAt,
             updatedAt: food.updatedAt
         )
@@ -77,8 +81,10 @@ enum FoodMapper {
         entity.referenceUnitName = food.referenceUnit.name
         entity.nutrientValues = food.nutritionProfile.nutrientValues.map { toEntity($0) }
         entity.notes = food.notes
+        entity.isSystemFood = food.isSystemFood
         entity.isFavorite = food.isFavorite
         entity.isArchived = food.isArchived
+        entity.lastUsedAt = food.lastUsedAt
         entity.updatedAt = food.updatedAt
     }
 }

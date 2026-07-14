@@ -19,8 +19,10 @@ final class Food: Identifiable {
     var referenceUnit: ServingUnit
     var nutritionProfile: NutritionProfile
     var notes: String?
+    let isSystemFood: Bool
     var isFavorite: Bool
     var isArchived: Bool
+    var lastUsedAt: Date?
     let createdAt: Date
     var updatedAt: Date
 
@@ -34,8 +36,10 @@ final class Food: Identifiable {
         referenceUnit: ServingUnit,
         nutritionProfile: NutritionProfile,
         notes: String? = nil,
+        isSystemFood: Bool = false,
         isFavorite: Bool = false,
         isArchived: Bool = false,
+        lastUsedAt: Date? = nil,
         createdAt: Date = Date(),
         updatedAt: Date = Date()
     ) {
@@ -46,8 +50,10 @@ final class Food: Identifiable {
         self.referenceUnit = referenceUnit
         self.nutritionProfile = nutritionProfile
         self.notes = notes
+        self.isSystemFood = isSystemFood
         self.isFavorite = isFavorite
         self.isArchived = isArchived
+        self.lastUsedAt = lastUsedAt
         self.createdAt = createdAt
         self.updatedAt = updatedAt
     }

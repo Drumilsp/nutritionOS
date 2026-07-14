@@ -11,7 +11,9 @@ import Foundation
 enum ValidationError: Error, Equatable {
     case emptyName
     case invalidQuantity
+    case invalidServingUnit
     case invalidNutrition
+    case systemFoodReadOnly
     case invalidDateOfBirth
     case invalidHeight
     case invalidWeight

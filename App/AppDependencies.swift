@@ -69,4 +69,32 @@ struct AppDependencies {
             )
         )
     }
+
+    func makeFoodListViewModel() -> FoodListViewModel {
+        FoodListViewModel(
+            getFoodsUseCase: GetFoodsUseCase(foodRepository: foodRepository),
+            searchFoodsUseCase: SearchFoodsUseCase(foodRepository: foodRepository),
+            getFavoriteFoodsUseCase: GetFavoriteFoodsUseCase(foodRepository: foodRepository),
+            foodRepository: foodRepository
+        )
+    }
+
+    func makeFoodDetailViewModel() -> FoodDetailViewModel {
+        FoodDetailViewModel(
+            getFoodDetailUseCase: GetFoodDetailUseCase(foodRepository: foodRepository),
+            favoriteFoodUseCase: FavoriteFoodUseCase(foodRepository: foodRepository),
+            archiveFoodUseCase: ArchiveFoodUseCase(foodRepository: foodRepository),
+            duplicateFoodUseCase: DuplicateFoodUseCase(foodRepository: foodRepository),
+            deleteFoodUseCase: DeleteFoodUseCase(foodRepository: foodRepository)
+        )
+    }
+
+    func makeFoodEditorViewModel(food: Food, isEditingExistingFood: Bool) -> FoodEditorViewModel {
+        FoodEditorViewModel(
+            food: food,
+            isEditingExistingFood: isEditingExistingFood,
+            createFoodUseCase: CreateFoodUseCase(foodRepository: foodRepository),
+            updateFoodUseCase: UpdateFoodUseCase(foodRepository: foodRepository)
+        )
+    }
 }

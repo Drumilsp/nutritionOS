@@ -22,27 +22,12 @@ struct SearchFoodsUseCase {
     // MARK: - Public Methods
 
     func execute(query: String, includeArchived: Bool = false) async throws -> [Food] {
-        let normalizedQuery = TextNormalizer.normalizedSpacing(query).lowercased()
-        let foods = try await foodRepository.allFoods()
-            .filter { includeArchived || !$0.isArchived }
-
-        guard !normalizedQuery.isEmpty else {
-            return foods.sorted { $0.name.localizedCaseInsensitiveCompare($1.name) == .orderedAscending }
+        if includeArchived {
+            return try await foodRepository.allFoods()
+                .filter(\.isArchived)
+                .filter { $0.name.localizedCaseInsensitiveContains(query) }
         }
 
-        return foods
-            .filter { food in
-                food.name.lowercased().contains(normalizedQuery)
-                    || (food.category?.lowercased().contains(normalizedQuery) ?? false)
-            }
-            .sorted { firstFood, secondFood in
-                ranked(firstFood, query: normalizedQuery) < ranked(secondFood, query: normalizedQuery)
-            }
-    }
-
-    // MARK: - Private Methods
-
-    private func ranked(_ food: Food, query: String) -> Int {
-        food.name.lowercased().hasPrefix(query) ? 0 : 1
+        return try await foodRepository.searchFoods(query: query)
     }
 }

@@ -53,7 +53,9 @@ struct LogFoodUseCase {
             notes: notes
         )
 
-        return try await dailyLogRepository.addLoggedFood(loggedFood, to: logDate)
+        let updatedLog = try await dailyLogRepository.addLoggedFood(loggedFood, to: logDate)
+        _ = try await foodRepository.markUsed(id: foodID, at: dateProvider.now)
+        return updatedLog
     }
 
     // MARK: - Private Methods

@@ -43,8 +43,10 @@ struct CreateFoodUseCase {
                 referenceUnit: food.referenceUnit,
                 nutritionProfile: food.nutritionProfile,
                 notes: food.notes,
+                isSystemFood: false,
                 isFavorite: food.isFavorite,
                 isArchived: false,
+                lastUsedAt: nil,
                 createdAt: now,
                 updatedAt: now
             )

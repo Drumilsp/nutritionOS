@@ -30,6 +30,10 @@ struct UpdateFoodUseCase {
     // MARK: - Public Methods
 
     func execute(_ food: Food) async throws -> Food {
+        let existingFood = try await foodRepository.food(id: food.id)
+        if existingFood.isSystemFood {
+            throw ValidationFailure(errors: [.systemFoodReadOnly])
+        }
         let normalizedFood = validator.normalizedFood(food, updatedAt: dateProvider.now)
         try validator.validate(normalizedFood).throwIfInvalid()
         try await validateDuplicateFood(normalizedFood)

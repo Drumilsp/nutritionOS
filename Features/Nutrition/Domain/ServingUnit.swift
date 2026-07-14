@@ -25,4 +25,6 @@ struct ServingUnit: Hashable {
     static let grams = ServingUnit(name: "g")
     static let millilitres = ServingUnit(name: "ml")
     static let piece = ServingUnit(name: "piece")
+
+    static let validNames: Set<String> = [grams.name, millilitres.name, piece.name]
 }
