@@ -13,31 +13,36 @@ final class LoggedFood: Identifiable {
     // MARK: - Properties
 
     let id: UUID
+    let foodID: UUID?
     let foodName: String
     let category: String?
     let referenceQuantity: Double
     let referenceUnit: ServingUnit
     let loggedQuantity: Double
     let nutritionProfileSnapshot: NutritionProfile
-    let mealSlot: MealSlot
+    let mealSlot: MealSlot?
     let createdAt: Date
+    let source: LoggedEntrySource
     let notes: String?
 
     // MARK: - Initialization
 
     init(
         id: UUID = UUID(),
+        foodID: UUID? = nil,
         foodName: String,
         category: String? = nil,
         referenceQuantity: Double,
         referenceUnit: ServingUnit,
         loggedQuantity: Double,
         nutritionProfileSnapshot: NutritionProfile,
-        mealSlot: MealSlot,
+        mealSlot: MealSlot? = nil,
         createdAt: Date = Date(),
+        source: LoggedEntrySource = .manualFood,
         notes: String? = nil
     ) {
         self.id = id
+        self.foodID = foodID
         self.foodName = foodName
         self.category = category
         self.referenceQuantity = referenceQuantity
@@ -46,6 +51,7 @@ final class LoggedFood: Identifiable {
         self.nutritionProfileSnapshot = nutritionProfileSnapshot
         self.mealSlot = mealSlot
         self.createdAt = createdAt
+        self.source = source
         self.notes = notes
     }
 }

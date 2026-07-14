@@ -46,6 +46,7 @@ struct LogFoodUseCase {
         let logDate = date ?? dateProvider.now
         try await validator.validateEditable(currentLog(on: logDate)).throwIfInvalid()
         let food = try await foodRepository.food(id: foodID)
+        try validator.validateServingUnit(food.referenceUnit).throwIfInvalid()
         let loggedFood = makeLoggedFood(
             from: food,
             quantity: quantity,
@@ -67,6 +68,7 @@ struct LogFoodUseCase {
 
         return DailyLog(
             id: uuidProvider.makeUUID(),
+            foodID: food.id,
             date: date,
             calorieGoalSnapshot: 0,
             proteinGoalSnapshot: 0,
@@ -74,6 +76,7 @@ struct LogFoodUseCase {
             fibreGoalSnapshot: 0,
             maintenanceCaloriesSnapshot: 0,
             createdAt: dateProvider.now,
+            source: .manualFood,
             updatedAt: dateProvider.now
         )
     }

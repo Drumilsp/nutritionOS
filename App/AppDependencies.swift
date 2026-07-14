@@ -125,4 +125,11 @@ struct AppDependencies {
             updateMealUseCase: UpdateMealUseCase(mealRepository: mealRepository)
         )
     }
+
+    func makeDailyLogViewModel() -> DailyLogViewModel {
+        DailyLogViewModel(
+            createDailyLogIfNeededUseCase: CreateDailyLogIfNeededUseCase(dailyLogRepository: dailyLogRepository, settingsRepository: settingsRepository),
+            suggestionsUseCase: GetSuggestionsUseCase(foodRepository: foodRepository, mealRepository: mealRepository)
+        )
+    }
 }

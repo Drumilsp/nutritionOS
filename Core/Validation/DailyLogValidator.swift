@@ -16,6 +16,14 @@ struct DailyLogValidator {
         quantity > 0 && quantity.isFinite ? .success : .failure([.invalidQuantity])
     }
 
+    func validateServingUnit(_ unit: ServingUnit) -> ValidationResult {
+        ServingUnit.validNames.contains(unit.name) ? .success : .failure([.invalidServingUnit])
+    }
+
+    func validateTimestamp(_ timestamp: Date) -> ValidationResult {
+        timestamp.timeIntervalSinceReferenceDate.isFinite ? .success : .failure([.invalidDateRange])
+    }
+
     func validateWaterIntake(_ waterIntake: Double) -> ValidationResult {
         waterIntake >= 0 && waterIntake.isFinite ? .success : .failure([.invalidWaterIntake])
     }

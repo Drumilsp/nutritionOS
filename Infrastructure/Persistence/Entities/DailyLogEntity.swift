@@ -18,11 +18,14 @@ final class DailyLogEntity {
     var date: Date
     @Relationship(deleteRule: .cascade) var loggedFoods: [LoggedFoodEntity]
     @Relationship(deleteRule: .cascade) var loggedMeals: [LoggedMealEntity]
+    @Relationship(deleteRule: .cascade) var waterEntries: [WaterEntryEntity]
     var waterIntake: Double
     var calorieGoalSnapshot: Double
     var proteinGoalSnapshot: Double
+    var carbohydrateGoalSnapshot: Double
     var fatGoalSnapshot: Double
     var fibreGoalSnapshot: Double
+    var waterGoalSnapshot: Double
     var maintenanceCaloriesSnapshot: Double
     var activeCalories: Double?
     var restingCalories: Double?
@@ -38,11 +41,14 @@ final class DailyLogEntity {
         date: Date,
         loggedFoods: [LoggedFoodEntity],
         loggedMeals: [LoggedMealEntity],
+        waterEntries: [WaterEntryEntity],
         waterIntake: Double,
         calorieGoalSnapshot: Double,
         proteinGoalSnapshot: Double,
+        carbohydrateGoalSnapshot: Double,
         fatGoalSnapshot: Double,
         fibreGoalSnapshot: Double,
+        waterGoalSnapshot: Double,
         maintenanceCaloriesSnapshot: Double,
         activeCalories: Double?,
         restingCalories: Double?,
@@ -55,11 +61,14 @@ final class DailyLogEntity {
         self.date = date
         self.loggedFoods = loggedFoods
         self.loggedMeals = loggedMeals
+        self.waterEntries = waterEntries
         self.waterIntake = waterIntake
         self.calorieGoalSnapshot = calorieGoalSnapshot
         self.proteinGoalSnapshot = proteinGoalSnapshot
+        self.carbohydrateGoalSnapshot = carbohydrateGoalSnapshot
         self.fatGoalSnapshot = fatGoalSnapshot
         self.fibreGoalSnapshot = fibreGoalSnapshot
+        self.waterGoalSnapshot = waterGoalSnapshot
         self.maintenanceCaloriesSnapshot = maintenanceCaloriesSnapshot
         self.activeCalories = activeCalories
         self.restingCalories = restingCalories

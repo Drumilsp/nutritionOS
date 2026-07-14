@@ -245,6 +245,55 @@ final class SwiftDataDailyLogRepository: DailyLogRepository {
         }
     }
 
+    func addWaterEntry(_ waterEntry: WaterEntry, to date: Date) async throws -> DailyLog {
+        let context = persistenceManager.mainContext
+        do {
+            let entity = try existingOrNewDailyLogEntity(date: date)
+            entity.waterEntries.append(DailyLogMapper.toEntity(waterEntry))
+            entity.waterIntake = entity.waterEntries.reduce(0) { $0 + $1.amount }
+            entity.updatedAt = Date()
+            try context.save()
+            return DailyLogMapper.toDomain(entity)
+        } catch { context.rollback(); throw error as? RepositoryError ?? RepositoryError.persistenceFailure }
+    }
+
+    func updateWaterEntry(_ waterEntry: WaterEntry, on date: Date) async throws -> DailyLog {
+        let context = persistenceManager.mainContext
+        do {
+            guard let entity = try dailyLogEntity(date: startOfDay(for: date)), let index = entity.waterEntries.firstIndex(where: { $0.id == waterEntry.id }) else { throw RepositoryError.notFound }
+            let previous = entity.waterEntries[index]
+            entity.waterEntries[index] = DailyLogMapper.toEntity(waterEntry)
+            context.delete(previous)
+            entity.waterIntake = entity.waterEntries.reduce(0) { $0 + $1.amount }
+            entity.updatedAt = Date()
+            try context.save()
+            return DailyLogMapper.toDomain(entity)
+        } catch { context.rollback(); throw error as? RepositoryError ?? RepositoryError.persistenceFailure }
+    }
+
+    func removeWaterEntry(id: UUID, from date: Date) async throws -> DailyLog {
+        let context = persistenceManager.mainContext
+        do {
+            guard let entity = try dailyLogEntity(date: startOfDay(for: date)), let index = entity.waterEntries.firstIndex(where: { $0.id == id }) else { throw RepositoryError.notFound }
+            context.delete(entity.waterEntries.remove(at: index))
+            entity.waterIntake = entity.waterEntries.reduce(0) { $0 + $1.amount }
+            entity.updatedAt = Date()
+            try context.save()
+            return DailyLogMapper.toDomain(entity)
+        } catch { context.rollback(); throw error as? RepositoryError ?? RepositoryError.persistenceFailure }
+    }
+
+    func updateNotes(_ notes: String?, on date: Date) async throws -> DailyLog {
+        let context = persistenceManager.mainContext
+        do {
+            let entity = try existingOrNewDailyLogEntity(date: date)
+            entity.notes = notes
+            entity.updatedAt = Date()
+            try context.save()
+            return DailyLogMapper.toDomain(entity)
+        } catch { context.rollback(); throw error as? RepositoryError ?? RepositoryError.persistenceFailure }
+    }
+
     func markDayComplete(date: Date) async throws -> DailyLog {
         let context = persistenceManager.mainContext
 

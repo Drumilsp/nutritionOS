@@ -20,6 +20,10 @@ protocol DailyLogRepository {
     func updateLoggedMeal(_ loggedMeal: LoggedMeal, on date: Date) async throws -> DailyLog
     func removeLoggedMeal(id: UUID, from date: Date) async throws -> DailyLog
     func updateWaterIntake(_ waterIntake: Double, on date: Date) async throws -> DailyLog
+    func addWaterEntry(_ waterEntry: WaterEntry, to date: Date) async throws -> DailyLog
+    func updateWaterEntry(_ waterEntry: WaterEntry, on date: Date) async throws -> DailyLog
+    func removeWaterEntry(id: UUID, from date: Date) async throws -> DailyLog
+    func updateNotes(_ notes: String?, on date: Date) async throws -> DailyLog
     func markDayComplete(date: Date) async throws -> DailyLog
     func exists(date: Date) async throws -> Bool
 }

@@ -35,6 +35,7 @@ struct ModelContainerFactory {
                     MealItemEntity.self,
                     NutrientValueEntity.self,
                     UserProfileEntity.self
+                    , WaterEntryEntity.self
                 ]),
                 configurations: [configuration.modelConfiguration]
             )

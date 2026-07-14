@@ -49,10 +49,12 @@ struct LogMealUseCase {
         let meal = try await mealRepository.meal(id: mealID)
         let loggedMeal = LoggedMeal(
             id: uuidProvider.makeUUID(),
+            mealID: meal.id,
             mealName: meal.name,
             loggedFoods: meal.mealItems.map { makeLoggedFood(from: $0, mealSlot: mealSlot) },
             mealSlot: mealSlot,
             createdAt: dateProvider.now,
+            source: .mealTemplate,
             notes: TextNormalizer.normalizedOptionalText(notes)
         )
 

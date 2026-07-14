@@ -13,4 +13,5 @@ enum MealSlot: String, CaseIterable {
     case lunch
     case dinner
     case snack
+    case other
 }
