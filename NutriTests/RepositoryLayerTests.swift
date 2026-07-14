@@ -66,6 +66,27 @@ struct RepositoryLayerTests {
         #expect(savedMeal.mealItems.first?.foodReference.name == "Rice")
     }
 
+    @MainActor
+    @Test func weightRepositorySavesReadsAndDeletesMeasurements() async throws {
+        let dependencies = AppDependencies(persistenceConfiguration: .testing)
+        let entry = try await dependencies.weightRepository.save(
+            WeightEntry(weight: 72.4, recordedAt: Date())
+        )
+
+        let savedEntries = try await dependencies.weightRepository.entries(
+            from: nil,
+            to: nil
+        )
+        try await dependencies.weightRepository.delete(id: entry.id)
+        let remainingEntries = try await dependencies.weightRepository.entries(
+            from: nil,
+            to: nil
+        )
+
+        #expect(savedEntries == [entry])
+        #expect(remainingEntries.isEmpty)
+    }
+
     // MARK: - Helpers
 
     private func makeFood(name: String) -> Food {

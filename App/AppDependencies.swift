@@ -28,6 +28,9 @@ struct AppDependencies {
     /// Provides settings persistence.
     let settingsRepository: any SettingsRepository
 
+    /// Provides recorded body-weight persistence.
+    let weightRepository: any WeightRepository
+
     // MARK: - Initialization
 
     /// Creates application dependencies with production persistence.
@@ -56,6 +59,9 @@ struct AppDependencies {
         self.settingsRepository = SwiftDataSettingsRepository(
             persistenceManager: persistenceManager
         )
+        self.weightRepository = SwiftDataWeightRepository(
+            persistenceManager: persistenceManager
+        )
     }
 
     // MARK: - Factory Methods
@@ -68,6 +74,26 @@ struct AppDependencies {
                 settingsRepository: settingsRepository
             )
         )
+    }
+
+    func makeProgressViewModel() -> ProgressViewModel {
+        ProgressViewModel(
+            getProgressSummaryUseCase: GetProgressSummaryUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
+            getNutritionTrendsUseCase: GetNutritionTrendsUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
+            getWeeklySummaryUseCase: GetWeeklySummaryUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
+            getMonthlySummaryUseCase: GetMonthlySummaryUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
+            getConsistencyScoreUseCase: GetConsistencyScoreUseCase(dailyLogRepository: dailyLogRepository),
+            getTodayImpactUseCase: GetTodayImpactUseCase(dailyLogRepository: dailyLogRepository),
+            getProgressChartDataUseCase: GetProgressChartDataUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository)
+        )
+    }
+
+    func makeHistoryViewModel() -> HistoryViewModel {
+        HistoryViewModel(getHistoryUseCase: GetHistoryUseCase(dailyLogRepository: dailyLogRepository))
+    }
+
+    func makeWeightHistoryViewModel() -> WeightHistoryViewModel {
+        WeightHistoryViewModel(getWeightHistoryUseCase: GetWeightHistoryUseCase(weightRepository: weightRepository))
     }
 
     func makeFoodListViewModel() -> FoodListViewModel {
