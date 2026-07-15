@@ -71,6 +71,7 @@ struct LogMealUseCase {
 
         return LoggedFood(
             id: uuidProvider.makeUUID(),
+            foodID: food.id,
             foodName: food.name,
             category: food.category,
             referenceQuantity: food.referenceQuantity,

@@ -1,0 +1,36 @@
+{
+  "" : {
+    "const-values" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutriTests-primary.swiftconstvalues",
+    "dependencies" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutriTests-primary.d",
+    "diagnostics" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutriTests-primary.dia",
+    "emit-module-dependencies" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutriTests-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutriTests-primary-emit-module.dia",
+    "pch" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutriTests-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutriTests-primary.swiftdeps"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/NutriTests/HealthKitTests.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/HealthKitTests.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/HealthKitTests.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/HealthKitTests.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/NutriTests/NutriTests.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutriTests.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutriTests.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutriTests.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/NutriTests/NutritionDomainTests.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutritionDomainTests.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutritionDomainTests.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/NutritionDomainTests.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/NutriTests/RepositoryLayerTests.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/RepositoryLayerTests.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/RepositoryLayerTests.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/RepositoryLayerTests.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/NutriTests/UseCaseLayerTests.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/UseCaseLayerTests.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/UseCaseLayerTests.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/NutriTests.build/Objects-normal/arm64/UseCaseLayerTests.o"
+  }
+}

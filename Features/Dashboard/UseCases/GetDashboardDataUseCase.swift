@@ -250,6 +250,8 @@ struct GetDashboardDataUseCase {
             return "Dinner"
         case .snack:
             return "Snack"
+        case .other:
+            return "Other"
         }
     }
 

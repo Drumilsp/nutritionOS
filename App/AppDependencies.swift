@@ -31,6 +31,9 @@ struct AppDependencies {
     /// Provides recorded body-weight persistence.
     let weightRepository: any WeightRepository
 
+    /// Provides optional Apple Health integration.
+    let healthRepository: any HealthRepository
+
     // MARK: - Initialization
 
     /// Creates application dependencies with production persistence.
@@ -62,6 +65,7 @@ struct AppDependencies {
         self.weightRepository = SwiftDataWeightRepository(
             persistenceManager: persistenceManager
         )
+        self.healthRepository = HealthKitRepository(persistenceManager: persistenceManager)
     }
 
     // MARK: - Factory Methods
@@ -157,5 +161,17 @@ struct AppDependencies {
             createDailyLogIfNeededUseCase: CreateDailyLogIfNeededUseCase(dailyLogRepository: dailyLogRepository, settingsRepository: settingsRepository),
             suggestionsUseCase: GetSuggestionsUseCase(foodRepository: foodRepository, mealRepository: mealRepository)
         )
+    }
+
+    func makeHealthSettingsViewModel() -> HealthSettingsViewModel {
+        HealthSettingsViewModel(
+            requestPermissionsUseCase: RequestHealthPermissionsUseCase(healthRepository: healthRepository),
+            syncHealthDataUseCase: SyncHealthDataUseCase(healthRepository: healthRepository, weightRepository: weightRepository, dailyLogRepository: dailyLogRepository),
+            disconnectHealthUseCase: DisconnectHealthUseCase(healthRepository: healthRepository)
+        )
+    }
+
+    func makeHealthSyncViewModel() -> HealthSyncViewModel {
+        HealthSyncViewModel(syncHealthDataUseCase: SyncHealthDataUseCase(healthRepository: healthRepository, weightRepository: weightRepository, dailyLogRepository: dailyLogRepository))
     }
 }

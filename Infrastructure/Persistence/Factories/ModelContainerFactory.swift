@@ -36,7 +36,8 @@ struct ModelContainerFactory {
                     NutrientValueEntity.self,
                     UserProfileEntity.self,
                     WaterEntryEntity.self,
-                    WeightEntryEntity.self
+                    WeightEntryEntity.self,
+                    HealthSyncMetadataEntity.self
                 ]),
                 configurations: [configuration.modelConfiguration]
             )

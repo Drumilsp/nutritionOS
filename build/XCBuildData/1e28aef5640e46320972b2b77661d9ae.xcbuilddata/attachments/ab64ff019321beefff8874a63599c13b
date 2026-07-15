@@ -1,0 +1,1116 @@
+{
+  "" : {
+    "const-values" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Nutri-primary.swiftconstvalues",
+    "dependencies" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Nutri-primary.d",
+    "diagnostics" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Nutri-primary.dia",
+    "emit-module-dependencies" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Nutri-primary-emit-module.d",
+    "emit-module-diagnostics" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Nutri-primary-emit-module.dia",
+    "pch" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Nutri-primary-Bridging-header.pch",
+    "swift-dependencies" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Nutri-primary.swiftdeps"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/App/AppDependencies.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppDependencies.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppDependencies.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppDependencies.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Errors/RepositoryError.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RepositoryError.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RepositoryError.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RepositoryError.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Providers/DateProvider.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DateProvider.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DateProvider.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DateProvider.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Providers/SystemDateProvider.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SystemDateProvider.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SystemDateProvider.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SystemDateProvider.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Providers/SystemUUIDProvider.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SystemUUIDProvider.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SystemUUIDProvider.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SystemUUIDProvider.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Providers/UUIDProvider.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UUIDProvider.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UUIDProvider.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UUIDProvider.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Validation/DailyLogValidator.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogValidator.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogValidator.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogValidator.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Validation/FoodValidator.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodValidator.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodValidator.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodValidator.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Validation/MealValidator.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealValidator.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealValidator.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealValidator.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Validation/TextNormalizer.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/TextNormalizer.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/TextNormalizer.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/TextNormalizer.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Validation/ValidationError.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ValidationError.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ValidationError.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ValidationError.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Validation/ValidationFailure.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ValidationFailure.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ValidationFailure.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ValidationFailure.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Core/Validation/ValidationResult.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ValidationResult.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ValidationResult.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ValidationResult.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/DashboardData.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardData.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardData.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardData.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/DashboardState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/EnergySummary.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/EnergySummary.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/EnergySummary.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/EnergySummary.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/MacroProgress.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MacroProgress.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MacroProgress.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MacroProgress.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/MacroSummary.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MacroSummary.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MacroSummary.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MacroSummary.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/MealCompletionState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealCompletionState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealCompletionState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealCompletionState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/MealSummary.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealSummary.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealSummary.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealSummary.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/MealSummaryItem.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealSummaryItem.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealSummaryItem.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealSummaryItem.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/QuickAction.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickAction.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickAction.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickAction.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/QuickActionKind.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickActionKind.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickActionKind.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickActionKind.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Domain/WaterSummary.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterSummary.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterSummary.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterSummary.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/DashboardFormatter.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardFormatter.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardFormatter.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardFormatter.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/DashboardHeaderView.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardHeaderView.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardHeaderView.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardHeaderView.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/DashboardStatusBanner.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardStatusBanner.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardStatusBanner.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardStatusBanner.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/DashboardView.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardView.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardView.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardView.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/DashboardViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/EnergyHeroCard.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/EnergyHeroCard.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/EnergyHeroCard.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/EnergyHeroCard.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/GoalReminderView.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalReminderView.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalReminderView.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalReminderView.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/MacroCard.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MacroCard.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MacroCard.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MacroCard.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/MealsCard.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealsCard.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealsCard.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealsCard.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/ProteinCard.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProteinCard.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProteinCard.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProteinCard.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/QuickActionsView.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickActionsView.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickActionsView.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickActionsView.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/Presentation/WaterCard.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterCard.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterCard.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterCard.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Dashboard/UseCases/GetDashboardDataUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetDashboardDataUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetDashboardDataUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetDashboardDataUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Health/Data/Repositories/HealthRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Health/Domain/HealthModels.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthModels.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthModels.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthModels.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Health/Presentation/HealthViewModels.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthViewModels.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthViewModels.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthViewModels.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Health/UseCases/HealthUseCases.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthUseCases.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthUseCases.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthUseCases.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Data/Repositories/DailyLogRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Data/Repositories/FoodRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Data/Repositories/MealRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/DailyLog.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLog.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLog.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLog.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/DailyLogCalculations.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogCalculations.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogCalculations.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogCalculations.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/DailyTotals.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyTotals.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyTotals.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyTotals.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/DashboardSummary.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardSummary.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardSummary.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DashboardSummary.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/Food.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Food.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Food.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Food.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/FoodCategory.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodCategory.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodCategory.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodCategory.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/LoggedEntrySource.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedEntrySource.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedEntrySource.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedEntrySource.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/LoggedFood.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedFood.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedFood.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedFood.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/LoggedMeal.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedMeal.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedMeal.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedMeal.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/Meal+Calculations.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Meal+Calculations.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Meal+Calculations.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Meal+Calculations.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/Meal.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Meal.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Meal.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/Meal.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/MealItem.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealItem.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealItem.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealItem.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/MealSlot.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealSlot.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealSlot.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealSlot.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/NutrientType.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutrientType.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutrientType.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutrientType.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/NutrientValue.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutrientValue.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutrientValue.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutrientValue.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/NutritionProfile+Calculations.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutritionProfile+Calculations.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutritionProfile+Calculations.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutritionProfile+Calculations.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/NutritionProfile.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutritionProfile.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutritionProfile.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutritionProfile.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/NutritionUnit.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutritionUnit.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutritionUnit.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutritionUnit.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/ServingUnit.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ServingUnit.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ServingUnit.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ServingUnit.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/TimelineEntry.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/TimelineEntry.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/TimelineEntry.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/TimelineEntry.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Domain/WaterEntry.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterEntry.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterEntry.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterEntry.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/DailyLog/DailyLogState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/DailyLog/DailyLogViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/DailyLog/LogFoodState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogFoodState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogFoodState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogFoodState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/DailyLog/LogFoodViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogFoodViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogFoodViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogFoodViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/DailyLog/LogMealState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogMealState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogMealState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogMealState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/DailyLog/LogMealViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogMealViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogMealViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogMealViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/DailyLog/LoggedEntryState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedEntryState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedEntryState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedEntryState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/DailyLog/LoggedEntryViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedEntryViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedEntryViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedEntryViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Food/FoodDetailState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodDetailState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodDetailState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodDetailState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Food/FoodDetailViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodDetailViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodDetailViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodDetailViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Food/FoodEditorState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodEditorState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodEditorState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodEditorState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Food/FoodEditorViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodEditorViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodEditorViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodEditorViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Food/FoodListState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodListState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodListState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodListState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Food/FoodListViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodListViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodListViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodListViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Meal/MealDetailState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealDetailState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealDetailState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealDetailState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Meal/MealDetailViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealDetailViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealDetailViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealDetailViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Meal/MealEditorState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealEditorState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealEditorState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealEditorState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Meal/MealEditorViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealEditorViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealEditorViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealEditorViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Meal/MealListState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealListState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealListState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealListState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/Presentation/Meal/MealListViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealListViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealListViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealListViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/CompleteDayUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CompleteDayUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CompleteDayUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CompleteDayUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/CopyYesterdayUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CopyYesterdayUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CopyYesterdayUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CopyYesterdayUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/CreateDailyLogIfNeededUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CreateDailyLogIfNeededUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CreateDailyLogIfNeededUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CreateDailyLogIfNeededUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/DeleteLoggedEntryUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteLoggedEntryUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteLoggedEntryUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteLoggedEntryUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/DuplicateLoggedEntryUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DuplicateLoggedEntryUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DuplicateLoggedEntryUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DuplicateLoggedEntryUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/GetDailyLogUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetDailyLogUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetDailyLogUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetDailyLogUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/GetDashboardSummaryUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetDashboardSummaryUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetDashboardSummaryUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetDashboardSummaryUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/GetHistoryUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetHistoryUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetHistoryUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetHistoryUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/GetSuggestionsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetSuggestionsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetSuggestionsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetSuggestionsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/GetTodayLogUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetTodayLogUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetTodayLogUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetTodayLogUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/LogFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/LogMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/LogWaterUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogWaterUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogWaterUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LogWaterUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/QuickLogFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickLogFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickLogFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/QuickLogFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/RemoveLoggedFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RemoveLoggedFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RemoveLoggedFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RemoveLoggedFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/RemoveLoggedMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RemoveLoggedMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RemoveLoggedMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RemoveLoggedMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/UpdateDailyNotesUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateDailyNotesUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateDailyNotesUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateDailyNotesUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/UpdateLoggedFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateLoggedFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateLoggedFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateLoggedFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/UpdateLoggedMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateLoggedMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateLoggedMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateLoggedMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/DailyLog/UpdateWaterIntakeUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateWaterIntakeUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateWaterIntakeUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateWaterIntakeUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/ArchiveFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ArchiveFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ArchiveFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ArchiveFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/CreateFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CreateFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CreateFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CreateFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/DeleteFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/DuplicateFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DuplicateFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DuplicateFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DuplicateFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/FavoriteFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FavoriteFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FavoriteFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FavoriteFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/GetFavoriteFoodsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFavoriteFoodsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFavoriteFoodsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFavoriteFoodsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/GetFoodDetailUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFoodDetailUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFoodDetailUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFoodDetailUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/GetFoodsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFoodsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFoodsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFoodsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/RestoreFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RestoreFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RestoreFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RestoreFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/SearchFoodsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SearchFoodsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SearchFoodsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SearchFoodsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/ToggleFavoriteFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ToggleFavoriteFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ToggleFavoriteFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ToggleFavoriteFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Food/UpdateFoodUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateFoodUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateFoodUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateFoodUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/ArchiveMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ArchiveMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ArchiveMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ArchiveMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/CreateMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CreateMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CreateMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CreateMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/DeleteMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/DuplicateMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DuplicateMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DuplicateMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DuplicateMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/FavoriteMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FavoriteMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FavoriteMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FavoriteMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/GetFavoriteMealsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFavoriteMealsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFavoriteMealsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetFavoriteMealsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/GetMealDetailUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetMealDetailUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetMealDetailUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetMealDetailUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/GetMealsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetMealsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetMealsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetMealsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/GetRecentlyUsedMealsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetRecentlyUsedMealsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetRecentlyUsedMealsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetRecentlyUsedMealsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/RestoreMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RestoreMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RestoreMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RestoreMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/SearchMealsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SearchMealsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SearchMealsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SearchMealsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/ToggleFavoriteMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ToggleFavoriteMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ToggleFavoriteMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ToggleFavoriteMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Nutrition/UseCases/Meal/UpdateMealUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateMealUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateMealUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateMealUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Data/Repositories/WeightRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/ConsistencyScore.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ConsistencyScore.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ConsistencyScore.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ConsistencyScore.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/GoalAdherence.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalAdherence.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalAdherence.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalAdherence.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/MetricSummaryCard.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MetricSummaryCard.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MetricSummaryCard.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MetricSummaryCard.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/MonthlySummary.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MonthlySummary.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MonthlySummary.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MonthlySummary.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/ProgressAnalyticsCalculator.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressAnalyticsCalculator.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressAnalyticsCalculator.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressAnalyticsCalculator.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/ProgressChartDataset.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressChartDataset.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressChartDataset.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressChartDataset.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/ProgressDateRange.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressDateRange.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressDateRange.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressDateRange.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/ProgressMetric.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressMetric.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressMetric.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressMetric.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/ProgressSnapshot.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressSnapshot.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressSnapshot.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressSnapshot.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/ProgressSummary.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressSummary.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressSummary.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressSummary.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/ProgressTimeRange.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressTimeRange.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressTimeRange.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressTimeRange.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/ProgressTrend.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressTrend.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressTrend.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressTrend.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/TodayImpact.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/TodayImpact.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/TodayImpact.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/TodayImpact.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/WeeklySummary.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeeklySummary.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeeklySummary.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeeklySummary.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Domain/WeightEntry.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightEntry.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightEntry.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightEntry.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Presentation/HistoryState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HistoryState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HistoryState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HistoryState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Presentation/HistoryViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HistoryViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HistoryViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HistoryViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Presentation/ProgressState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Presentation/ProgressViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ProgressViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Presentation/WeightHistoryState.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightHistoryState.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightHistoryState.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightHistoryState.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/Presentation/WeightHistoryViewModel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightHistoryViewModel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightHistoryViewModel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightHistoryViewModel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/DeleteWeightUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteWeightUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteWeightUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DeleteWeightUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/GetConsistencyScoreUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetConsistencyScoreUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetConsistencyScoreUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetConsistencyScoreUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/GetGoalAdherenceUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetGoalAdherenceUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetGoalAdherenceUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetGoalAdherenceUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/GetMonthlySummaryUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetMonthlySummaryUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetMonthlySummaryUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetMonthlySummaryUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/GetNutritionTrendsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetNutritionTrendsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetNutritionTrendsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetNutritionTrendsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/GetProgressChartDataUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetProgressChartDataUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetProgressChartDataUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetProgressChartDataUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/GetProgressSummaryUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetProgressSummaryUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetProgressSummaryUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetProgressSummaryUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/GetTodayImpactUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetTodayImpactUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetTodayImpactUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetTodayImpactUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/GetWeeklySummaryUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetWeeklySummaryUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetWeeklySummaryUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetWeeklySummaryUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/GetWeightHistoryUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetWeightHistoryUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetWeightHistoryUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetWeightHistoryUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Progress/UseCases/SaveWeightUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SaveWeightUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SaveWeightUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SaveWeightUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Data/Repositories/SettingsRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SettingsRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SettingsRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SettingsRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/ActivityLevel.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ActivityLevel.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ActivityLevel.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ActivityLevel.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/AppConfiguration.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppConfiguration.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppConfiguration.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppConfiguration.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/AppPreferences.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppPreferences.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppPreferences.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppPreferences.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/BiologicalSex.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/BiologicalSex.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/BiologicalSex.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/BiologicalSex.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/EnergyBalanceTarget.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/EnergyBalanceTarget.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/EnergyBalanceTarget.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/EnergyBalanceTarget.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/GoalCalculationMode.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalCalculationMode.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalCalculationMode.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalCalculationMode.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/GoalSettings.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalSettings.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalSettings.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalSettings.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/GoalType.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalType.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalType.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalType.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/HealthKitProfileImport.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitProfileImport.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitProfileImport.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitProfileImport.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/PreferenceOptions.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/PreferenceOptions.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/PreferenceOptions.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/PreferenceOptions.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/Domain/UserProfile.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UserProfile.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UserProfile.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UserProfile.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/CompleteOnboardingUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CompleteOnboardingUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CompleteOnboardingUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/CompleteOnboardingUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/GetAppPreferencesUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetAppPreferencesUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetAppPreferencesUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetAppPreferencesUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/GetGoalSettingsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetGoalSettingsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetGoalSettingsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetGoalSettingsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/GetUserProfileUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetUserProfileUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetUserProfileUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GetUserProfileUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/ImportHealthKitProfileUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ImportHealthKitProfileUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ImportHealthKitProfileUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ImportHealthKitProfileUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/RecalculateNutritionGoalsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RecalculateNutritionGoalsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RecalculateNutritionGoalsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/RecalculateNutritionGoalsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/UpdateAppPreferencesUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateAppPreferencesUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateAppPreferencesUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateAppPreferencesUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/UpdateGoalSettingsUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateGoalSettingsUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateGoalSettingsUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateGoalSettingsUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/UpdateUserProfileUseCase.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateUserProfileUseCase.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateUserProfileUseCase.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UpdateUserProfileUseCase.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/Validation/AppPreferencesValidator.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppPreferencesValidator.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppPreferencesValidator.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppPreferencesValidator.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/Validation/GoalSettingsValidator.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalSettingsValidator.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalSettingsValidator.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalSettingsValidator.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Features/Settings/UseCases/Validation/UserProfileValidator.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UserProfileValidator.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UserProfileValidator.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UserProfileValidator.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/HealthKit/HealthKitService.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitService.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitService.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitService.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/HealthKit/HealthSyncMetadataStore.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthSyncMetadataStore.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthSyncMetadataStore.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthSyncMetadataStore.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/HealthKit/Mappers/HealthKitMapper.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitMapper.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitMapper.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitMapper.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/HealthKit/Repositories/HealthKitRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthKitRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/AppPreferencesEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppPreferencesEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppPreferencesEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/AppPreferencesEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/DailyLogEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/FoodEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/GoalSettingsEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalSettingsEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalSettingsEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GoalSettingsEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/HealthSyncMetadataEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthSyncMetadataEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthSyncMetadataEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthSyncMetadataEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/LoggedFoodEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedFoodEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedFoodEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedFoodEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/LoggedMealEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedMealEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedMealEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/LoggedMealEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/MealEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/MealItemEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealItemEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealItemEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealItemEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/NutrientValueEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutrientValueEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutrientValueEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutrientValueEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/UserProfileEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UserProfileEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UserProfileEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/UserProfileEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/WaterEntryEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterEntryEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterEntryEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WaterEntryEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Entities/WeightEntryEntity.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightEntryEntity.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightEntryEntity.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightEntryEntity.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Factories/ModelContainerFactory.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ModelContainerFactory.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ModelContainerFactory.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ModelContainerFactory.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Mappers/DailyLogMapper.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogMapper.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogMapper.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/DailyLogMapper.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Mappers/FoodMapper.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodMapper.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodMapper.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/FoodMapper.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Mappers/HealthSyncMetadataMapper.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthSyncMetadataMapper.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthSyncMetadataMapper.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/HealthSyncMetadataMapper.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Mappers/MealMapper.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealMapper.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealMapper.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/MealMapper.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Mappers/SettingsMapper.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SettingsMapper.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SettingsMapper.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SettingsMapper.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Mappers/WeightEntryMapper.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightEntryMapper.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightEntryMapper.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/WeightEntryMapper.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/PersistenceManager.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/PersistenceManager.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/PersistenceManager.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/PersistenceManager.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Repositories/SwiftDataDailyLogRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataDailyLogRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataDailyLogRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataDailyLogRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Repositories/SwiftDataFoodRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataFoodRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataFoodRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataFoodRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Repositories/SwiftDataMealRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataMealRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataMealRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataMealRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Repositories/SwiftDataSettingsRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataSettingsRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataSettingsRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataSettingsRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/Repositories/SwiftDataWeightRepository.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataWeightRepository.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataWeightRepository.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/SwiftDataWeightRepository.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Infrastructure/Persistence/configurations/PersistenceConfiguration.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/PersistenceConfiguration.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/PersistenceConfiguration.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/PersistenceConfiguration.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Nutri/ContentView.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ContentView.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ContentView.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/ContentView.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/Nutri/NutriApp.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutriApp.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutriApp.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/NutriApp.o"
+  },
+  "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/DerivedSources/GeneratedAssetSymbols.swift" : {
+    "index-unit-output-path" : "/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GeneratedAssetSymbols.o",
+    "llvm-bc" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GeneratedAssetSymbols.bc",
+    "object" : "/Users/drumilpatil/Developer/projects/Nutri/build/Nutri.build/Release-iphoneos/Nutri.build/Objects-normal/arm64/GeneratedAssetSymbols.o"
+  }
+}

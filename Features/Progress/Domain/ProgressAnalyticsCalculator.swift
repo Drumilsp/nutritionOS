@@ -12,12 +12,12 @@ enum ProgressAnalyticsCalculator {
     static func value(for log: DailyLog, metric: ProgressMetric) -> Double {
         let totals = DailyLogCalculations.totals(for: log)
         switch metric {
-        case .calories: totals.calories
-        case .protein: totals.protein
-        case .carbohydrates: totals.carbohydrates
-        case .fat: totals.fat
-        case .water: totals.water
-        case .weight: 0
+        case .calories: return totals.calories
+        case .protein: return totals.protein
+        case .carbohydrates: return totals.carbohydrates
+        case .fat: return totals.fat
+        case .water: return totals.water
+        case .weight: return 0
         }
     }
 

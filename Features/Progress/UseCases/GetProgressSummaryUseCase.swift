@@ -11,7 +11,7 @@ struct GetProgressSummaryUseCase {
         let logs = try await dailyLogRepository.logs(from: dates.start ?? .distantPast, to: dates.end)
         let weights = try await weightRepository.entries(from: dates.start, to: dates.end)
         let previous = ProgressDateRange.previousDates(for: range, now: dateProvider.now, calendar: calendar)
-        let previousLogs = try await logs(for: previous)
+        let previousLogs = try await self.logs(for: previous)
         let previousWeights = try await weightRepository.entries(from: previous?.start, to: previous?.end)
         let cards = ProgressMetric.allCases.map { metric -> MetricSummaryCard in
             let current = metric == .weight ? ProgressAnalyticsCalculator.averageWeight(weights) : ProgressAnalyticsCalculator.average(logs, metric: metric)

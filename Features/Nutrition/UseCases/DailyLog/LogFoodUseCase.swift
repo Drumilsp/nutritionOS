@@ -68,15 +68,15 @@ struct LogFoodUseCase {
 
         return DailyLog(
             id: uuidProvider.makeUUID(),
-            foodID: food.id,
             date: date,
             calorieGoalSnapshot: 0,
             proteinGoalSnapshot: 0,
+            carbohydrateGoalSnapshot: 0,
             fatGoalSnapshot: 0,
             fibreGoalSnapshot: 0,
+            waterGoalSnapshot: 0,
             maintenanceCaloriesSnapshot: 0,
             createdAt: dateProvider.now,
-            source: .manualFood,
             updatedAt: dateProvider.now
         )
     }
@@ -91,6 +91,7 @@ struct LogFoodUseCase {
 
         return LoggedFood(
             id: uuidProvider.makeUUID(),
+            foodID: food.id,
             foodName: food.name,
             category: food.category,
             referenceQuantity: food.referenceQuantity,

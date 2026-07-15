@@ -38,6 +38,10 @@ final class SwiftDataWeightRepository: WeightRepository {
         }
     }
 
+    func latest() async throws -> WeightEntry? {
+        try await entries(from: nil, to: nil).max(by: { $0.recordedAt < $1.recordedAt })
+    }
+
     func delete(id: UUID) async throws {
         do {
             let descriptor = FetchDescriptor<WeightEntryEntity>(predicate: #Predicate { $0.id == id })

@@ -1,0 +1,4 @@
+Target dependency graph (2 targets)
+Target 'NutriTests' in project 'Nutri'
+➜ Explicit dependency on target 'Nutri' in project 'Nutri'
+Target 'Nutri' in project 'Nutri' (no dependencies)
