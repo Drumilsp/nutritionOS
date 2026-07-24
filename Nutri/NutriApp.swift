@@ -10,15 +10,11 @@ import SwiftUI
 @main
 struct NutriApp: App {
 
-    // MARK: - Properties
-
-    private let dependencies = AppDependencies()
-
     // MARK: - Body
 
     var body: some Scene {
         WindowGroup {
-            ContentView(dependencies: dependencies)
+            ContentView()
         }
     }
 }
