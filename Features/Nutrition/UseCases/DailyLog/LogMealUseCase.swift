@@ -38,9 +38,11 @@ struct LogMealUseCase {
     func execute(
         mealID: UUID,
         mealSlot: MealSlot,
+        servingMultiplier: Double = 1,
         date: Date? = nil,
         notes: String? = nil
     ) async throws -> DailyLog {
+        try validator.validateServingMultiplier(servingMultiplier).throwIfInvalid()
         let logDate = date ?? dateProvider.now
         if try await dailyLogRepository.exists(date: logDate) {
             try validator.validateEditable(try await dailyLogRepository.log(date: logDate)).throwIfInvalid()
@@ -51,8 +53,11 @@ struct LogMealUseCase {
             id: uuidProvider.makeUUID(),
             mealID: meal.id,
             mealName: meal.name,
-            loggedFoods: meal.mealItems.map { makeLoggedFood(from: $0, mealSlot: mealSlot) },
+            loggedFoods: meal.mealItems.map {
+                makeLoggedFood(from: $0, mealSlot: mealSlot, servingMultiplier: servingMultiplier)
+            },
             mealSlot: mealSlot,
+            servingMultiplier: servingMultiplier,
             createdAt: dateProvider.now,
             source: .mealTemplate,
             notes: TextNormalizer.normalizedOptionalText(notes)
@@ -65,9 +70,13 @@ struct LogMealUseCase {
 
     // MARK: - Private Methods
 
-    private func makeLoggedFood(from mealItem: MealItem, mealSlot: MealSlot) -> LoggedFood {
+    private func makeLoggedFood(
+        from mealItem: MealItem,
+        mealSlot: MealSlot,
+        servingMultiplier: Double
+    ) -> LoggedFood {
         let food = mealItem.foodReference
-        let multiplier = mealItem.quantity / food.referenceQuantity
+        let multiplier = (mealItem.quantity * servingMultiplier) / food.referenceQuantity
 
         return LoggedFood(
             id: uuidProvider.makeUUID(),
@@ -76,10 +85,11 @@ struct LogMealUseCase {
             category: food.category,
             referenceQuantity: food.referenceQuantity,
             referenceUnit: food.referenceUnit,
-            loggedQuantity: mealItem.quantity,
+            loggedQuantity: mealItem.quantity * servingMultiplier,
             nutritionProfileSnapshot: food.nutritionProfile.scaled(by: multiplier),
             mealSlot: mealSlot,
             createdAt: dateProvider.now,
+            source: .mealTemplate,
             notes: food.notes
         )
     }

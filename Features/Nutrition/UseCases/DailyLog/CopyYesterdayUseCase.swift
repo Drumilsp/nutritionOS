@@ -82,6 +82,7 @@ struct CopyYesterdayUseCase {
     private func copy(_ loggedFood: LoggedFood) -> LoggedFood {
         LoggedFood(
             id: uuidProvider.makeUUID(),
+            foodID: loggedFood.foodID,
             foodName: loggedFood.foodName,
             category: loggedFood.category,
             referenceQuantity: loggedFood.referenceQuantity,
@@ -90,6 +91,7 @@ struct CopyYesterdayUseCase {
             nutritionProfileSnapshot: loggedFood.nutritionProfileSnapshot,
             mealSlot: loggedFood.mealSlot,
             createdAt: dateProvider.now,
+            source: loggedFood.source,
             notes: loggedFood.notes
         )
     }
@@ -97,10 +99,13 @@ struct CopyYesterdayUseCase {
     private func copy(_ loggedMeal: LoggedMeal) -> LoggedMeal {
         LoggedMeal(
             id: uuidProvider.makeUUID(),
+            mealID: loggedMeal.mealID,
             mealName: loggedMeal.mealName,
             loggedFoods: loggedMeal.loggedFoods.map(copy),
             mealSlot: loggedMeal.mealSlot,
+            servingMultiplier: loggedMeal.servingMultiplier,
             createdAt: dateProvider.now,
+            source: loggedMeal.source,
             notes: loggedMeal.notes
         )
     }

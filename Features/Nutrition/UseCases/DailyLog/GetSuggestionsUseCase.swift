@@ -1,21 +1,88 @@
 import Foundation
 
-/// Produces deterministic, local food and meal suggestions from remaining goals.
+/// Produces deterministic, local Today suggestions in UI-ready groups.
 struct GetSuggestionsUseCase {
-    struct Suggestions { let foods: [Food]; let meals: [Meal] }
+
+    struct Suggestions {
+        let recentFoods: [Food]
+        let frequentFoods: [Food]
+        let favoriteFoods: [Food]
+        let recentMeals: [Meal]
+        let favoriteMeals: [Meal]
+
+        /// Compatibility list for existing consumers that have not adopted groups yet.
+        var foods: [Food] {
+            unique(recentFoods + frequentFoods + favoriteFoods)
+        }
+
+        /// Compatibility list for existing consumers that have not adopted groups yet.
+        var meals: [Meal] {
+            unique(recentMeals + favoriteMeals)
+        }
+
+        private func unique<T: Identifiable>(_ items: [T]) -> [T] where T.ID == UUID {
+            var identifiers = Set<UUID>()
+            return items.filter { identifiers.insert($0.id).inserted }
+        }
+    }
+
+    // MARK: - Properties
+
     private let foodRepository: any FoodRepository
     private let mealRepository: any MealRepository
-    init(foodRepository: any FoodRepository, mealRepository: any MealRepository) { self.foodRepository = foodRepository; self.mealRepository = mealRepository }
-    func execute(for log: DailyLog) async throws -> Suggestions {
-        let totals = DailyLogCalculations.totals(for: log)
-        let foods = try await foodRepository.allFoods().filter { !$0.isArchived }.sorted { score($0.nutritionProfile, totals: totals, log: log) > score($1.nutritionProfile, totals: totals, log: log) }.prefix(3)
-        let meals = try await mealRepository.allMeals().filter { !$0.isArchived }.sorted { score($0.nutritionProfile(), totals: totals, log: log) > score($1.nutritionProfile(), totals: totals, log: log) }.prefix(3)
-        return Suggestions(foods: Array(foods), meals: Array(meals))
+    private let dailyLogRepository: any DailyLogRepository
+    private let groupLimit: Int
+
+    // MARK: - Initialization
+
+    init(
+        foodRepository: any FoodRepository,
+        mealRepository: any MealRepository,
+        dailyLogRepository: any DailyLogRepository,
+        groupLimit: Int = 8
+    ) {
+        self.foodRepository = foodRepository
+        self.mealRepository = mealRepository
+        self.dailyLogRepository = dailyLogRepository
+        self.groupLimit = groupLimit
     }
-    private func score(_ profile: NutritionProfile, totals: DailyTotals, log: DailyLog) -> Double {
-        let proteinNeed = max(log.proteinGoalSnapshot - totals.protein, 0)
-        let carbohydrateNeed = max(log.carbohydrateGoalSnapshot - totals.carbohydrates, 0)
-        let fatNeed = max(log.fatGoalSnapshot - totals.fat, 0)
-        return (profile.value(for: .protein) * proteinNeed) + (profile.value(for: .carbohydrates) * carbohydrateNeed) + (profile.value(for: .fat) * fatNeed)
+
+    // MARK: - Public Methods
+
+    func execute(for _: DailyLog) async throws -> Suggestions {
+        async let recentFoods = foodRepository.recentlyUsedFoods(limit: groupLimit)
+        async let favoriteFoods = foodRepository.favoriteFoods()
+        async let recentMeals = mealRepository.recentlyUsedMeals(limit: groupLimit)
+        async let favoriteMeals = mealRepository.favoriteMeals()
+        async let logs = dailyLogRepository.logs(from: .distantPast, to: .distantFuture)
+
+        let foodUsageCounts = frequencyByFoodID(in: try await logs)
+        let allFoods = try await foodRepository.allFoods()
+        let frequentFoods = allFoods
+            .filter { !$0.isArchived && (foodUsageCounts[$0.id] ?? 0) > 0 }
+            .sorted { left, right in
+                let leftCount = foodUsageCounts[left.id] ?? 0
+                let rightCount = foodUsageCounts[right.id] ?? 0
+                if leftCount != rightCount { return leftCount > rightCount }
+                return left.name.localizedCaseInsensitiveCompare(right.name) == .orderedAscending
+            }
+
+        return Suggestions(
+            recentFoods: try await recentFoods.filter { !$0.isArchived },
+            frequentFoods: Array(frequentFoods.prefix(groupLimit)),
+            favoriteFoods: try await favoriteFoods.filter { !$0.isArchived }.prefix(groupLimit).map { $0 },
+            recentMeals: try await recentMeals.filter { !$0.isArchived },
+            favoriteMeals: try await favoriteMeals.filter { !$0.isArchived }.prefix(groupLimit).map { $0 }
+        )
+    }
+
+    // MARK: - Private Methods
+
+    private func frequencyByFoodID(in logs: [DailyLog]) -> [UUID: Int] {
+        let loggedFoods = logs.flatMap(\.loggedFoods) + logs.flatMap { $0.loggedMeals.flatMap(\.loggedFoods) }
+        return loggedFoods.reduce(into: [:]) { counts, food in
+            guard let foodID = food.foodID else { return }
+            counts[foodID, default: 0] += 1
+        }
     }
 }

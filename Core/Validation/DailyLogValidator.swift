@@ -16,6 +16,10 @@ struct DailyLogValidator {
         quantity > 0 && quantity.isFinite ? .success : .failure([.invalidQuantity])
     }
 
+    func validateServingMultiplier(_ multiplier: Double) -> ValidationResult {
+        multiplier > 0 && multiplier.isFinite ? .success : .failure([.invalidQuantity])
+    }
+
     func validateServingUnit(_ unit: ServingUnit) -> ValidationResult {
         ServingUnit.validNames.contains(unit.name) ? .success : .failure([.invalidServingUnit])
     }

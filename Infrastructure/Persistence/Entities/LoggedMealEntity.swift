@@ -19,6 +19,7 @@ final class LoggedMealEntity {
     var mealName: String
     @Relationship(deleteRule: .cascade) var loggedFoods: [LoggedFoodEntity]
     var mealSlotRawValue: String
+    var servingMultiplier: Double
     var sourceRawValue: String
     var createdAt: Date
     var notes: String?
@@ -31,6 +32,7 @@ final class LoggedMealEntity {
         mealName: String,
         loggedFoods: [LoggedFoodEntity],
         mealSlotRawValue: String,
+        servingMultiplier: Double,
         sourceRawValue: String,
         createdAt: Date,
         notes: String?
@@ -40,6 +42,7 @@ final class LoggedMealEntity {
         self.mealName = mealName
         self.loggedFoods = loggedFoods
         self.mealSlotRawValue = mealSlotRawValue
+        self.servingMultiplier = servingMultiplier
         self.sourceRawValue = sourceRawValue
         self.createdAt = createdAt
         self.notes = notes

@@ -159,8 +159,40 @@ struct AppDependencies {
     func makeDailyLogViewModel() -> DailyLogViewModel {
         DailyLogViewModel(
             createDailyLogIfNeededUseCase: CreateDailyLogIfNeededUseCase(dailyLogRepository: dailyLogRepository, settingsRepository: settingsRepository),
-            suggestionsUseCase: GetSuggestionsUseCase(foodRepository: foodRepository, mealRepository: mealRepository)
+            suggestionsUseCase: GetSuggestionsUseCase(
+                foodRepository: foodRepository,
+                mealRepository: mealRepository,
+                dailyLogRepository: dailyLogRepository
+            )
         )
+    }
+
+    func makeLogFoodViewModel() -> LogFoodViewModel {
+        LogFoodViewModel(
+            searchFoodsUseCase: SearchFoodsUseCase(foodRepository: foodRepository),
+            logFoodUseCase: LogFoodUseCase(
+                foodRepository: foodRepository,
+                dailyLogRepository: dailyLogRepository
+            )
+        )
+    }
+
+    func makeLogMealViewModel() -> LogMealViewModel {
+        LogMealViewModel(
+            searchMealsUseCase: SearchMealsUseCase(mealRepository: mealRepository),
+            logMealUseCase: LogMealUseCase(
+                mealRepository: mealRepository,
+                dailyLogRepository: dailyLogRepository
+            )
+        )
+    }
+
+    func makeLogWaterViewModel() -> LogWaterViewModel {
+        LogWaterViewModel(logWaterUseCase: LogWaterUseCase(dailyLogRepository: dailyLogRepository))
+    }
+
+    func makeLoggedEntryViewModel(entry: TimelineEntry) -> LoggedEntryViewModel {
+        LoggedEntryViewModel(entry: entry, deleteLoggedEntryUseCase: DeleteLoggedEntryUseCase(dailyLogRepository: dailyLogRepository), duplicateLoggedEntryUseCase: DuplicateLoggedEntryUseCase(dailyLogRepository: dailyLogRepository), restoreLoggedEntryUseCase: RestoreLoggedEntryUseCase(dailyLogRepository: dailyLogRepository), updateLoggedFoodUseCase: UpdateLoggedFoodUseCase(dailyLogRepository: dailyLogRepository), updateLoggedMealUseCase: UpdateLoggedMealUseCase(dailyLogRepository: dailyLogRepository), updateWaterEntryUseCase: UpdateWaterEntryUseCase(dailyLogRepository: dailyLogRepository))
     }
 
     func makeHealthSettingsViewModel() -> HealthSettingsViewModel {

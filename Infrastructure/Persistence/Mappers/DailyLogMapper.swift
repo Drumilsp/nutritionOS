@@ -62,6 +62,7 @@ enum DailyLogMapper {
             mealName: entity.mealName,
             loggedFoods: entity.loggedFoods.map { toDomain($0) },
             mealSlot: MealSlot(rawValue: entity.mealSlotRawValue),
+            servingMultiplier: entity.servingMultiplier,
             createdAt: entity.createdAt,
             source: LoggedEntrySource(rawValue: entity.sourceRawValue) ?? .mealTemplate,
             notes: entity.notes
@@ -120,6 +121,7 @@ enum DailyLogMapper {
             mealName: loggedMeal.mealName,
             loggedFoods: loggedMeal.loggedFoods.map { toEntity($0) },
             mealSlotRawValue: loggedMeal.mealSlot?.rawValue ?? "",
+            servingMultiplier: loggedMeal.servingMultiplier,
             sourceRawValue: loggedMeal.source.rawValue,
             createdAt: loggedMeal.createdAt,
             notes: loggedMeal.notes

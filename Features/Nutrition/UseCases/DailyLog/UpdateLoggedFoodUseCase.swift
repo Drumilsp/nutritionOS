@@ -42,6 +42,7 @@ struct UpdateLoggedFoodUseCase {
         let multiplier = quantity / loggedFood.loggedQuantity
         let updatedLoggedFood = LoggedFood(
             id: loggedFood.id,
+            foodID: loggedFood.foodID,
             foodName: loggedFood.foodName,
             category: loggedFood.category,
             referenceQuantity: loggedFood.referenceQuantity,
@@ -50,6 +51,7 @@ struct UpdateLoggedFoodUseCase {
             nutritionProfileSnapshot: loggedFood.nutritionProfileSnapshot.scaled(by: multiplier),
             mealSlot: mealSlot ?? loggedFood.mealSlot,
             createdAt: loggedFood.createdAt,
+            source: loggedFood.source,
             notes: TextNormalizer.normalizedOptionalText(notes) ?? loggedFood.notes
         )
 

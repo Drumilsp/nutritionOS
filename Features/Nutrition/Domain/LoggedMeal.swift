@@ -17,6 +17,7 @@ final class LoggedMeal: Identifiable {
     let mealName: String
     let loggedFoods: [LoggedFood]
     let mealSlot: MealSlot?
+    let servingMultiplier: Double
     let createdAt: Date
     let source: LoggedEntrySource
     let notes: String?
@@ -29,6 +30,7 @@ final class LoggedMeal: Identifiable {
         mealName: String,
         loggedFoods: [LoggedFood],
         mealSlot: MealSlot? = nil,
+        servingMultiplier: Double = 1,
         createdAt: Date = Date(),
         source: LoggedEntrySource = .mealTemplate,
         notes: String? = nil
@@ -38,6 +40,7 @@ final class LoggedMeal: Identifiable {
         self.mealName = mealName
         self.loggedFoods = loggedFoods
         self.mealSlot = mealSlot
+        self.servingMultiplier = servingMultiplier
         self.createdAt = createdAt
         self.source = source
         self.notes = notes
