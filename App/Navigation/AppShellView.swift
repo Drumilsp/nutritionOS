@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Hosts the application-wide navigation stack, tab selection, and modal routing.
-struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: View, FoodLibraryContent: View>: View {
+struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: View, FoodLibraryContent: View, MealLibraryContent: View>: View {
 
     // MARK: - State
 
@@ -13,6 +13,7 @@ struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: 
     private let quickLogContent: QuickLogContent
     private let settingsContent: SettingsContent
     private let foodLibraryContent: FoodLibraryContent
+    private let mealLibraryContent: MealLibraryContent
 
     // MARK: - Initialization
 
@@ -20,12 +21,14 @@ struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: 
         @ViewBuilder today: () -> TodayContent,
         @ViewBuilder quickLog: () -> QuickLogContent,
         @ViewBuilder settings: () -> SettingsContent,
-        @ViewBuilder foodLibrary: () -> FoodLibraryContent
+        @ViewBuilder foodLibrary: () -> FoodLibraryContent,
+        @ViewBuilder mealLibrary: () -> MealLibraryContent
     ) {
         self.todayContent = today()
         self.quickLogContent = quickLog()
         self.settingsContent = settings()
         self.foodLibraryContent = foodLibrary()
+        self.mealLibraryContent = mealLibrary()
     }
 
     // MARK: - Body
@@ -57,10 +60,10 @@ struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: 
             }
             .animation(AppAnimation.standard, value: selectedTab)
             .navigationDestination(for: AppNavigationDestination.self) { destination in
-                if destination == .food {
-                    foodLibraryContent
-                } else {
-                    AppDestinationPlaceholder(destination: destination)
+                switch destination {
+                case .food: foodLibraryContent
+                case .meal: mealLibraryContent
+                default: AppDestinationPlaceholder(destination: destination)
                 }
             }
         }
@@ -83,6 +86,7 @@ struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: 
         today: { AppPlaceholderScreen(tab: .today) },
         quickLog: { AppSheetPlaceholder(destination: .quickLog, onRoute: { _ in }, onDismiss: {}) },
         settings: { ManageFoodsSettingsView() },
-        foodLibrary: { EmptyView() }
+        foodLibrary: { EmptyView() },
+        mealLibrary: { EmptyView() }
     )
 }

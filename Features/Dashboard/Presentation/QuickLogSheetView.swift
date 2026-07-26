@@ -8,6 +8,7 @@ struct QuickLogSheetView: View {
     @ObservedObject private var logFoodViewModel: LogFoodViewModel
     @ObservedObject private var logMealViewModel: LogMealViewModel
     private let makeFoodEditorViewModel: (Food, Bool) -> FoodEditorViewModel
+    private let makeMealEditorViewModel: (Meal, Bool) -> MealEditorViewModel
     private let onLogCompleted: (String) -> Void
 
     @Environment(\.dismiss) private var dismiss
@@ -16,6 +17,7 @@ struct QuickLogSheetView: View {
     @State private var selectedMeal: Meal?
     @State private var quantity = "1"
     @State private var isCreatingFood = false
+    @State private var isCreatingMeal = false
 
     // MARK: - Initialization
 
@@ -24,12 +26,14 @@ struct QuickLogSheetView: View {
         logFoodViewModel: LogFoodViewModel,
         logMealViewModel: LogMealViewModel,
         makeFoodEditorViewModel: @escaping (Food, Bool) -> FoodEditorViewModel,
+        makeMealEditorViewModel: @escaping (Meal, Bool) -> MealEditorViewModel,
         onLogCompleted: @escaping (String) -> Void
     ) {
         self.dailyLogViewModel = dailyLogViewModel
         self.logFoodViewModel = logFoodViewModel
         self.logMealViewModel = logMealViewModel
         self.makeFoodEditorViewModel = makeFoodEditorViewModel
+        self.makeMealEditorViewModel = makeMealEditorViewModel
         self.onLogCompleted = onLogCompleted
     }
 
@@ -47,7 +51,7 @@ struct QuickLogSheetView: View {
 
                 Section {
                     PrimaryButton("New Food", systemImage: AppIcons.createFood) { isCreatingFood = true }
-                    SecondaryButton("New Meal", systemImage: AppIcons.createMeal) {}
+                    SecondaryButton("New Meal", systemImage: AppIcons.createMeal) { isCreatingMeal = true }
                 }
             }
             .navigationTitle("Quick Log")
@@ -66,6 +70,17 @@ struct QuickLogSheetView: View {
                         onSaved: { food in
                             selectedFood = food
                             quantity = food.referenceQuantity.formatted()
+                        }
+                    )
+                }
+            }
+            .sheet(isPresented: $isCreatingMeal) {
+                NavigationStack {
+                    MealEditorView(
+                        viewModel: makeMealEditorViewModel(newMeal, false),
+                        onSaved: { meal in
+                            selectedMeal = meal
+                            quantity = "1"
                         }
                     )
                 }
@@ -137,4 +152,6 @@ struct QuickLogSheetView: View {
             nutritionProfile: NutritionProfile()
         )
     }
+
+    private var newMeal: Meal { Meal(name: "", mealItems: []) }
 }

@@ -16,8 +16,10 @@ struct ContentView: View {
     @StateObject private var logFoodViewModel: LogFoodViewModel
     @StateObject private var logMealViewModel: LogMealViewModel
     @State private var foodViewModel: FoodViewModel
+    @State private var mealViewModel: MealListViewModel
     @State private var toastMessage: String?
     private let makeFoodEditorViewModel: (Food, Bool) -> FoodEditorViewModel
+    private let makeMealEditorViewModel: (Meal, Bool) -> MealEditorViewModel
 
     // MARK: - Initialization
 
@@ -27,7 +29,9 @@ struct ContentView: View {
         _logFoodViewModel = StateObject(wrappedValue: dependencies.makeLogFoodViewModel())
         _logMealViewModel = StateObject(wrappedValue: dependencies.makeLogMealViewModel())
         _foodViewModel = State(initialValue: dependencies.makeFoodViewModel())
+        _mealViewModel = State(initialValue: dependencies.makeMealListViewModel())
         self.makeFoodEditorViewModel = dependencies.makeFoodEditorViewModel
+        self.makeMealEditorViewModel = dependencies.makeMealEditorViewModel
     }
 
     // MARK: - Body
@@ -47,6 +51,7 @@ struct ContentView: View {
                     logFoodViewModel: logFoodViewModel,
                     logMealViewModel: logMealViewModel,
                     makeFoodEditorViewModel: makeFoodEditorViewModel,
+                    makeMealEditorViewModel: makeMealEditorViewModel,
                     onLogCompleted: refreshToday
                 )
             },
@@ -57,6 +62,13 @@ struct ContentView: View {
                 FoodLibraryView(
                     viewModel: foodViewModel,
                     makeFoodEditorViewModel: makeFoodEditorViewModel
+                )
+            },
+            mealLibrary: {
+                MealLibraryView(
+                    viewModel: mealViewModel,
+                    makeMealEditorViewModel: makeMealEditorViewModel,
+                    logMeal: logMealFromLibrary
                 )
             }
         )
@@ -69,6 +81,15 @@ struct ContentView: View {
         Task {
             await dashboardViewModel.refresh()
             await dailyLogViewModel.refresh()
+        }
+    }
+
+    private func logMealFromLibrary(_ meal: Meal) {
+        Task {
+            await logMealViewModel.save(mealID: meal.id)
+            if case .saved = logMealViewModel.state {
+                refreshToday(message: "Meal logged")
+            }
         }
     }
 }

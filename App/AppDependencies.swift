@@ -138,7 +138,12 @@ struct AppDependencies {
             getMealsUseCase: GetMealsUseCase(mealRepository: mealRepository),
             searchMealsUseCase: SearchMealsUseCase(mealRepository: mealRepository),
             getFavoriteMealsUseCase: GetFavoriteMealsUseCase(mealRepository: mealRepository),
-            getRecentlyUsedMealsUseCase: GetRecentlyUsedMealsUseCase(mealRepository: mealRepository)
+            getRecentlyUsedMealsUseCase: GetRecentlyUsedMealsUseCase(mealRepository: mealRepository),
+            toggleFavoriteMealUseCase: ToggleFavoriteMealUseCase(mealRepository: mealRepository),
+            archiveMealUseCase: ArchiveMealUseCase(mealRepository: mealRepository),
+            restoreMealUseCase: RestoreMealUseCase(mealRepository: mealRepository),
+            deleteMealUseCase: DeleteMealUseCase(mealRepository: mealRepository),
+            duplicateMealUseCase: DuplicateMealUseCase(mealRepository: mealRepository)
         )
     }
 
@@ -157,7 +162,9 @@ struct AppDependencies {
             meal: meal,
             isEditingExistingMeal: isEditingExistingMeal,
             createMealUseCase: CreateMealUseCase(mealRepository: mealRepository),
-            updateMealUseCase: UpdateMealUseCase(mealRepository: mealRepository)
+            updateMealUseCase: UpdateMealUseCase(mealRepository: mealRepository),
+            getFoodsUseCase: GetFoodsUseCase(foodRepository: foodRepository),
+            searchFoodsUseCase: SearchFoodsUseCase(foodRepository: foodRepository)
         )
     }
 
