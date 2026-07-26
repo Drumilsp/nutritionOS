@@ -1,0 +1,232 @@
+//
+//  SampleDesign.html
+//  Nutri
+//
+//  Created by Drumil Patil on 25/07/26.
+//
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Nutrition OS — Today (Apple Health, Locked)</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: #E7E5E0;
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+  }
+  .page { max-width: 900px; margin: 0 auto; padding: 40px 24px 80px; }
+  .page-header { text-align: center; margin-bottom: 22px; }
+  .page-header h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.01em; color: #1C1C1E;}
+  .page-header p { font-size: 14px; color: #6E6E73; margin-top: 4px; }
+
+  .switcher {
+    display: flex; justify-content: center; gap: 6px; margin-bottom: 36px;
+  }
+  .switcher button {
+    appearance: none; border: none; background: #EDEBE6;
+    padding: 9px 22px; border-radius: 999px; font-size: 13.5px; font-weight: 600;
+    color: #48484A; cursor: pointer; transition: all .15s ease;
+  }
+  .switcher button.active { background: #1C1C1E; color: #fff; }
+
+  .stage { display: flex; justify-content: center; }
+  .phone {
+    width: 375px; height: 780px; background: #000; border-radius: 52px; padding: 12px;
+    box-shadow: 0 30px 60px -20px rgba(0,0,0,0.35), 0 0 0 1px rgba(0,0,0,0.05);
+    position: relative;
+  }
+  .phone::before {
+    content: ""; position: absolute; top: 22px; left: 50%; transform: translateX(-50%);
+    width: 90px; height: 24px; background: #000; border-radius: 16px; z-index: 5;
+  }
+  .screen { width: 100%; height: 100%; border-radius: 42px; overflow-y: auto; overflow-x: hidden; scrollbar-width: none; }
+  .screen::-webkit-scrollbar { display: none; }
+
+  /* ============ TOKENS ============ */
+  .screen[data-mode="light"] {
+    --bg: #F2F2F7;
+    --card-bg: #FFFFFF;
+    --text-primary: #1C1C1E;
+    --text-secondary: #8E8E93;
+    --separator: #E5E5EA;
+    --protein: #007AFF;
+    --carbs: #FF9500;
+    --fat: #AF52DE;
+    --water: #5AC8FA;
+    --positive: #34C759;
+    --fab-surface: rgba(255,255,255,0.82);
+    --fab-border: rgba(0,0,0,0.08);
+    --fab-icon: #FF3B30;
+    --status-color: #1C1C1E;
+    --section-label: #6E6E73;
+  }
+  .screen[data-mode="dark"] {
+    --bg: #000000;
+    --card-bg: #1C1C1E;
+    --text-primary: #FFFFFF;
+    --text-secondary: #98989D;
+    --separator: #38383A;
+    --protein: #0A84FF;
+    --carbs: #FF9F0A;
+    --fat: #BF5AF2;
+    --water: #64D2FF;
+    --positive: #30D158;
+    --fab-surface: rgba(28,28,30,0.82);
+    --fab-border: rgba(255,255,255,0.12);
+    --fab-icon: #FF453A;
+    --status-color: #FFFFFF;
+    --section-label: #98989D;
+  }
+
+  .screen { background: var(--bg); color: var(--text-primary); }
+  .status-row { display:flex; justify-content: space-between; align-items:center; padding: 18px 24px 4px; font-size: 13px; font-weight: 600; color: var(--status-color); }
+  .nav-title { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; padding: 6px 20px 14px; }
+  .section-label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 0 20px; margin: 22px 0 8px; color: var(--section-label); }
+
+  .h-card { background: var(--card-bg); margin: 0 16px; border-radius: 14px; padding: 16px 16px 6px; }
+  .h-date { font-size: 13px; color: var(--text-secondary); font-weight: 600; margin-bottom: 10px; }
+  .h-hero { display:flex; align-items:baseline; gap:8px; margin-bottom:4px; }
+  .h-hero .num { font-size: 34px; font-weight: 700; font-variant-numeric: tabular-nums; }
+  .h-hero .goal { font-size: 15px; color: var(--text-secondary); font-weight: 500; }
+  .h-remaining { font-size: 13px; color: var(--positive); font-weight: 600; margin-bottom: 14px; }
+  .h-row { display:flex; justify-content: space-between; align-items:center; padding: 12px 0; border-top: 0.5px solid var(--separator); }
+  .h-row .label { display:flex; align-items:center; gap:8px; font-size:14px; font-weight:500; }
+  .h-dot { width:9px; height:9px; border-radius:50%; }
+  .h-bar-track { background: var(--separator); height:6px; border-radius:3px; width:90px; overflow:hidden; }
+  .h-bar-fill { height:100%; border-radius:3px; }
+  .h-value { font-size:13px; color: var(--text-secondary); font-weight:600; font-variant-numeric: tabular-nums; }
+
+  .h-list { background: var(--card-bg); margin: 0 16px; border-radius: 14px; overflow: hidden; }
+  .h-item { display:flex; align-items:center; gap:12px; padding: 12px 16px; border-top: 0.5px solid var(--separator); }
+  .h-item:first-child { border-top: none; }
+  .h-icon { width:30px; height:30px; border-radius:8px; display:flex; align-items:center; justify-content:center; font-size:14px; color:#fff; flex-shrink:0; }
+  .h-item-title { font-size:14.5px; font-weight:600; }
+  .h-item-sub { font-size:12.5px; color: var(--text-secondary); }
+  .h-item-val { margin-left:auto; font-size:13px; color: var(--text-secondary); font-weight:600; }
+
+  .h-totals { display:grid; grid-template-columns: repeat(3,1fr); gap:10px; margin:0 16px; }
+  .h-total-card { background: var(--card-bg); border-radius:14px; padding:12px; }
+  .h-total-card .t-label { font-size:11.5px; color: var(--text-secondary); font-weight:600; margin-bottom:4px; }
+  .h-total-card .t-val { font-size:17px; font-weight:700; font-variant-numeric: tabular-nums; }
+
+  .h-macro-card { background: var(--card-bg); margin: 0 16px; border-radius:14px; padding:16px; display:flex; align-items:center; gap:16px; }
+  .h-ring { width:74px; height:74px; }
+  .h-legend { flex:1; }
+  .h-legend-row { display:flex; justify-content:space-between; font-size:13px; font-weight:600; padding:4px 0; }
+
+  .h-suggest-row { display:flex; gap:10px; padding: 0 16px; overflow-x:auto; }
+  .h-chip { background: var(--card-bg); border-radius:12px; padding:10px 14px; min-width:108px; flex-shrink:0; }
+  .h-chip .n { font-size:13px; font-weight:600; margin-bottom:2px; }
+  .h-chip .k { font-size:11.5px; color: var(--text-secondary); }
+
+  .h-fab {
+    position:absolute; right:20px; bottom:26px; width:52px; height:52px; border-radius:50%;
+    background: var(--fab-surface); backdrop-filter: blur(6px); border: 0.5px solid var(--fab-border);
+    box-shadow: 0 4px 14px rgba(0,0,0,0.18);
+    display:flex; align-items:center; justify-content:center; font-size:22px; color: var(--fab-icon); font-weight:400;
+  }
+
+  .footnote { text-align:center; max-width:480px; margin: 26px auto 0; font-size:12px; color:#8A8A8E; line-height:1.5; }
+</style>
+</head>
+<body>
+<div class="page">
+  <div class="page-header">
+    <h1>Nutrition OS — Today Screen</h1>
+    <p>Locked concept: Apple Health. Toggle to check both modes.</p>
+  </div>
+
+  <div class="switcher">
+    <button data-mode="light" class="active">☀️ Light</button>
+    <button data-mode="dark">🌙 Dark</button>
+  </div>
+
+  <div class="stage">
+    <div class="phone">
+      <div class="screen" id="screen" data-mode="light">
+        <div class="status-row"><span>9:41</span><span>●●●●  🔋</span></div>
+        <div class="nav-title">Today</div>
+
+        <div class="h-card">
+          <div class="h-date">Wednesday, July 24</div>
+          <div class="h-hero"><span class="num">1,450</span><span class="goal">/ 2,200 kcal</span></div>
+          <div class="h-remaining">750 kcal remaining</div>
+
+          <div class="h-row">
+            <div class="label"><span class="h-dot" style="background:var(--protein)"></span>Protein</div>
+            <div class="h-bar-track"><div class="h-bar-fill" style="width:55%; background:var(--protein)"></div></div>
+            <div class="h-value">82 / 150g</div>
+          </div>
+          <div class="h-row">
+            <div class="label"><span class="h-dot" style="background:var(--positive)"></span>Energy balance</div>
+            <div class="h-value" style="color:var(--positive); font-weight:700;">Deficit · Balanced</div>
+          </div>
+        </div>
+
+        <div class="section-label">Timeline</div>
+        <div class="h-list">
+          <div class="h-item"><div class="h-icon" style="background:var(--carbs);">🥣</div><div><div class="h-item-title">Oatmeal &amp; Berries</div><div class="h-item-sub">7:32 AM · Breakfast</div></div><div class="h-item-val">320 kcal</div></div>
+          <div class="h-item"><div class="h-icon" style="background:var(--water);">💧</div><div><div class="h-item-title">Water</div><div class="h-item-sub">9:15 AM</div></div><div class="h-item-val">500 ml</div></div>
+          <div class="h-item"><div class="h-icon" style="background:var(--positive);">🥗</div><div><div class="h-item-title">Grilled Chicken Salad</div><div class="h-item-sub">12:40 PM · Lunch</div></div><div class="h-item-val">480 kcal</div></div>
+          <div class="h-item"><div class="h-icon" style="background:var(--fat);">🥜</div><div><div class="h-item-title">Almonds</div><div class="h-item-sub">3:05 PM · Snack</div></div><div class="h-item-val">210 kcal</div></div>
+        </div>
+
+        <div class="section-label">Today's Totals</div>
+        <div class="h-totals">
+          <div class="h-total-card"><div class="t-label">Calories</div><div class="t-val">1,450</div></div>
+          <div class="h-total-card"><div class="t-label">Protein</div><div class="t-val">82g</div></div>
+          <div class="h-total-card"><div class="t-label">Carbs</div><div class="t-val">140g</div></div>
+          <div class="h-total-card"><div class="t-label">Fat</div><div class="t-val">48g</div></div>
+          <div class="h-total-card"><div class="t-label">Water</div><div class="t-val">1.2 L</div></div>
+        </div>
+
+        <div class="section-label">Energy Distribution</div>
+        <div class="h-macro-card">
+          <svg class="h-ring" viewBox="0 0 36 36">
+            <circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--separator)" stroke-width="3"/>
+            <circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--fat)" stroke-width="3" stroke-dasharray="24 73" stroke-dashoffset="0" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--carbs)" stroke-width="3" stroke-dasharray="41 73" stroke-dashoffset="-24" stroke-linecap="round"/>
+            <circle cx="18" cy="18" r="15.5" fill="none" stroke="var(--protein)" stroke-width="3" stroke-dasharray="33 73" stroke-dashoffset="-65" stroke-linecap="round"/>
+          </svg>
+          <div class="h-legend">
+            <div class="h-legend-row"><span style="color:var(--protein);">● Protein</span><span>34%</span></div>
+            <div class="h-legend-row"><span style="color:var(--carbs);">● Carbs</span><span>42%</span></div>
+            <div class="h-legend-row"><span style="color:var(--fat);">● Fat</span><span>24%</span></div>
+          </div>
+        </div>
+
+        <div class="section-label">Suggested Foods</div>
+        <div class="h-suggest-row">
+          <div class="h-chip"><div class="n">Greek Yogurt</div><div class="k">130 kcal</div></div>
+          <div class="h-chip"><div class="n">Banana</div><div class="k">105 kcal</div></div>
+          <div class="h-chip"><div class="n">Grilled Salmon</div><div class="k">280 kcal</div></div>
+        </div>
+
+        <div class="section-label">Suggested Meals</div>
+        <div class="h-suggest-row" style="margin-bottom:24px;">
+          <div class="h-chip"><div class="n">Turkey Wrap</div><div class="k">410 kcal</div></div>
+          <div class="h-chip"><div class="n">Quinoa Bowl</div><div class="k">390 kcal</div></div>
+        </div>
+        <div style="height:70px;"></div>
+        <div class="h-fab">＋</div>
+      </div>
+    </div>
+  </div>
+
+  <p class="footnote">This is the frozen visual language — grouped-inset cards, semantic color only on data, SF Symbols, no gradients — for both appearances. Every future screen should reuse these exact tokens and components.</p>
+</div>
+
+<script>
+  const buttons = document.querySelectorAll('.switcher button');
+  const screen = document.getElementById('screen');
+  buttons.forEach(b => b.addEventListener('click', () => {
+    buttons.forEach(x => x.classList.remove('active'));
+    b.classList.add('active');
+    screen.setAttribute('data-mode', b.dataset.mode);
+  }));
+</script>
+</body>
+</html>

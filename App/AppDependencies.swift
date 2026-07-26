@@ -100,12 +100,17 @@ struct AppDependencies {
         WeightHistoryViewModel(getWeightHistoryUseCase: GetWeightHistoryUseCase(weightRepository: weightRepository))
     }
 
-    func makeFoodListViewModel() -> FoodListViewModel {
-        FoodListViewModel(
+    func makeFoodViewModel() -> FoodViewModel {
+        FoodViewModel(
             getFoodsUseCase: GetFoodsUseCase(foodRepository: foodRepository),
             searchFoodsUseCase: SearchFoodsUseCase(foodRepository: foodRepository),
             getFavoriteFoodsUseCase: GetFavoriteFoodsUseCase(foodRepository: foodRepository),
-            foodRepository: foodRepository
+            getRecentlyUsedFoodsUseCase: GetRecentlyUsedFoodsUseCase(foodRepository: foodRepository),
+            toggleFavoriteFoodUseCase: ToggleFavoriteFoodUseCase(foodRepository: foodRepository),
+            archiveFoodUseCase: ArchiveFoodUseCase(foodRepository: foodRepository),
+            restoreFoodUseCase: RestoreFoodUseCase(foodRepository: foodRepository),
+            deleteFoodUseCase: DeleteFoodUseCase(foodRepository: foodRepository),
+            duplicateFoodUseCase: DuplicateFoodUseCase(foodRepository: foodRepository)
         )
     }
 

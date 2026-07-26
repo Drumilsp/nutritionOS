@@ -15,7 +15,9 @@ struct ContentView: View {
     @StateObject private var dailyLogViewModel: DailyLogViewModel
     @StateObject private var logFoodViewModel: LogFoodViewModel
     @StateObject private var logMealViewModel: LogMealViewModel
+    @State private var foodViewModel: FoodViewModel
     @State private var toastMessage: String?
+    private let makeFoodEditorViewModel: (Food, Bool) -> FoodEditorViewModel
 
     // MARK: - Initialization
 
@@ -24,6 +26,8 @@ struct ContentView: View {
         _dailyLogViewModel = StateObject(wrappedValue: dependencies.makeDailyLogViewModel())
         _logFoodViewModel = StateObject(wrappedValue: dependencies.makeLogFoodViewModel())
         _logMealViewModel = StateObject(wrappedValue: dependencies.makeLogMealViewModel())
+        _foodViewModel = State(initialValue: dependencies.makeFoodViewModel())
+        self.makeFoodEditorViewModel = dependencies.makeFoodEditorViewModel
     }
 
     // MARK: - Body
@@ -42,7 +46,17 @@ struct ContentView: View {
                     dailyLogViewModel: dailyLogViewModel,
                     logFoodViewModel: logFoodViewModel,
                     logMealViewModel: logMealViewModel,
+                    makeFoodEditorViewModel: makeFoodEditorViewModel,
                     onLogCompleted: refreshToday
+                )
+            },
+            settings: {
+                ManageFoodsSettingsView()
+            },
+            foodLibrary: {
+                FoodLibraryView(
+                    viewModel: foodViewModel,
+                    makeFoodEditorViewModel: makeFoodEditorViewModel
                 )
             }
         )
