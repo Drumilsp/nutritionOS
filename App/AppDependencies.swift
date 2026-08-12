@@ -103,6 +103,19 @@ struct AppDependencies {
         WeightHistoryViewModel(getWeightHistoryUseCase: GetWeightHistoryUseCase(weightRepository: weightRepository))
     }
 
+    func makeSettingsViewModel() -> SettingsViewModel {
+        SettingsViewModel(
+            getSettingsSummaryUseCase: GetSettingsSummaryUseCase(settingsRepository: settingsRepository),
+            getGoalSettingsUseCase: GetGoalSettingsUseCase(settingsRepository: settingsRepository),
+            updateGoalSettingsUseCase: UpdateGoalSettingsUseCase(settingsRepository: settingsRepository),
+            updateUnitSettingsUseCase: UpdateUnitSettingsUseCase(settingsRepository: settingsRepository),
+            updateDisplayPreferencesUseCase: UpdateDisplayPreferencesUseCase(settingsRepository: settingsRepository),
+            exportAppDataUseCase: ExportAppDataUseCase(foodRepository: foodRepository, mealRepository: mealRepository, dailyLogRepository: dailyLogRepository, weightRepository: weightRepository, settingsRepository: settingsRepository),
+            resetLocalDataUseCase: ResetLocalDataUseCase(foodRepository: foodRepository, mealRepository: mealRepository, dailyLogRepository: dailyLogRepository, weightRepository: weightRepository, settingsRepository: settingsRepository),
+            getAppInfoUseCase: GetAppInfoUseCase()
+        )
+    }
+
     func makeFoodViewModel() -> FoodViewModel {
         FoodViewModel(
             getFoodsUseCase: GetFoodsUseCase(foodRepository: foodRepository),

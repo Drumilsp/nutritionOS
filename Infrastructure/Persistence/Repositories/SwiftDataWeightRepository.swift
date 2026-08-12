@@ -54,4 +54,14 @@ final class SwiftDataWeightRepository: WeightRepository {
             throw RepositoryError.persistenceFailure
         }
     }
+
+    func deleteAllEntries() async throws {
+        do {
+            try persistenceManager.mainContext.fetch(FetchDescriptor<WeightEntryEntity>()).forEach(persistenceManager.mainContext.delete)
+            try persistenceManager.mainContext.save()
+        } catch {
+            persistenceManager.mainContext.rollback()
+            throw RepositoryError.persistenceFailure
+        }
+    }
 }

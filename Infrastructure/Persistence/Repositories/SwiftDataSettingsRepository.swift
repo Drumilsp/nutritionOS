@@ -108,6 +108,19 @@ final class SwiftDataSettingsRepository: SettingsRepository {
         }
     }
 
+    func reset() async throws {
+        let context = persistenceManager.mainContext
+        do {
+            try userProfileEntities().forEach(context.delete)
+            try goalSettingsEntities().forEach(context.delete)
+            try appPreferencesEntities().forEach(context.delete)
+            try context.save()
+        } catch {
+            context.rollback()
+            throw RepositoryError.persistenceFailure
+        }
+    }
+
     // MARK: - Private Methods
 
     private func userProfileEntities() throws -> [UserProfileEntity] {

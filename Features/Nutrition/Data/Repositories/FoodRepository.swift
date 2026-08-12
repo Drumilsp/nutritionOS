@@ -22,4 +22,5 @@ protocol FoodRepository {
     func setFavorite(id: UUID, isFavorite: Bool) async throws -> Food
     func markUsed(id: UUID, at date: Date) async throws -> Food
     func deleteFood(id: UUID) async throws
+    func deleteAllFoods() async throws
 }

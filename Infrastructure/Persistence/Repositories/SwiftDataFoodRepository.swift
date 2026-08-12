@@ -173,6 +173,17 @@ final class SwiftDataFoodRepository: FoodRepository {
         }
     }
 
+    func deleteAllFoods() async throws {
+        let context = persistenceManager.mainContext
+        do {
+            try foodEntities().forEach(context.delete)
+            try context.save()
+        } catch {
+            context.rollback()
+            throw RepositoryError.persistenceFailure
+        }
+    }
+
     // MARK: - Private Methods
 
     private func setArchived(_ isArchived: Bool, foodID: UUID) async throws -> Food {

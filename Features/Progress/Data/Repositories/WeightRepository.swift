@@ -6,4 +6,5 @@ protocol WeightRepository {
     func entries(from startDate: Date?, to endDate: Date?) async throws -> [WeightEntry]
     func latest() async throws -> WeightEntry?
     func delete(id: UUID) async throws
+    func deleteAllEntries() async throws
 }

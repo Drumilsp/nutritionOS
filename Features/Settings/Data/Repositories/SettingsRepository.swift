@@ -15,4 +15,5 @@ protocol SettingsRepository {
     func saveGoalSettings(_ goalSettings: GoalSettings) async throws -> GoalSettings
     func appPreferences() async throws -> AppPreferences
     func saveAppPreferences(_ appPreferences: AppPreferences) async throws -> AppPreferences
+    func reset() async throws
 }

@@ -316,6 +316,17 @@ final class SwiftDataDailyLogRepository: DailyLogRepository {
         try dailyLogEntity(date: startOfDay(for: date)) != nil
     }
 
+    func deleteAllLogs() async throws {
+        let context = persistenceManager.mainContext
+        do {
+            try dailyLogEntities().forEach(context.delete)
+            try context.save()
+        } catch {
+            context.rollback()
+            throw RepositoryError.persistenceFailure
+        }
+    }
+
     // MARK: - Private Methods
 
     private func existingOrNewDailyLogEntity(date: Date) throws -> DailyLogEntity {

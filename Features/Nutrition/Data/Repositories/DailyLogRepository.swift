@@ -26,4 +26,5 @@ protocol DailyLogRepository {
     func updateNotes(_ notes: String?, on date: Date) async throws -> DailyLog
     func markDayComplete(date: Date) async throws -> DailyLog
     func exists(date: Date) async throws -> Bool
+    func deleteAllLogs() async throws
 }

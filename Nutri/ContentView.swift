@@ -20,6 +20,7 @@ struct ContentView: View {
     @StateObject private var progressViewModel: ProgressViewModel
     @StateObject private var historyViewModel: HistoryViewModel
     @StateObject private var weightHistoryViewModel: WeightHistoryViewModel
+    @StateObject private var settingsViewModel: SettingsViewModel
     @State private var toastMessage: String?
     private let makeFoodEditorViewModel: (Food, Bool) -> FoodEditorViewModel
     private let makeMealEditorViewModel: (Meal, Bool) -> MealEditorViewModel
@@ -36,6 +37,7 @@ struct ContentView: View {
         _progressViewModel = StateObject(wrappedValue: dependencies.makeProgressViewModel())
         _historyViewModel = StateObject(wrappedValue: dependencies.makeHistoryViewModel())
         _weightHistoryViewModel = StateObject(wrappedValue: dependencies.makeWeightHistoryViewModel())
+        _settingsViewModel = StateObject(wrappedValue: dependencies.makeSettingsViewModel())
         self.makeFoodEditorViewModel = dependencies.makeFoodEditorViewModel
         self.makeMealEditorViewModel = dependencies.makeMealEditorViewModel
     }
@@ -65,7 +67,7 @@ struct ContentView: View {
                 )
             },
             settings: {
-                ManageFoodsSettingsView()
+                SettingsHomeView(viewModel: settingsViewModel)
             },
             foodLibrary: {
                 FoodLibraryView(
