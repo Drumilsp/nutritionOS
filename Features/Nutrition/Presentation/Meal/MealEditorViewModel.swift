@@ -35,7 +35,7 @@ final class MealEditorViewModel {
         updateMealUseCase: UpdateMealUseCase,
         getFoodsUseCase: GetFoodsUseCase,
         searchFoodsUseCase: SearchFoodsUseCase,
-        validator: MealValidator = MealValidator()
+        validator: MealValidator
     ) {
         self.createMealUseCase = createMealUseCase
         self.updateMealUseCase = updateMealUseCase

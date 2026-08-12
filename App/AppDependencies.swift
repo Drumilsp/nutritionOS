@@ -180,7 +180,8 @@ struct AppDependencies {
             createMealUseCase: CreateMealUseCase(mealRepository: mealRepository),
             updateMealUseCase: UpdateMealUseCase(mealRepository: mealRepository),
             getFoodsUseCase: GetFoodsUseCase(foodRepository: foodRepository),
-            searchFoodsUseCase: SearchFoodsUseCase(foodRepository: foodRepository)
+            searchFoodsUseCase: SearchFoodsUseCase(foodRepository: foodRepository),
+            validator: MealValidator()
         )
     }
 
