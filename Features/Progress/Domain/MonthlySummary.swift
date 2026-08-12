@@ -5,6 +5,7 @@ struct MonthlySummary {
     let averageProtein: Double
     let averageCarbohydrates: Double
     let averageFat: Double
+    let averageFibre: Double
     let averageWater: Double
     let goalAdherence: [GoalAdherence]
     let weightTrend: ProgressTrend?

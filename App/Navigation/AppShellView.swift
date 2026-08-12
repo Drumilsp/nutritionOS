@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// Hosts the application-wide navigation stack, tab selection, and modal routing.
-struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: View, FoodLibraryContent: View, MealLibraryContent: View>: View {
+struct AppShellView<TodayContent: View, ProgressContent: View, QuickLogContent: View, SettingsContent: View, FoodLibraryContent: View, MealLibraryContent: View>: View {
 
     // MARK: - State
 
@@ -10,6 +10,7 @@ struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: 
     @State private var sheetDestination: AppSheetDestination?
 
     private let todayContent: TodayContent
+    private let progressContent: ProgressContent
     private let quickLogContent: QuickLogContent
     private let settingsContent: SettingsContent
     private let foodLibraryContent: FoodLibraryContent
@@ -19,12 +20,14 @@ struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: 
 
     init(
         @ViewBuilder today: () -> TodayContent,
+        @ViewBuilder progress: () -> ProgressContent,
         @ViewBuilder quickLog: () -> QuickLogContent,
         @ViewBuilder settings: () -> SettingsContent,
         @ViewBuilder foodLibrary: () -> FoodLibraryContent,
         @ViewBuilder mealLibrary: () -> MealLibraryContent
     ) {
         self.todayContent = today()
+        self.progressContent = progress()
         self.quickLogContent = quickLog()
         self.settingsContent = settings()
         self.foodLibraryContent = foodLibrary()
@@ -40,7 +43,7 @@ struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: 
                     .tag(AppTab.today)
                     .tabItem { Label(AppTab.today.title, systemImage: AppTab.today.icon) }
 
-                AppPlaceholderScreen(tab: .progress)
+                progressContent
                     .tag(AppTab.progress)
                     .tabItem { Label(AppTab.progress.title, systemImage: AppTab.progress.icon) }
 
@@ -84,6 +87,7 @@ struct AppShellView<TodayContent: View, QuickLogContent: View, SettingsContent: 
 #Preview {
     AppShellView(
         today: { AppPlaceholderScreen(tab: .today) },
+        progress: { AppPlaceholderScreen(tab: .progress) },
         quickLog: { AppSheetPlaceholder(destination: .quickLog, onRoute: { _ in }, onDismiss: {}) },
         settings: { ManageFoodsSettingsView() },
         foodLibrary: { EmptyView() },

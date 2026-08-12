@@ -11,6 +11,6 @@ struct GetWeeklySummaryUseCase {
         let logs = try await dailyLogRepository.logs(from: dates.start ?? .distantPast, to: dates.end)
         let weights = try await weightRepository.entries(from: dates.start, to: dates.end)
         let net = ProgressAnalyticsCalculator.netEnergyBalance(logs: logs)
-        return WeeklySummary(averageCalories: ProgressAnalyticsCalculator.average(logs, metric: .calories), averageProtein: ProgressAnalyticsCalculator.average(logs, metric: .protein), averageCarbohydrates: ProgressAnalyticsCalculator.average(logs, metric: .carbohydrates), averageFat: ProgressAnalyticsCalculator.average(logs, metric: .fat), averageWater: ProgressAnalyticsCalculator.average(logs, metric: .water), weightChange: ProgressAnalyticsCalculator.weightChange(weights), netEnergyBalance: net, estimatedFatLoss: ProgressAnalyticsCalculator.estimatedFatLoss(netEnergyBalance: net))
+        return WeeklySummary(averageCalories: ProgressAnalyticsCalculator.average(logs, metric: .calories), averageProtein: ProgressAnalyticsCalculator.average(logs, metric: .protein), averageCarbohydrates: ProgressAnalyticsCalculator.average(logs, metric: .carbohydrates), averageFat: ProgressAnalyticsCalculator.average(logs, metric: .fat), averageFibre: ProgressAnalyticsCalculator.average(logs, metric: .fibre), averageWater: ProgressAnalyticsCalculator.average(logs, metric: .water), weightChange: ProgressAnalyticsCalculator.weightChange(weights), netEnergyBalance: net, estimatedFatLoss: ProgressAnalyticsCalculator.estimatedFatLoss(netEnergyBalance: net))
     }
 }

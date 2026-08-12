@@ -2,7 +2,10 @@ import Foundation
 
 enum ProgressDateRange {
     static func dates(for range: ProgressTimeRange, now: Date, calendar: Calendar) -> (start: Date?, end: Date) {
-        (range.startDate(relativeTo: now, calendar: calendar), calendar.startOfDay(for: now))
+        if case .custom(_, let end) = range {
+            return (range.startDate(relativeTo: now, calendar: calendar), calendar.startOfDay(for: end))
+        }
+        return (range.startDate(relativeTo: now, calendar: calendar), calendar.startOfDay(for: now))
     }
 
     static func previousDates(for range: ProgressTimeRange, now: Date, calendar: Calendar) -> (start: Date?, end: Date)? {

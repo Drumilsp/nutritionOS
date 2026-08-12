@@ -15,6 +15,7 @@ struct DashboardSummary {
     let date: Date
     let caloriesConsumed: Double
     let proteinConsumed: Double
+    let carbohydratesConsumed: Double
     let fatConsumed: Double
     let fibreConsumed: Double
     let waterIntake: Double

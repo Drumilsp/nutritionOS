@@ -8,6 +8,6 @@ struct GetGoalAdherenceUseCase {
     func execute(for range: ProgressTimeRange) async throws -> [GoalAdherence] {
         let dates = ProgressDateRange.dates(for: range, now: dateProvider.now, calendar: calendar)
         let logs = try await dailyLogRepository.logs(from: dates.start ?? .distantPast, to: dates.end)
-        return ProgressMetric.allCases.filter { $0 != .weight }.map { ProgressAnalyticsCalculator.adherence(logs: logs, metric: $0) }
+        return ProgressMetric.allCases.filter { $0 != .weight && $0 != .fibre }.map { ProgressAnalyticsCalculator.adherence(logs: logs, metric: $0) }
     }
 }

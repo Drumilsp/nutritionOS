@@ -88,12 +88,15 @@ struct AppDependencies {
             getMonthlySummaryUseCase: GetMonthlySummaryUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
             getConsistencyScoreUseCase: GetConsistencyScoreUseCase(dailyLogRepository: dailyLogRepository),
             getTodayImpactUseCase: GetTodayImpactUseCase(dailyLogRepository: dailyLogRepository),
-            getProgressChartDataUseCase: GetProgressChartDataUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository)
+            getProgressChartDataUseCase: GetProgressChartDataUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
+            getGoalProgressUseCase: GetGoalProgressUseCase(dailyLogRepository: dailyLogRepository, settingsRepository: settingsRepository),
+            getConsistencyMetricsUseCase: GetConsistencyMetricsUseCase(dailyLogRepository: dailyLogRepository),
+            getDashboardSummaryUseCase: GetDashboardSummaryUseCase(dailyLogRepository: dailyLogRepository)
         )
     }
 
     func makeHistoryViewModel() -> HistoryViewModel {
-        HistoryViewModel(getHistoryUseCase: GetHistoryUseCase(dailyLogRepository: dailyLogRepository))
+        HistoryViewModel(getHistoryUseCase: GetHistoryUseCase(dailyLogRepository: dailyLogRepository), searchHistoryUseCase: SearchHistoryUseCase(dailyLogRepository: dailyLogRepository))
     }
 
     func makeWeightHistoryViewModel() -> WeightHistoryViewModel {

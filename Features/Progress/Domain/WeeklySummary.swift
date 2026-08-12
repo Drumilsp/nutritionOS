@@ -5,6 +5,7 @@ struct WeeklySummary {
     let averageProtein: Double
     let averageCarbohydrates: Double
     let averageFat: Double
+    let averageFibre: Double
     let averageWater: Double
     let weightChange: Double?
     let netEnergyBalance: Double

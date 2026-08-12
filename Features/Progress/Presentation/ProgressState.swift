@@ -1,6 +1,6 @@
 import Foundation
 
-enum ProgressState {
+enum ProgressScreenState {
     case loading
     case loaded(ProgressSnapshot)
     case empty

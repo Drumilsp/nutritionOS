@@ -16,6 +16,7 @@ enum ProgressAnalyticsCalculator {
         case .protein: return totals.protein
         case .carbohydrates: return totals.carbohydrates
         case .fat: return totals.fat
+        case .fibre: return totals.fibre
         case .water: return totals.water
         case .weight: return 0
         }
@@ -27,6 +28,7 @@ enum ProgressAnalyticsCalculator {
         case .protein: return log.proteinGoalSnapshot > 0 ? log.proteinGoalSnapshot : nil
         case .carbohydrates: return log.carbohydrateGoalSnapshot > 0 ? log.carbohydrateGoalSnapshot : nil
         case .fat: return log.fatGoalSnapshot > 0 ? log.fatGoalSnapshot : nil
+        case .fibre: return nil
         case .water: return log.waterGoalSnapshot > 0 ? log.waterGoalSnapshot : nil
         case .weight: return nil
         }

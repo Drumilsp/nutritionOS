@@ -35,6 +35,7 @@ struct GetDashboardSummaryUseCase {
             date: dailyLog.date,
             caloriesConsumed: total(.calories, in: nutritionProfiles),
             proteinConsumed: total(.protein, in: nutritionProfiles),
+            carbohydratesConsumed: total(.carbohydrates, in: nutritionProfiles),
             fatConsumed: total(.fat, in: nutritionProfiles),
             fibreConsumed: total(.fibre, in: nutritionProfiles),
             waterIntake: dailyLog.waterIntake,

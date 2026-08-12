@@ -9,6 +9,7 @@ enum AppColors {
     static let secondaryText = Color.secondary
     static let success = Color.green
     static let warning = Color.orange
+    static let fat = Color.purple
     static let destructive = Color.red
     static let outline = Color(uiColor: .separator)
     static let skeleton = Color(uiColor: .tertiarySystemFill)

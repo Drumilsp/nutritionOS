@@ -6,7 +6,8 @@ struct ProgressChartPoint: Identifiable {
     var id: Date { date }
 }
 
-struct ProgressChartDataset {
+struct ProgressChartDataset: Identifiable {
     let metric: ProgressMetric
     let points: [ProgressChartPoint]
+    var id: ProgressMetric { metric }
 }

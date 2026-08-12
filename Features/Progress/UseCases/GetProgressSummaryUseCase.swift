@@ -16,7 +16,7 @@ struct GetProgressSummaryUseCase {
         let cards = ProgressMetric.allCases.map { metric -> MetricSummaryCard in
             let current = metric == .weight ? ProgressAnalyticsCalculator.averageWeight(weights) : ProgressAnalyticsCalculator.average(logs, metric: metric)
             let averageGoal = logs.compactMap { ProgressAnalyticsCalculator.goal(for: $0, metric: metric) }.averageOrNil
-            let adherence = metric == .weight ? nil : ProgressAnalyticsCalculator.adherence(logs: logs, metric: metric).hitRate
+            let adherence = metric == .weight || metric == .fibre ? nil : ProgressAnalyticsCalculator.adherence(logs: logs, metric: metric).hitRate
             return MetricSummaryCard(metric: metric, currentValue: current, goal: averageGoal, goalHitRate: adherence, trend: ProgressAnalyticsCalculator.trend(metric: metric, currentLogs: logs, previousLogs: previousLogs, currentWeights: weights, previousWeights: previousWeights))
         }
         let net = ProgressAnalyticsCalculator.netEnergyBalance(logs: logs)

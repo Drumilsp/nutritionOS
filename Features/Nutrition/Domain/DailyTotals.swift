@@ -6,5 +6,6 @@ struct DailyTotals {
     let protein: Double
     let carbohydrates: Double
     let fat: Double
+    let fibre: Double
     let water: Double
 }

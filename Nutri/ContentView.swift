@@ -17,6 +17,9 @@ struct ContentView: View {
     @StateObject private var logMealViewModel: LogMealViewModel
     @State private var foodViewModel: FoodViewModel
     @State private var mealViewModel: MealListViewModel
+    @StateObject private var progressViewModel: ProgressViewModel
+    @StateObject private var historyViewModel: HistoryViewModel
+    @StateObject private var weightHistoryViewModel: WeightHistoryViewModel
     @State private var toastMessage: String?
     private let makeFoodEditorViewModel: (Food, Bool) -> FoodEditorViewModel
     private let makeMealEditorViewModel: (Meal, Bool) -> MealEditorViewModel
@@ -30,6 +33,9 @@ struct ContentView: View {
         _logMealViewModel = StateObject(wrappedValue: dependencies.makeLogMealViewModel())
         _foodViewModel = State(initialValue: dependencies.makeFoodViewModel())
         _mealViewModel = State(initialValue: dependencies.makeMealListViewModel())
+        _progressViewModel = StateObject(wrappedValue: dependencies.makeProgressViewModel())
+        _historyViewModel = StateObject(wrappedValue: dependencies.makeHistoryViewModel())
+        _weightHistoryViewModel = StateObject(wrappedValue: dependencies.makeWeightHistoryViewModel())
         self.makeFoodEditorViewModel = dependencies.makeFoodEditorViewModel
         self.makeMealEditorViewModel = dependencies.makeMealEditorViewModel
     }
@@ -44,6 +50,9 @@ struct ContentView: View {
                     dailyLogViewModel: dailyLogViewModel,
                     toastMessage: $toastMessage
                 )
+            },
+            progress: {
+                ProgressDashboardView(viewModel: progressViewModel, historyViewModel: historyViewModel, weightHistoryViewModel: weightHistoryViewModel)
             },
             quickLog: {
                 QuickLogSheetView(
