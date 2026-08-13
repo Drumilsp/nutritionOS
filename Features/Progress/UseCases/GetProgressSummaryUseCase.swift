@@ -19,12 +19,21 @@ struct GetProgressSummaryUseCase {
             let adherence = metric == .weight || metric == .fibre ? nil : ProgressAnalyticsCalculator.adherence(logs: logs, metric: metric).hitRate
             return MetricSummaryCard(metric: metric, currentValue: current, goal: averageGoal, goalHitRate: adherence, trend: ProgressAnalyticsCalculator.trend(metric: metric, currentLogs: logs, previousLogs: previousLogs, currentWeights: weights, previousWeights: previousWeights))
         }
-        let net = ProgressAnalyticsCalculator.netEnergyBalance(logs: logs)
-        return ProgressSummary(cards: cards, weeklyNetEnergyBalance: net, estimatedFatLoss: ProgressAnalyticsCalculator.estimatedFatLoss(netEnergyBalance: net))
+        return ProgressSummary(cards: cards, energyBalance: energyBalance(for: logs))
     }
     private func logs(for range: (start: Date?, end: Date)?) async throws -> [DailyLog] {
         guard let range else { return [] }
         return try await dailyLogRepository.logs(from: range.start ?? .distantPast, to: range.end)
+    }
+
+    private func energyBalance(for logs: [DailyLog]) -> EnergyBalanceAvailability {
+        guard !logs.isEmpty else { return .tdeeNotConfigured }
+        guard logs.allSatisfy({ $0.maintenanceCaloriesSnapshot > 0 }) else { return .tdeeNotConfigured }
+        guard logs.allSatisfy({ $0.activeCalories != nil }) else { return .activeCaloriesUnavailable }
+        let consumed = logs.reduce(0) { $0 + DailyLogCalculations.totals(for: $1).calories }
+        let estimatedBurn = logs.reduce(0) { $0 + $1.maintenanceCaloriesSnapshot + ($1.activeCalories ?? 0) }
+        let netEnergy = consumed - estimatedBurn
+        return .available(consumedCalories: consumed, estimatedBurn: estimatedBurn, label: netEnergy <= 0 ? "Deficit" : "Surplus", amount: abs(netEnergy))
     }
 }
 

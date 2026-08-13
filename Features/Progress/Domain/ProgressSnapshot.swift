@@ -4,8 +4,6 @@ import Foundation
 struct ProgressSnapshot {
     let todaySummary: DashboardSummary?
     let summary: ProgressSummary
-    let weeklySummary: WeeklySummary
-    let monthlySummary: MonthlySummary
     let trends: [ProgressTrend]
     let chartDatasets: [ProgressChartDataset]
     let consistencyScore: ConsistencyScore

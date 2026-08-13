@@ -2,6 +2,11 @@ import Foundation
 
 struct ProgressSummary {
     let cards: [MetricSummaryCard]
-    let weeklyNetEnergyBalance: Double
-    let estimatedFatLoss: Double
+    let energyBalance: EnergyBalanceAvailability
+}
+
+enum EnergyBalanceAvailability {
+    case available(consumedCalories: Double, estimatedBurn: Double, label: String, amount: Double)
+    case tdeeNotConfigured
+    case activeCaloriesUnavailable
 }

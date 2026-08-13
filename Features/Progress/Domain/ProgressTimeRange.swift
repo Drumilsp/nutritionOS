@@ -18,10 +18,10 @@ enum ProgressTimeRange: Hashable, Identifiable {
     var title: String {
         switch self {
         case .today: "Today"
-        case .week: "Week"
-        case .month: "Month"
-        case .year: "Year"
-        case .custom: "Custom"
+        case .week: "This Week"
+        case .month: "This Month"
+        case .year: "This Year"
+        case .custom: "Custom Range"
         }
     }
 

@@ -7,6 +7,13 @@ struct RequestHealthPermissionsUseCase {
     func execute(for dataTypes: Set<HealthDataType>) async throws { try await healthRepository.requestPermissions(for: dataTypes) }
 }
 
+/// Reads the current optional Apple Health connection state for Settings.
+struct GetHealthConnectionStatusUseCase {
+    private let healthRepository: any HealthRepository
+    init(healthRepository: any HealthRepository) { self.healthRepository = healthRepository }
+    func execute() async -> HealthConnectionStatus { await healthRepository.connectionStatus() }
+}
+
 /// Imports HealthKit weights, keeping the newest timestamp as the current value.
 struct ImportWeightUseCase {
     private let healthRepository: any HealthRepository

@@ -30,7 +30,7 @@ struct LoadingOverlay: ViewModifier {
             .overlay {
                 if isLoading {
                     ZStack {
-                        Color.black.opacity(0.12).ignoresSafeArea()
+                        AppColors.primaryText.opacity(0.12).ignoresSafeArea()
                         ProgressView().controlSize(.large).padding(AppSpacing.lg).sectionStyle()
                     }
                     .accessibilityElement(children: .ignore)

@@ -6,6 +6,7 @@ struct GetSettingsSummaryUseCase {
     func execute() async throws -> SettingsSummary {
         let goals = try await settingsRepository.goalSettings()
         let preferences = try await settingsRepository.appPreferences()
-        return SettingsSummary(goals: goals, preferences: preferences)
+        let profile = try await settingsRepository.userProfile()
+        return SettingsSummary(goals: goals, preferences: preferences, profile: profile)
     }
 }

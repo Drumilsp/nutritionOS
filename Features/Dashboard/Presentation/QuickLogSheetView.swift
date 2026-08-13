@@ -7,6 +7,7 @@ struct QuickLogSheetView: View {
     @ObservedObject private var dailyLogViewModel: DailyLogViewModel
     @ObservedObject private var logFoodViewModel: LogFoodViewModel
     @ObservedObject private var logMealViewModel: LogMealViewModel
+    @ObservedObject private var logWaterViewModel: LogWaterViewModel
     private let makeFoodEditorViewModel: (Food, Bool) -> FoodEditorViewModel
     private let makeMealEditorViewModel: (Meal, Bool) -> MealEditorViewModel
     private let onLogCompleted: (String) -> Void
@@ -18,6 +19,8 @@ struct QuickLogSheetView: View {
     @State private var quantity = "1"
     @State private var isCreatingFood = false
     @State private var isCreatingMeal = false
+    @State private var isLoggingWater = false
+    @State private var waterAmount = "250"
 
     // MARK: - Initialization
 
@@ -25,6 +28,7 @@ struct QuickLogSheetView: View {
         dailyLogViewModel: DailyLogViewModel,
         logFoodViewModel: LogFoodViewModel,
         logMealViewModel: LogMealViewModel,
+        logWaterViewModel: LogWaterViewModel,
         makeFoodEditorViewModel: @escaping (Food, Bool) -> FoodEditorViewModel,
         makeMealEditorViewModel: @escaping (Meal, Bool) -> MealEditorViewModel,
         onLogCompleted: @escaping (String) -> Void
@@ -32,6 +36,7 @@ struct QuickLogSheetView: View {
         self.dailyLogViewModel = dailyLogViewModel
         self.logFoodViewModel = logFoodViewModel
         self.logMealViewModel = logMealViewModel
+        self.logWaterViewModel = logWaterViewModel
         self.makeFoodEditorViewModel = makeFoodEditorViewModel
         self.makeMealEditorViewModel = makeMealEditorViewModel
         self.onLogCompleted = onLogCompleted
@@ -52,6 +57,7 @@ struct QuickLogSheetView: View {
                 Section {
                     PrimaryButton("New Food", systemImage: AppIcons.createFood) { isCreatingFood = true }
                     SecondaryButton("New Meal", systemImage: AppIcons.createMeal) { isCreatingMeal = true }
+                    SecondaryButton("Log Water", systemImage: AppIcons.water) { isLoggingWater = true }
                 }
             }
             .navigationTitle("Quick Log")
@@ -85,6 +91,7 @@ struct QuickLogSheetView: View {
                     )
                 }
             }
+            .sheet(isPresented: $isLoggingWater) { waterSheet }
         }
     }
 
@@ -154,4 +161,24 @@ struct QuickLogSheetView: View {
     }
 
     private var newMeal: Meal { Meal(name: "", mealItems: []) }
+
+    private var waterSheet: some View {
+        VStack(spacing: AppSpacing.lg) {
+            Text("Log Water").font(AppTypography.title)
+            NutritionTextField("Amount", text: $waterAmount, prompt: "mL", keyboardType: .decimalPad)
+            if case .validationError(let message) = logWaterViewModel.state {
+                Text(message).foregroundStyle(AppColors.destructive)
+            } else if case .error(let message) = logWaterViewModel.state {
+                Text(message).foregroundStyle(AppColors.destructive)
+            }
+            PrimaryButton("Log Water") { Task { await saveWater() } }
+        }
+        .padding(AppSpacing.lg)
+        .presentationDetents([.medium])
+    }
+
+    private func saveWater() async {
+        await logWaterViewModel.save(amount: Double(waterAmount) ?? 0)
+        if case .saved = logWaterViewModel.state { completeLog(message: "Water logged") }
+    }
 }

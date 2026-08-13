@@ -15,12 +15,14 @@ struct ContentView: View {
     @StateObject private var dailyLogViewModel: DailyLogViewModel
     @StateObject private var logFoodViewModel: LogFoodViewModel
     @StateObject private var logMealViewModel: LogMealViewModel
+    @StateObject private var logWaterViewModel: LogWaterViewModel
     @State private var foodViewModel: FoodViewModel
     @State private var mealViewModel: MealListViewModel
     @StateObject private var progressViewModel: ProgressViewModel
     @StateObject private var historyViewModel: HistoryViewModel
     @StateObject private var weightHistoryViewModel: WeightHistoryViewModel
     @StateObject private var settingsViewModel: SettingsViewModel
+    @StateObject private var healthSettingsViewModel: HealthSettingsViewModel
     @State private var toastMessage: String?
     private let makeFoodEditorViewModel: (Food, Bool) -> FoodEditorViewModel
     private let makeMealEditorViewModel: (Meal, Bool) -> MealEditorViewModel
@@ -32,12 +34,14 @@ struct ContentView: View {
         _dailyLogViewModel = StateObject(wrappedValue: dependencies.makeDailyLogViewModel())
         _logFoodViewModel = StateObject(wrappedValue: dependencies.makeLogFoodViewModel())
         _logMealViewModel = StateObject(wrappedValue: dependencies.makeLogMealViewModel())
+        _logWaterViewModel = StateObject(wrappedValue: dependencies.makeLogWaterViewModel())
         _foodViewModel = State(initialValue: dependencies.makeFoodViewModel())
         _mealViewModel = State(initialValue: dependencies.makeMealListViewModel())
         _progressViewModel = StateObject(wrappedValue: dependencies.makeProgressViewModel())
         _historyViewModel = StateObject(wrappedValue: dependencies.makeHistoryViewModel())
         _weightHistoryViewModel = StateObject(wrappedValue: dependencies.makeWeightHistoryViewModel())
         _settingsViewModel = StateObject(wrappedValue: dependencies.makeSettingsViewModel())
+        _healthSettingsViewModel = StateObject(wrappedValue: dependencies.makeHealthSettingsViewModel())
         self.makeFoodEditorViewModel = dependencies.makeFoodEditorViewModel
         self.makeMealEditorViewModel = dependencies.makeMealEditorViewModel
     }
@@ -61,13 +65,14 @@ struct ContentView: View {
                     dailyLogViewModel: dailyLogViewModel,
                     logFoodViewModel: logFoodViewModel,
                     logMealViewModel: logMealViewModel,
+                    logWaterViewModel: logWaterViewModel,
                     makeFoodEditorViewModel: makeFoodEditorViewModel,
                     makeMealEditorViewModel: makeMealEditorViewModel,
                     onLogCompleted: refreshToday
                 )
             },
             settings: {
-                SettingsHomeView(viewModel: settingsViewModel)
+                SettingsHomeView(viewModel: settingsViewModel, healthViewModel: healthSettingsViewModel)
             },
             foodLibrary: {
                 FoodLibraryView(

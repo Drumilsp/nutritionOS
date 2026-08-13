@@ -12,11 +12,12 @@ final class SettingsViewModel: ObservableObject {
     private let updateGoalSettingsUseCase: UpdateGoalSettingsUseCase
     private let updateUnitSettingsUseCase: UpdateUnitSettingsUseCase
     private let updateDisplayPreferencesUseCase: UpdateDisplayPreferencesUseCase
+    private let updateUserProfileUseCase: UpdateUserProfileUseCase
     private let exportAppDataUseCase: ExportAppDataUseCase
     private let resetLocalDataUseCase: ResetLocalDataUseCase
 
-    init(getSettingsSummaryUseCase: GetSettingsSummaryUseCase, getGoalSettingsUseCase: GetGoalSettingsUseCase, updateGoalSettingsUseCase: UpdateGoalSettingsUseCase, updateUnitSettingsUseCase: UpdateUnitSettingsUseCase, updateDisplayPreferencesUseCase: UpdateDisplayPreferencesUseCase, exportAppDataUseCase: ExportAppDataUseCase, resetLocalDataUseCase: ResetLocalDataUseCase, getAppInfoUseCase: GetAppInfoUseCase) {
-        self.getSettingsSummaryUseCase = getSettingsSummaryUseCase; self.getGoalSettingsUseCase = getGoalSettingsUseCase; self.updateGoalSettingsUseCase = updateGoalSettingsUseCase; self.updateUnitSettingsUseCase = updateUnitSettingsUseCase; self.updateDisplayPreferencesUseCase = updateDisplayPreferencesUseCase; self.exportAppDataUseCase = exportAppDataUseCase; self.resetLocalDataUseCase = resetLocalDataUseCase; self.appInfo = getAppInfoUseCase.execute()
+    init(getSettingsSummaryUseCase: GetSettingsSummaryUseCase, getGoalSettingsUseCase: GetGoalSettingsUseCase, updateGoalSettingsUseCase: UpdateGoalSettingsUseCase, updateUnitSettingsUseCase: UpdateUnitSettingsUseCase, updateDisplayPreferencesUseCase: UpdateDisplayPreferencesUseCase, updateUserProfileUseCase: UpdateUserProfileUseCase, exportAppDataUseCase: ExportAppDataUseCase, resetLocalDataUseCase: ResetLocalDataUseCase, getAppInfoUseCase: GetAppInfoUseCase) {
+        self.getSettingsSummaryUseCase = getSettingsSummaryUseCase; self.getGoalSettingsUseCase = getGoalSettingsUseCase; self.updateGoalSettingsUseCase = updateGoalSettingsUseCase; self.updateUnitSettingsUseCase = updateUnitSettingsUseCase; self.updateDisplayPreferencesUseCase = updateDisplayPreferencesUseCase; self.updateUserProfileUseCase = updateUserProfileUseCase; self.exportAppDataUseCase = exportAppDataUseCase; self.resetLocalDataUseCase = resetLocalDataUseCase; self.appInfo = getAppInfoUseCase.execute()
     }
 
     func load() async {
@@ -33,6 +34,11 @@ final class SettingsViewModel: ObservableObject {
 
     func saveUnits(_ preferences: AppPreferences) async -> String? { await save(preferences, using: updateUnitSettingsUseCase) }
     func saveDisplayPreferences(_ preferences: AppPreferences) async -> String? { await save(preferences, using: updateDisplayPreferencesUseCase) }
+    func saveProfile(_ profile: UserProfile) async -> String? {
+        do { _ = try await updateUserProfileUseCase.execute(profile); await load(); return nil }
+        catch let failure as ValidationFailure { return failure.localizedDescription }
+        catch { return "Unable to save body measurements." }
+    }
     func export() async { do { exportedData = try await exportAppDataUseCase.execute() } catch { state = .error("Unable to export data.") } }
     func reset() async { do { try await resetLocalDataUseCase.execute(); exportedData = nil; await load() } catch { state = .error("Unable to reset local data.") } }
 

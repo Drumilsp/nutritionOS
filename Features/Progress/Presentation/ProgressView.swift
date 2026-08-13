@@ -36,31 +36,15 @@ struct ProgressDashboardView: View {
                     DatePicker("End", selection: $customEnd, in: customStart..., displayedComponents: .date)
                     Button("Apply Range") { Task { await viewModel.select(range: .custom(customStart, customEnd)) } }
                 }
+                Text(rangeDescription).font(AppTypography.caption).foregroundStyle(AppColors.secondaryText)
             }
-            Section("Today") {
-                if let today = snapshot.todaySummary {
-                    MetricRow(title: "Calories", value: NutritionFormatter.energy(today.caloriesConsumed), systemImage: AppIcons.energy)
-                    MetricRow(title: "Protein", value: NutritionFormatter.macro(today.proteinConsumed), tint: AppColors.accent)
-                    MetricRow(title: "Carbohydrates", value: NutritionFormatter.macro(today.carbohydratesConsumed))
-                    MetricRow(title: "Fat", value: NutritionFormatter.macro(today.fatConsumed))
-                    MetricRow(title: "Fiber", value: NutritionFormatter.macro(today.fibreConsumed))
-                } else {
-                    Text("No nutrition logged today.").foregroundStyle(AppColors.secondaryText)
+            Section("Summary") {
+                ForEach(snapshot.summary.cards.filter { [.calories, .protein, .carbohydrates, .fat, .fibre].contains($0.metric) }) { card in
+                    MetricRow(title: metricTitle(card.metric), value: formatted(card.currentValue, metric: card.metric), systemImage: card.metric == .calories ? AppIcons.energy : nil, tint: card.metric == .protein ? AppColors.accent : AppColors.secondaryText)
                 }
             }
-            Section("Weekly Summary") {
-                MetricRow(title: "Average Calories", value: NutritionFormatter.energy(snapshot.weeklySummary.averageCalories))
-                MetricRow(title: "Protein", value: NutritionFormatter.macro(snapshot.weeklySummary.averageProtein), tint: AppColors.accent)
-                MetricRow(title: "Carbohydrates", value: NutritionFormatter.macro(snapshot.weeklySummary.averageCarbohydrates))
-                MetricRow(title: "Fat", value: NutritionFormatter.macro(snapshot.weeklySummary.averageFat))
-                MetricRow(title: "Fiber", value: NutritionFormatter.macro(snapshot.weeklySummary.averageFibre))
-            }
-            Section("Monthly Summary") {
-                MetricRow(title: "Average Calories", value: NutritionFormatter.energy(snapshot.monthlySummary.averageCalories))
-                MetricRow(title: "Protein", value: NutritionFormatter.macro(snapshot.monthlySummary.averageProtein), tint: AppColors.accent)
-                MetricRow(title: "Carbohydrates", value: NutritionFormatter.macro(snapshot.monthlySummary.averageCarbohydrates))
-                MetricRow(title: "Fat", value: NutritionFormatter.macro(snapshot.monthlySummary.averageFat))
-                MetricRow(title: "Fiber", value: NutritionFormatter.macro(snapshot.monthlySummary.averageFibre))
+            Section("Energy Balance") {
+                energyBalance(snapshot.summary.energyBalance)
             }
             Section("Goal Progress") {
                 if snapshot.goalProgress.isEmpty { Text("No goals are available for today.").foregroundStyle(AppColors.secondaryText) }
@@ -97,14 +81,29 @@ struct ProgressDashboardView: View {
 
     @ViewBuilder private func chart(_ dataset: ProgressChartDataset) -> some View {
         if !dataset.points.isEmpty {
+            Text(metricTitle(dataset.metric)).font(AppTypography.caption).foregroundStyle(AppColors.secondaryText)
             Chart(dataset.points) { point in
                 LineMark(x: .value("Date", point.date), y: .value("Value", point.value))
                     .foregroundStyle(chartColor(for: dataset.metric))
                 PointMark(x: .value("Date", point.date), y: .value("Value", point.value))
                     .foregroundStyle(chartColor(for: dataset.metric))
             }
-            .frame(height: 150)
+            .chartYAxisLabel(dataset.metric == .calories ? "kcal" : "g")
+            .frame(height: 170)
             .accessibilityLabel("\(metricTitle(dataset.metric)) trend chart")
+        }
+    }
+
+    @ViewBuilder private func energyBalance(_ availability: EnergyBalanceAvailability) -> some View {
+        switch availability {
+        case .available(let consumed, let burn, let label, let amount):
+            MetricRow(title: "Consumed", value: NutritionFormatter.energy(consumed), systemImage: AppIcons.energy)
+            MetricRow(title: "Estimated Burn", value: NutritionFormatter.energy(burn))
+            MetricRow(title: label, value: NutritionFormatter.energy(amount))
+        case .tdeeNotConfigured:
+            Text("Unavailable — configure a maintenance energy target to view energy balance.").foregroundStyle(AppColors.secondaryText)
+        case .activeCaloriesUnavailable:
+            Text("Unavailable — Apple Health active-calorie data is needed for this range.").foregroundStyle(AppColors.secondaryText)
         }
     }
 
@@ -126,6 +125,11 @@ struct ProgressDashboardView: View {
     private func loadHistory() {
         let dates = ProgressDateRange.dates(for: viewModel.selectedRange, now: .now, calendar: .current)
         Task { await historyViewModel.search(query: historyQuery, from: dates.start ?? .distantPast, to: dates.end) }
+    }
+    private var rangeDescription: String {
+        let dates = ProgressDateRange.dates(for: viewModel.selectedRange, now: .now, calendar: .current)
+        guard let start = dates.start else { return "All available history" }
+        return "Showing \(start.formatted(date: .abbreviated, time: .omitted)) – \(dates.end.formatted(date: .abbreviated, time: .omitted))"
     }
     private func metricTitle(_ metric: ProgressMetric) -> String { switch metric { case .calories: "Calories"; case .protein: "Protein"; case .carbohydrates: "Carbohydrates"; case .fat: "Fat"; case .fibre: "Fiber"; case .water: "Water"; case .weight: "Weight" } }
     private func formatted(_ value: Double, metric: ProgressMetric) -> String { metric == .calories ? NutritionFormatter.energy(value) : NutritionFormatter.macro(value) }

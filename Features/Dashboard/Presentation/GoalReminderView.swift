@@ -18,10 +18,10 @@ struct GoalReminderView: View {
     var body: some View {
         Label(message, systemImage: "target")
             .font(.subheadline.weight(.semibold))
-            .foregroundStyle(.purple)
+            .foregroundStyle(AppColors.fat)
             .padding(14)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.purple.opacity(0.12))
+            .background(AppColors.fat.opacity(0.12))
             .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }

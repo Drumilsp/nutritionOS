@@ -18,10 +18,10 @@ struct DashboardStatusBanner: View {
     var body: some View {
         Label(message, systemImage: "exclamationmark.circle")
             .font(.subheadline.weight(.medium))
-            .foregroundStyle(.orange)
+            .foregroundStyle(AppColors.warning)
             .padding(12)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color.orange.opacity(0.12))
+            .background(AppColors.warning.opacity(0.12))
             .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 }

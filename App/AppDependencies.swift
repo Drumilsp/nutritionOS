@@ -84,8 +84,6 @@ struct AppDependencies {
         ProgressViewModel(
             getProgressSummaryUseCase: GetProgressSummaryUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
             getNutritionTrendsUseCase: GetNutritionTrendsUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
-            getWeeklySummaryUseCase: GetWeeklySummaryUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
-            getMonthlySummaryUseCase: GetMonthlySummaryUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
             getConsistencyScoreUseCase: GetConsistencyScoreUseCase(dailyLogRepository: dailyLogRepository),
             getTodayImpactUseCase: GetTodayImpactUseCase(dailyLogRepository: dailyLogRepository),
             getProgressChartDataUseCase: GetProgressChartDataUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
@@ -110,6 +108,7 @@ struct AppDependencies {
             updateGoalSettingsUseCase: UpdateGoalSettingsUseCase(settingsRepository: settingsRepository),
             updateUnitSettingsUseCase: UpdateUnitSettingsUseCase(settingsRepository: settingsRepository),
             updateDisplayPreferencesUseCase: UpdateDisplayPreferencesUseCase(settingsRepository: settingsRepository),
+            updateUserProfileUseCase: UpdateUserProfileUseCase(settingsRepository: settingsRepository),
             exportAppDataUseCase: ExportAppDataUseCase(foodRepository: foodRepository, mealRepository: mealRepository, dailyLogRepository: dailyLogRepository, weightRepository: weightRepository, settingsRepository: settingsRepository),
             resetLocalDataUseCase: ResetLocalDataUseCase(foodRepository: foodRepository, mealRepository: mealRepository, dailyLogRepository: dailyLogRepository, weightRepository: weightRepository, settingsRepository: settingsRepository),
             getAppInfoUseCase: GetAppInfoUseCase()
@@ -227,6 +226,7 @@ struct AppDependencies {
     func makeHealthSettingsViewModel() -> HealthSettingsViewModel {
         HealthSettingsViewModel(
             requestPermissionsUseCase: RequestHealthPermissionsUseCase(healthRepository: healthRepository),
+            getConnectionStatusUseCase: GetHealthConnectionStatusUseCase(healthRepository: healthRepository),
             syncHealthDataUseCase: SyncHealthDataUseCase(healthRepository: healthRepository, weightRepository: weightRepository, dailyLogRepository: dailyLogRepository),
             disconnectHealthUseCase: DisconnectHealthUseCase(healthRepository: healthRepository)
         )
