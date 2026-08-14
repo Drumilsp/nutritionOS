@@ -233,7 +233,113 @@ struct UseCaseLayerTests {
         #expect(validator.validateDateRange(from: startDate, to: endDate).errors == [.invalidDateRange])
     }
 
+    @MainActor
+    @Test func progressHistoryStatusRequiresRealBalanceAndConfiguredRange() {
+        #expect(
+            ProgressHistoryDayStatus.classify(
+                energyBalance: -400,
+                targetRange: -700 ... -300
+            ) == .onTarget
+        )
+        #expect(
+            ProgressHistoryDayStatus.classify(
+                energyBalance: -800,
+                targetRange: -700 ... -300
+            ) == .offTarget
+        )
+        #expect(
+            ProgressHistoryDayStatus.classify(
+                energyBalance: -400,
+                targetRange: nil
+            ) == .neutral
+        )
+        #expect(
+            ProgressHistoryDayStatus.classify(
+                energyBalance: nil,
+                targetRange: -700 ... -300
+            ) == .neutral
+        )
+    }
+
+    @MainActor
+    @Test func signedEnergyBalanceRangesSaveAndClearWithoutChangingMacroValidation() async throws {
+        let dependencies = AppDependencies(persistenceConfiguration: .testing)
+        let useCase = UpdateGoalSettingsUseCase(
+            settingsRepository: dependencies.settingsRepository,
+            dateProvider: FixedDateProvider(now: Date(timeIntervalSince1970: 400))
+        )
+        let validRanges: [(Double?, Double?)] = [
+            (-700, -300),
+            (-150, 150),
+            (200, 500),
+            (nil, nil)
+        ]
+
+        for (lowerBound, upperBound) in validRanges {
+            let saved = try await useCase.execute(
+                makeGoalSettings(
+                    lowerBound: lowerBound,
+                    upperBound: upperBound
+                )
+            )
+
+            #expect(saved.energyBalanceLowerBound == lowerBound)
+            #expect(saved.energyBalanceUpperBound == upperBound)
+        }
+
+        let persisted = try await dependencies.settingsRepository.goalSettings()
+        #expect(persisted.energyBalanceLowerBound == nil)
+        #expect(persisted.energyBalanceUpperBound == nil)
+    }
+
+    @Test func energyBalanceRangeValidatorRejectsIncompleteAndReversedRangesOnly() {
+        let validator = GoalSettingsValidator()
+
+        #expect(validator.validate(makeGoalSettings(lowerBound: -700, upperBound: -300)).errors.isEmpty)
+        #expect(validator.validate(makeGoalSettings(lowerBound: nil, upperBound: nil)).errors.isEmpty)
+        #expect(validator.validate(makeGoalSettings(lowerBound: -700, upperBound: nil)).errors == [.invalidGoal])
+        #expect(validator.validate(makeGoalSettings(lowerBound: nil, upperBound: 150)).errors == [.invalidGoal])
+        #expect(validator.validate(makeGoalSettings(lowerBound: 500, upperBound: 200)).errors == [.invalidGoal])
+    }
+
+    @MainActor
+    @Test func energyBalanceRangeInputShowsSpecificValidationMessages() {
+        #expect(
+            EnergyBalanceRangeInputValidator.validationMessage(lowerText: "-700", upperText: "")
+                == "Enter both lower and upper bounds, or leave both empty."
+        )
+        #expect(
+            EnergyBalanceRangeInputValidator.validationMessage(lowerText: "", upperText: "150")
+                == "Enter both lower and upper bounds, or leave both empty."
+        )
+        #expect(
+            EnergyBalanceRangeInputValidator.validationMessage(lowerText: "500", upperText: "200")
+                == "Lower bound must be less than or equal to upper bound."
+        )
+        #expect(
+            EnergyBalanceRangeInputValidator.validationMessage(lowerText: "abc", upperText: "150")
+                == "Enter valid kcal values."
+        )
+        #expect(EnergyBalanceRangeInputValidator.validationMessage(lowerText: "", upperText: "") == nil)
+    }
+
     // MARK: - Helpers
+
+    private func makeGoalSettings(lowerBound: Double?, upperBound: Double?) -> GoalSettings {
+        GoalSettings(
+            goalType: .maintainWeight,
+            energyBalanceTarget: .maintain,
+            energyBalanceLowerBound: lowerBound,
+            energyBalanceUpperBound: upperBound,
+            goalCalculationMode: .automatic,
+            activityLevel: .lightlyActive,
+            dailyProteinGoal: 120,
+            dailyCarbohydrateGoal: 250,
+            dailyFatGoal: 70,
+            dailyWaterGoal: 3_000,
+            goalCalculationVersion: 1
+        )
+    }
 
     private func makeFood(
         name: String,

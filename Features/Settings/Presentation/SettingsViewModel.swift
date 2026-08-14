@@ -29,7 +29,7 @@ final class SettingsViewModel: ObservableObject {
 
     func saveGoals(_ goals: GoalSettings) async -> String? {
         do { _ = try await updateGoalSettingsUseCase.execute(goals); await load(); return nil }
-        catch let failure as ValidationFailure { return failure.localizedDescription }
+        catch is ValidationFailure { return "Protein, carbs, fat, and water goals must be valid positive values." }
         catch { return "Unable to save goals." }
     }
 

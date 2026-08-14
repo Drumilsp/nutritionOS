@@ -67,12 +67,7 @@ struct GetProgressSummaryUseCase {
         while date <= finalDate {
             let log = logsByDate[date]
             let balance = log.flatMap(energyBalance(for:))
-            let status: ProgressHistoryDayStatus
-            if let balance, let targetRange {
-                status = targetRange.contains(balance) ? .onTarget : .offTarget
-            } else {
-                status = .neutral
-            }
+            let status = ProgressHistoryDayStatus.classify(energyBalance: balance, targetRange: targetRange)
             days.append(ProgressHistoryDay(date: date, log: log, energyBalance: balance, status: status))
             guard let nextDate = calendar.date(byAdding: .day, value: 1, to: date) else { break }
             date = nextDate

@@ -10,8 +10,13 @@ struct ProgressHistoryDay: Identifiable {
     var id: Date { date }
 }
 
-enum ProgressHistoryDayStatus {
+enum ProgressHistoryDayStatus: Equatable {
     case onTarget
     case offTarget
     case neutral
+
+    static func classify(energyBalance: Double?, targetRange: ClosedRange<Double>?) -> Self {
+        guard let energyBalance, let targetRange else { return .neutral }
+        return targetRange.contains(energyBalance) ? .onTarget : .offTarget
+    }
 }

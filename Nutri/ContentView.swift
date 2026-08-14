@@ -88,6 +88,8 @@ struct ContentView: View {
                 )
             }
         )
+        .preferredColorScheme(preferredColorScheme)
+        .task { await settingsViewModel.load() }
     }
 
     // MARK: - Private Methods
@@ -106,6 +108,15 @@ struct ContentView: View {
             if case .saved = logMealViewModel.state {
                 refreshToday(message: "Meal logged")
             }
+        }
+    }
+
+    private var preferredColorScheme: ColorScheme? {
+        guard case .loaded(let summary) = settingsViewModel.state else { return nil }
+        switch summary.preferences.theme {
+        case .system: return nil
+        case .light: return .light
+        case .dark: return .dark
         }
     }
 }

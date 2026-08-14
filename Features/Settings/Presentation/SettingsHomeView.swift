@@ -136,12 +136,12 @@ private struct GoalSettingsView: View {
 
     init(viewModel: SettingsViewModel, goals: GoalSettings) {
         self.viewModel = viewModel; source = goals
-        _protein = State(initialValue: goals.dailyProteinGoal.formatted())
-        _carbohydrates = State(initialValue: goals.dailyCarbohydrateGoal.formatted())
-        _fat = State(initialValue: goals.dailyFatGoal.formatted())
-        _water = State(initialValue: goals.dailyWaterGoal.formatted())
-        _energyBalanceLowerBound = State(initialValue: goals.energyBalanceLowerBound?.formatted() ?? "")
-        _energyBalanceUpperBound = State(initialValue: goals.energyBalanceUpperBound?.formatted() ?? "")
+        _protein = State(initialValue: String(goals.dailyProteinGoal))
+        _carbohydrates = State(initialValue: String(goals.dailyCarbohydrateGoal))
+        _fat = State(initialValue: String(goals.dailyFatGoal))
+        _water = State(initialValue: String(goals.dailyWaterGoal))
+        _energyBalanceLowerBound = State(initialValue: goals.energyBalanceLowerBound.map { String($0) } ?? "")
+        _energyBalanceUpperBound = State(initialValue: goals.energyBalanceUpperBound.map { String($0) } ?? "")
     }
 
     var body: some View {
@@ -179,13 +179,17 @@ private struct GoalSettingsView: View {
             TextField("Not configured", text: value)
                 .keyboardType(.numbersAndPunctuation)
                 .multilineTextAlignment(.trailing)
-                .onChange(of: value.wrappedValue) { _, newValue in
-                    value.wrappedValue = sanitizedSignedNumber(newValue)
-                }
             Text("kcal").foregroundStyle(AppColors.secondaryText)
         }
     }
     private func save() async {
+        if let rangeError = EnergyBalanceRangeInputValidator.validationMessage(
+            lowerText: energyBalanceLowerBound,
+            upperText: energyBalanceUpperBound
+        ) {
+            error = rangeError
+            return
+        }
         let goals = GoalSettings(id: source.id, goalType: source.goalType, energyBalanceTarget: source.energyBalanceTarget, energyBalanceLowerBound: optionalNumber(energyBalanceLowerBound), energyBalanceUpperBound: optionalNumber(energyBalanceUpperBound), goalCalculationMode: source.goalCalculationMode, activityLevel: source.activityLevel, dailyProteinGoal: Double(protein) ?? -1, dailyCarbohydrateGoal: Double(carbohydrates) ?? -1, dailyFatGoal: Double(fat) ?? -1, dailyWaterGoal: Double(water) ?? -1, goalCalculationVersion: source.goalCalculationVersion, createdAt: source.createdAt)
         error = await viewModel.saveGoals(goals)
         if error == nil { dismiss() }
@@ -197,22 +201,24 @@ private struct GoalSettingsView: View {
         return Double(trimmedValue) ?? .nan
     }
 
-    private func sanitizedSignedNumber(_ input: String) -> String {
-        var result = ""
-        var includesDecimalSeparator = false
+}
 
-        for character in input {
-            if character.isNumber {
-                result.append(character)
-            } else if character == "-", result.isEmpty {
-                result.append(character)
-            } else if character == ".", !includesDecimalSeparator {
-                result.append(character)
-                includesDecimalSeparator = true
-            }
+enum EnergyBalanceRangeInputValidator {
+    static func validationMessage(lowerText: String, upperText: String) -> String? {
+        let lowerText = lowerText.trimmingCharacters(in: .whitespacesAndNewlines)
+        let upperText = upperText.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !lowerText.isEmpty || !upperText.isEmpty else { return nil }
+        guard !lowerText.isEmpty, !upperText.isEmpty else {
+            return "Enter both lower and upper bounds, or leave both empty."
         }
-
-        return result
+        guard let lowerBound = Double(lowerText), let upperBound = Double(upperText),
+              lowerBound.isFinite, upperBound.isFinite else {
+            return "Enter valid kcal values."
+        }
+        guard lowerBound <= upperBound else {
+            return "Lower bound must be less than or equal to upper bound."
+        }
+        return nil
     }
 }
 
