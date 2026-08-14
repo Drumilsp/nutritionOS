@@ -17,9 +17,13 @@ struct ExportAppDataUseCase {
         let logs = try await dailyLogRepository.logs(from: .distantPast, to: .distantFuture)
         let weights = try await weightRepository.entries(from: nil, to: nil)
         let goals = try await settingsRepository.goalSettings()
+        let lowerEnergyBalanceBound = goals.energyBalanceLowerBound.map { String($0) } ?? "Not configured"
+        let upperEnergyBalanceBound = goals.energyBalanceUpperBound.map { String($0) } ?? "Not configured"
         var lines = [
             "Nutrition OS Export", "Foods: \(foods.count)", "Meals: \(meals.count)", "Logs: \(logs.count)", "Weight Entries: \(weights.count)",
-            "Protein Goal: \(goals.dailyProteinGoal)", "Carbohydrate Goal: \(goals.dailyCarbohydrateGoal)", "Fat Goal: \(goals.dailyFatGoal)", "Water Goal: \(goals.dailyWaterGoal)"
+            "Protein Goal: \(goals.dailyProteinGoal)", "Carbohydrate Goal: \(goals.dailyCarbohydrateGoal)", "Fat Goal: \(goals.dailyFatGoal)", "Water Goal: \(goals.dailyWaterGoal)",
+            "Energy Balance Lower Bound: \(lowerEnergyBalanceBound)",
+            "Energy Balance Upper Bound: \(upperEnergyBalanceBound)"
         ]
         lines += foods.map { "Food,\($0.name)" }
         lines += meals.map { "Meal,\($0.name)" }

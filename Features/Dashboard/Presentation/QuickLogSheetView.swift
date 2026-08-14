@@ -21,6 +21,10 @@ struct QuickLogSheetView: View {
     @State private var isCreatingMeal = false
     @State private var isLoggingWater = false
     @State private var waterAmount = "250"
+    @State private var quantityValidationMessage: String?
+    @State private var waterValidationMessage: String?
+    @FocusState private var isQuantityFocused: Bool
+    @FocusState private var isWaterAmountFocused: Bool
 
     // MARK: - Initialization
 
@@ -67,7 +71,7 @@ struct QuickLogSheetView: View {
                 await logFoodViewModel.search(query: query)
                 await logMealViewModel.search(query: query)
             }
-            .sheet(item: $selectedFood) { food in quantitySheet(title: food.name, action: { await save(food: food) }) }
+            .sheet(item: $selectedFood) { food in foodQuantitySheet(food) }
             .sheet(item: $selectedMeal) { meal in quantitySheet(title: meal.name, action: { await save(meal: meal) }) }
             .sheet(isPresented: $isCreatingFood) {
                 NavigationStack {
@@ -124,6 +128,36 @@ struct QuickLogSheetView: View {
     private var searchedFoods: [Food] { if case .searching(let foods) = logFoodViewModel.state { foods } else { [] } }
     private var searchedMeals: [Meal] { if case .searching(let meals) = logMealViewModel.state { meals } else { [] } }
 
+    private func foodQuantitySheet(_ food: Food) -> some View {
+        VStack(spacing: AppSpacing.lg) {
+            Text(food.name).font(AppTypography.title)
+            Text("\(quantity) \(food.referenceUnit.name)")
+                .font(AppTypography.headline)
+                .monospacedDigit()
+                .foregroundStyle(AppColors.secondaryText)
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: AppSpacing.sm) {
+                ForEach(quickQuantities(for: food), id: \.self) { amount in
+                    Button(quantityLabel(amount, unit: food.referenceUnit)) {
+                        quantity = amount.formatted()
+                        isQuantityFocused = false
+                    }
+                    .buttonStyle(.bordered)
+                }
+                Button("Custom") { isQuantityFocused = true }
+                    .buttonStyle(.bordered)
+            }
+            NutritionTextField("Custom quantity", text: $quantity, prompt: "Amount", keyboardType: .decimalPad)
+                .focused($isQuantityFocused)
+                .onChange(of: quantity) { _, _ in quantityValidationMessage = nil }
+            if let quantityValidationMessage {
+                Text(quantityValidationMessage).foregroundStyle(AppColors.destructive)
+            }
+            PrimaryButton("Log") { Task { await save(food: food) } }
+        }
+        .padding(AppSpacing.lg)
+        .presentationDetents([.medium])
+    }
+
     private func quantitySheet(title: String, action: @escaping () async -> Void) -> some View {
         VStack(spacing: AppSpacing.lg) {
             Text(title).font(AppTypography.title)
@@ -137,7 +171,11 @@ struct QuickLogSheetView: View {
     // MARK: - Private Methods
 
     private func save(food: Food) async {
-        await logFoodViewModel.save(foodID: food.id, quantity: Double(quantity) ?? food.referenceQuantity)
+        guard let loggedQuantity = Double(quantity), loggedQuantity.isFinite, loggedQuantity > 0 else {
+            quantityValidationMessage = "Enter a valid quantity greater than zero."
+            return
+        }
+        await logFoodViewModel.save(foodID: food.id, quantity: loggedQuantity)
         if case .saved = logFoodViewModel.state { completeLog(message: "Food logged") }
     }
 
@@ -165,7 +203,27 @@ struct QuickLogSheetView: View {
     private var waterSheet: some View {
         VStack(spacing: AppSpacing.lg) {
             Text("Log Water").font(AppTypography.title)
+            Text("\(waterAmount) ml")
+                .font(AppTypography.headline)
+                .monospacedDigit()
+                .foregroundStyle(AppColors.secondaryText)
+            LazyVGrid(columns: Array(repeating: GridItem(.flexible()), count: 2), spacing: AppSpacing.sm) {
+                ForEach([100.0, 250.0, 500.0, 1_000.0], id: \.self) { amount in
+                    Button(waterAmountLabel(amount)) {
+                        waterAmount = amount.formatted()
+                        isWaterAmountFocused = false
+                    }
+                    .buttonStyle(.bordered)
+                }
+                Button("Custom") { isWaterAmountFocused = true }
+                    .buttonStyle(.bordered)
+            }
             NutritionTextField("Amount", text: $waterAmount, prompt: "mL", keyboardType: .decimalPad)
+                .focused($isWaterAmountFocused)
+                .onChange(of: waterAmount) { _, _ in waterValidationMessage = nil }
+            if let waterValidationMessage {
+                Text(waterValidationMessage).foregroundStyle(AppColors.destructive)
+            }
             if case .validationError(let message) = logWaterViewModel.state {
                 Text(message).foregroundStyle(AppColors.destructive)
             } else if case .error(let message) = logWaterViewModel.state {
@@ -178,7 +236,27 @@ struct QuickLogSheetView: View {
     }
 
     private func saveWater() async {
-        await logWaterViewModel.save(amount: Double(waterAmount) ?? 0)
+        guard let amount = Double(waterAmount), amount.isFinite, amount > 0 else {
+            waterValidationMessage = "Enter a valid water amount greater than zero."
+            return
+        }
+        await logWaterViewModel.save(amount: amount)
         if case .saved = logWaterViewModel.state { completeLog(message: "Water logged") }
+    }
+
+    private func quickQuantities(for food: Food) -> [Double] {
+        if food.referenceUnit == .grams {
+            return [50, 100, 200, 400]
+        }
+
+        return (1...4).map { food.referenceQuantity * Double($0) }
+    }
+
+    private func quantityLabel(_ amount: Double, unit: ServingUnit) -> String {
+        "\(amount.formatted()) \(unit.name)"
+    }
+
+    private func waterAmountLabel(_ amount: Double) -> String {
+        amount == 1_000 ? "1 L" : "\(amount.formatted()) ml"
     }
 }

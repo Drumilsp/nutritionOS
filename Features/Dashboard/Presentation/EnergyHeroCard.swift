@@ -56,7 +56,7 @@ struct EnergyHeroCard: View {
             }
             .padding(18)
             .frame(maxWidth: .infinity, alignment: .leading)
-            .background(Color(.secondarySystemGroupedBackground))
+            .background(AppColors.surface)
             .clipShape(RoundedRectangle(cornerRadius: 8))
         }
         .buttonStyle(.plain)

@@ -166,6 +166,65 @@ struct UseCaseLayerTests {
         #expect(meal.nutritionProfile().value(for: .protein) == 10)
     }
 
+    @MainActor
+    @Test func mealEditorRetainsItsDraftAfterValidationAndAddsSelectedFood() async throws {
+        let dependencies = AppDependencies(persistenceConfiguration: .testing)
+        let food = try await dependencies.foodRepository.save(makeFood(name: "Oats", calories: 100))
+        let editor = dependencies.makeMealEditorViewModel(
+            meal: Meal(name: "", mealItems: []),
+            isEditingExistingMeal: false
+        )
+
+        await editor.save()
+
+        guard case .validationError(let errors) = editor.state else {
+            Issue.record("Expected an invalid empty meal to show validation errors.")
+            return
+        }
+        #expect(errors == [.emptyName, .mealHasNoItems])
+
+        editor.updateName("Oats Bowl")
+        editor.addFood(food, quantity: food.referenceQuantity)
+
+        #expect(editor.editingMeal.mealItems.count == 1)
+        #expect(editor.editingMeal.nutritionProfile().value(for: .calories) == 100)
+        guard case .editing = editor.state else {
+            Issue.record("Editing a meal after validation should return to the editable state.")
+            return
+        }
+    }
+
+    @MainActor
+    @Test func libraryJSONImportCreatesFoodsBeforeReferencedMealsAndSkipsDuplicates() async throws {
+        let dependencies = AppDependencies(persistenceConfiguration: .testing)
+        let useCase = ImportLibraryJSONUseCase(
+            foodRepository: dependencies.foodRepository,
+            mealRepository: dependencies.mealRepository
+        )
+        let json = #"""
+        {
+          "foods": [{
+            "name": "Chicken Breast", "servingSize": 100, "servingUnit": "g",
+            "calories": 165, "protein": 31, "carbohydrates": 0, "fat": 3.6, "fiber": 0
+          }],
+          "meals": [{
+            "name": "High Protein Lunch",
+            "items": [{ "foodName": "Chicken Breast", "quantity": 200, "unit": "g" }]
+          }]
+        }
+        """#
+
+        let firstImport = try await useCase.execute(json: json)
+        let secondImport = try await useCase.execute(json: json)
+        let meals = try await dependencies.mealRepository.allMeals()
+
+        #expect(firstImport.importedFoods == 1)
+        #expect(firstImport.importedMeals == 1)
+        #expect(secondImport.skippedFoods == 1)
+        #expect(secondImport.skippedMeals == 1)
+        #expect(meals.first?.mealItems.count == 1)
+    }
+
     @Test func dailyLogValidatorRejectsInvalidHistoryRange() throws {
         let validator = DailyLogValidator()
         let startDate = Date(timeIntervalSince1970: 20)

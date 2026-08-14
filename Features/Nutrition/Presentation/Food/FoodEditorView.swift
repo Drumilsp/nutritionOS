@@ -18,6 +18,7 @@ struct FoodEditorView: View {
     @State private var fat: String
     @State private var fibre: String
     @State private var notes: String
+    @State private var inputValidationMessage: String?
 
     // MARK: - Initialization
 
@@ -55,6 +56,10 @@ struct FoodEditorView: View {
             Section("Serving") {
                 TextField("Quantity", text: $servingQuantity)
                     .keyboardType(.decimalPad)
+                    .onChange(of: servingQuantity) { _, value in
+                        servingQuantity = sanitizedNumericInput(value)
+                        inputValidationMessage = nil
+                    }
                 Picker("Unit", selection: $servingUnit) {
                     Text("g").tag(ServingUnit.grams)
                     Text("ml").tag(ServingUnit.millilitres)
@@ -67,7 +72,7 @@ struct FoodEditorView: View {
                 nutritionField("Protein", value: $protein, unit: "g")
                 nutritionField("Carbohydrates", value: $carbohydrates, unit: "g")
                 nutritionField("Fat", value: $fat, unit: "g")
-                nutritionField("Fibre", value: $fibre, unit: "g")
+                nutritionField("Fiber", value: $fibre, unit: "g")
             }
 
             Section("Notes") {
@@ -83,6 +88,10 @@ struct FoodEditorView: View {
             } else if case .error(let message) = viewModel.state {
                 Section {
                     Text(message).foregroundStyle(AppColors.destructive)
+                }
+            } else if let inputValidationMessage {
+                Section {
+                    Text(inputValidationMessage).foregroundStyle(AppColors.destructive)
                 }
             }
         }
@@ -108,14 +117,25 @@ struct FoodEditorView: View {
         unit: String
     ) -> some View {
         HStack {
-            TextField(title, text: value)
+            Text(title)
+            Spacer()
+            TextField("0", text: value)
                 .keyboardType(.decimalPad)
+                .multilineTextAlignment(.trailing)
+                .onChange(of: value.wrappedValue) { _, newValue in
+                    value.wrappedValue = sanitizedNumericInput(newValue)
+                    inputValidationMessage = nil
+                }
                 .accessibilityLabel(title)
             Text(unit).foregroundStyle(AppColors.secondaryText)
         }
     }
 
     private func save() async {
+        guard hasValidNumericInput else {
+            inputValidationMessage = "Enter valid numeric values for serving quantity and nutrition."
+            return
+        }
         await viewModel.save(foodFromInput)
         if case .saved(let food) = viewModel.state {
             onSaved(food)
@@ -150,6 +170,29 @@ struct FoodEditorView: View {
 
     private var title: String { viewModel.isEditingExistingFood ? "Edit Food" : "New Food" }
     private var isSaving: Bool { if case .saving = viewModel.state { true } else { false } }
+
+    private var hasValidNumericInput: Bool {
+        [servingQuantity, calories, protein, carbohydrates, fat, fibre].allSatisfy { value in
+            guard let number = Double(value) else { return false }
+            return number.isFinite && number >= 0
+        }
+    }
+
+    private func sanitizedNumericInput(_ input: String) -> String {
+        var result = ""
+        var includesDecimalSeparator = false
+
+        for character in input {
+            if character.isNumber {
+                result.append(character)
+            } else if character == ".", !includesDecimalSeparator {
+                result.append(character)
+                includesDecimalSeparator = true
+            }
+        }
+
+        return result
+    }
 
     private func nutrientValue(
         _ nutrientType: NutrientType,

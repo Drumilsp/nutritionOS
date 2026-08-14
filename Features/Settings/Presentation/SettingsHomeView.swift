@@ -31,6 +31,7 @@ struct SettingsHomeView: View {
             }
             Section("Data") {
                 NavigationLink("Data Export") { DataExportView(viewModel: viewModel) }
+                NavigationLink("Import JSON") { LibraryJSONImportView(viewModel: viewModel) }
                 NavigationLink("Reset Local Data") { ResetLocalDataView(viewModel: viewModel) }.foregroundStyle(AppColors.destructive)
             }
             Section("App") {
@@ -72,7 +73,17 @@ private struct BodyMeasurementsView: View {
         .toolbar { ToolbarItem(placement: .cancellationAction) { Button("Cancel") { dismiss() } }; ToolbarItem(placement: .confirmationAction) { Button("Save") { Task { await save() } } } }
     }
 
-    private func field(_ title: String, value: Binding<String>, unit: String) -> some View { HStack { TextField(title, text: value).keyboardType(.decimalPad); Text(unit).foregroundStyle(AppColors.secondaryText) } }
+    private func field(_ title: String, value: Binding<String>, unit: String) -> some View {
+        HStack {
+            Text(title)
+            Spacer()
+            TextField("0", text: value)
+                .keyboardType(.decimalPad)
+                .multilineTextAlignment(.trailing)
+                .accessibilityLabel(title)
+            Text(unit).foregroundStyle(AppColors.secondaryText)
+        }
+    }
     private func save() async {
         let profile = UserProfile(id: source.id, name: source.name, dateOfBirth: source.dateOfBirth, biologicalSex: source.biologicalSex, height: Double(height) ?? -1, currentWeight: Double(currentWeight) ?? -1, targetWeight: Double(targetWeight) ?? -1, createdAt: source.createdAt, updatedAt: source.updatedAt)
         error = await viewModel.saveProfile(profile)
@@ -119,6 +130,8 @@ private struct GoalSettingsView: View {
     @State private var carbohydrates: String
     @State private var fat: String
     @State private var water: String
+    @State private var energyBalanceLowerBound: String
+    @State private var energyBalanceUpperBound: String
     @State private var error: String?
 
     init(viewModel: SettingsViewModel, goals: GoalSettings) {
@@ -127,6 +140,8 @@ private struct GoalSettingsView: View {
         _carbohydrates = State(initialValue: goals.dailyCarbohydrateGoal.formatted())
         _fat = State(initialValue: goals.dailyFatGoal.formatted())
         _water = State(initialValue: goals.dailyWaterGoal.formatted())
+        _energyBalanceLowerBound = State(initialValue: goals.energyBalanceLowerBound?.formatted() ?? "")
+        _energyBalanceUpperBound = State(initialValue: goals.energyBalanceUpperBound?.formatted() ?? "")
     }
 
     var body: some View {
@@ -137,6 +152,19 @@ private struct GoalSettingsView: View {
                 field("Fat", value: $fat, unit: "g")
                 field("Water", value: $water, unit: "mL")
             }
+            Section("Energy Balance Target Range") {
+                rangeField("Lower bound", value: $energyBalanceLowerBound)
+                rangeField("Upper bound", value: $energyBalanceUpperBound)
+                if energyBalanceLowerBound.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+                    && energyBalanceUpperBound.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
+                    Text("Status: Not configured")
+                        .font(AppTypography.caption)
+                        .foregroundStyle(AppColors.secondaryText)
+                }
+                Text("Use negative values for a deficit, positive values for a surplus, and zero for maintenance. Leave both fields empty to keep the range not configured.")
+                    .font(AppTypography.caption)
+                    .foregroundStyle(AppColors.secondaryText)
+            }
             if let error { Section { Text(error).foregroundStyle(AppColors.destructive) } }
         }
         .navigationTitle("Nutrition Goals").navigationBarTitleDisplayMode(.inline)
@@ -144,10 +172,47 @@ private struct GoalSettingsView: View {
     }
 
     private func field(_ title: String, value: Binding<String>, unit: String) -> some View { HStack { TextField(title, text: value).keyboardType(.decimalPad); Text(unit).foregroundStyle(AppColors.secondaryText) } }
+    private func rangeField(_ title: String, value: Binding<String>) -> some View {
+        HStack {
+            Text(title)
+            Spacer()
+            TextField("Not configured", text: value)
+                .keyboardType(.numbersAndPunctuation)
+                .multilineTextAlignment(.trailing)
+                .onChange(of: value.wrappedValue) { _, newValue in
+                    value.wrappedValue = sanitizedSignedNumber(newValue)
+                }
+            Text("kcal").foregroundStyle(AppColors.secondaryText)
+        }
+    }
     private func save() async {
-        let goals = GoalSettings(id: source.id, goalType: source.goalType, energyBalanceTarget: source.energyBalanceTarget, goalCalculationMode: source.goalCalculationMode, activityLevel: source.activityLevel, dailyProteinGoal: Double(protein) ?? -1, dailyCarbohydrateGoal: Double(carbohydrates) ?? -1, dailyFatGoal: Double(fat) ?? -1, dailyWaterGoal: Double(water) ?? -1, goalCalculationVersion: source.goalCalculationVersion, createdAt: source.createdAt)
+        let goals = GoalSettings(id: source.id, goalType: source.goalType, energyBalanceTarget: source.energyBalanceTarget, energyBalanceLowerBound: optionalNumber(energyBalanceLowerBound), energyBalanceUpperBound: optionalNumber(energyBalanceUpperBound), goalCalculationMode: source.goalCalculationMode, activityLevel: source.activityLevel, dailyProteinGoal: Double(protein) ?? -1, dailyCarbohydrateGoal: Double(carbohydrates) ?? -1, dailyFatGoal: Double(fat) ?? -1, dailyWaterGoal: Double(water) ?? -1, goalCalculationVersion: source.goalCalculationVersion, createdAt: source.createdAt)
         error = await viewModel.saveGoals(goals)
         if error == nil { dismiss() }
+    }
+
+    private func optionalNumber(_ value: String) -> Double? {
+        let trimmedValue = value.trimmingCharacters(in: .whitespacesAndNewlines)
+        guard !trimmedValue.isEmpty else { return nil }
+        return Double(trimmedValue) ?? .nan
+    }
+
+    private func sanitizedSignedNumber(_ input: String) -> String {
+        var result = ""
+        var includesDecimalSeparator = false
+
+        for character in input {
+            if character.isNumber {
+                result.append(character)
+            } else if character == "-", result.isEmpty {
+                result.append(character)
+            } else if character == ".", !includesDecimalSeparator {
+                result.append(character)
+                includesDecimalSeparator = true
+            }
+        }
+
+        return result
     }
 }
 

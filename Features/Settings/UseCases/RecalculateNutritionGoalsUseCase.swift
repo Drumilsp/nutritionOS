@@ -57,6 +57,8 @@ struct RecalculateNutritionGoalsUseCase {
             id: currentGoalSettings.id,
             goalType: currentGoalSettings.goalType,
             energyBalanceTarget: currentGoalSettings.energyBalanceTarget,
+            energyBalanceLowerBound: currentGoalSettings.energyBalanceLowerBound,
+            energyBalanceUpperBound: currentGoalSettings.energyBalanceUpperBound,
             goalCalculationMode: currentGoalSettings.goalCalculationMode,
             activityLevel: currentGoalSettings.activityLevel,
             dailyProteinGoal: proteinGoal,

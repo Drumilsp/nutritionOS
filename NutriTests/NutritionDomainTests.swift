@@ -11,6 +11,7 @@ import Foundation
 
 struct NutritionDomainTests {
 
+    @MainActor
     @Test func nutritionProfileStoresSparseNutrientValues() {
         let profile = NutritionProfile(
             nutrientValues: [
@@ -26,6 +27,7 @@ struct NutritionDomainTests {
         #expect(profile.nutrientValues.first?.nutrientType == .calories)
     }
 
+    @MainActor
     @Test func mealItemReferencesFoodWithoutDuplicatingUnits() {
         let food = makeFood(name: "Chicken", referenceQuantity: 100, referenceUnit: .grams)
         let mealItem = MealItem(foodReference: food, quantity: 2)

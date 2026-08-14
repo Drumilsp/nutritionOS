@@ -11,6 +11,7 @@ import SwiftData
 
 struct NutriTests {
 
+    @MainActor
     @Test func productionConfigurationUsesPersistentStorage() {
         let configuration = PersistenceConfiguration.production
 
@@ -19,6 +20,7 @@ struct NutriTests {
         #expect(configuration.cloudKitConfiguration == .disabled)
     }
 
+    @MainActor
     @Test func previewConfigurationUsesInMemoryStorage() {
         let configuration = PersistenceConfiguration.preview
 
@@ -27,6 +29,7 @@ struct NutriTests {
         #expect(configuration.cloudKitConfiguration == .disabled)
     }
 
+    @MainActor
     @Test func testingConfigurationUsesIsolatedInMemoryStorage() {
         let firstConfiguration = PersistenceConfiguration.testing
         let secondConfiguration = PersistenceConfiguration.testing

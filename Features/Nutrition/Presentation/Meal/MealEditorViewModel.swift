@@ -15,16 +15,14 @@ final class MealEditorViewModel {
     private let getFoodsUseCase: GetFoodsUseCase
     private let searchFoodsUseCase: SearchFoodsUseCase
     private let editingExistingMeal: Bool
+    private let editingMealValue: Meal
 
     private(set) var state: MealEditorState
     private(set) var availableFoods: [Food] = []
 
-    var editingMeal: Meal {
-        guard case .editing(let meal) = state else {
-            fatalError("MealEditorViewModel has no editable meal.")
-        }
-        return meal
-    }
+    /// The editable draft remains available while validation or save errors are displayed.
+    /// UI actions must never depend on the transient screen state to access this draft.
+    var editingMeal: Meal { editingMealValue }
 
     var isEditingExistingMeal: Bool { editingExistingMeal }
 
@@ -43,6 +41,7 @@ final class MealEditorViewModel {
         self.getFoodsUseCase = getFoodsUseCase
         self.searchFoodsUseCase = searchFoodsUseCase
         self.editingExistingMeal = isEditingExistingMeal
+        self.editingMealValue = meal
         self.state = .editing(meal)
     }
 
@@ -85,8 +84,7 @@ final class MealEditorViewModel {
     }
 
     func save() async {
-        guard case .editing(let meal) = state else { return }
-        let normalizedMeal = validator.normalizedMeal(meal)
+        let normalizedMeal = validator.normalizedMeal(editingMealValue)
         let validation = validator.validate(normalizedMeal)
         guard validation.errors.isEmpty else {
             state = .validationError(validation.errors)
@@ -109,8 +107,7 @@ final class MealEditorViewModel {
     }
 
     private func mutateMeal(_ mutation: (Meal) -> Void) {
-        guard case .editing(let meal) = state else { return }
-        mutation(meal)
-        state = .editing(meal)
+        mutation(editingMealValue)
+        state = .editing(editingMealValue)
     }
 }

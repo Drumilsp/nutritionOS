@@ -7,7 +7,6 @@ struct ProgressDashboardView: View {
     @ObservedObject var weightHistoryViewModel: WeightHistoryViewModel
     @State private var customStart = Calendar.current.date(byAdding: .day, value: -29, to: .now) ?? .now
     @State private var customEnd = Date()
-    @State private var historyQuery = ""
 
     var body: some View {
         NavigationStack {
@@ -40,10 +39,8 @@ struct ProgressDashboardView: View {
             }
             Section("Summary") {
                 ForEach(snapshot.summary.cards.filter { [.calories, .protein, .carbohydrates, .fat, .fibre].contains($0.metric) }) { card in
-                    MetricRow(title: metricTitle(card.metric), value: formatted(card.currentValue, metric: card.metric), systemImage: card.metric == .calories ? AppIcons.energy : nil, tint: card.metric == .protein ? AppColors.accent : AppColors.secondaryText)
+                    MetricRow(title: summaryTitle(card.metric), value: formatted(card.currentValue, metric: card.metric), systemImage: card.metric == .calories ? AppIcons.energy : nil, tint: card.metric == .protein ? AppColors.accent : AppColors.secondaryText)
                 }
-            }
-            Section("Energy Balance") {
                 energyBalance(snapshot.summary.energyBalance)
             }
             Section("Goal Progress") {
@@ -72,7 +69,13 @@ struct ProgressDashboardView: View {
                 if let weight = snapshot.chartDatasets.first(where: { $0.metric == .weight }) { chart(weight) }
             }
             Section("History") {
-                NavigationLink("Browse History") { historyBrowser }
+                NavigationLink("Browse History") {
+                    ProgressHistoryCalendarView(
+                        days: snapshot.summary.historyDays,
+                        hasTargetRange: snapshot.summary.hasEnergyBalanceTargetRange,
+                        viewModel: historyViewModel
+                    )
+                }
             }
         }
         .listStyle(.insetGrouped)
@@ -96,10 +99,8 @@ struct ProgressDashboardView: View {
 
     @ViewBuilder private func energyBalance(_ availability: EnergyBalanceAvailability) -> some View {
         switch availability {
-        case .available(let consumed, let burn, let label, let amount):
-            MetricRow(title: "Consumed", value: NutritionFormatter.energy(consumed), systemImage: AppIcons.energy)
-            MetricRow(title: "Estimated Burn", value: NutritionFormatter.energy(burn))
-            MetricRow(title: label, value: NutritionFormatter.energy(amount))
+        case .available(_, _, let label, let amount):
+            MetricRow(title: isDailyRange ? label : "Total \(label)", value: NutritionFormatter.energy(amount), systemImage: AppIcons.balance)
         case .tdeeNotConfigured:
             Text("Unavailable — configure a maintenance energy target to view energy balance.").foregroundStyle(AppColors.secondaryText)
         case .activeCaloriesUnavailable:
@@ -107,31 +108,15 @@ struct ProgressDashboardView: View {
         }
     }
 
-    private var historyBrowser: some View {
-        List {
-            Section { TextField("Search foods and meals", text: $historyQuery).onChange(of: historyQuery) { _, _ in loadHistory() } }
-            switch historyViewModel.state {
-            case .loaded(let logs): ForEach(logs) { log in MetricRow(title: log.date.formatted(date: .abbreviated, time: .omitted), value: NutritionFormatter.energy(DailyLogCalculations.totals(for: log).calories)) }
-            case .empty: Text("No matching history.").foregroundStyle(AppColors.secondaryText)
-            case .loading: ProgressView()
-            case .error(let message): Text(message).foregroundStyle(AppColors.destructive)
-            }
-        }
-        .listStyle(.insetGrouped).navigationTitle("History")
-        .task { loadHistory() }
-    }
-
     private var latestWeight: WeightEntry? { if case .loaded(let entries) = weightHistoryViewModel.state { entries.last } else { nil } }
-    private func loadHistory() {
-        let dates = ProgressDateRange.dates(for: viewModel.selectedRange, now: .now, calendar: .current)
-        Task { await historyViewModel.search(query: historyQuery, from: dates.start ?? .distantPast, to: dates.end) }
-    }
     private var rangeDescription: String {
         let dates = ProgressDateRange.dates(for: viewModel.selectedRange, now: .now, calendar: .current)
         guard let start = dates.start else { return "All available history" }
         return "Showing \(start.formatted(date: .abbreviated, time: .omitted)) – \(dates.end.formatted(date: .abbreviated, time: .omitted))"
     }
     private func metricTitle(_ metric: ProgressMetric) -> String { switch metric { case .calories: "Calories"; case .protein: "Protein"; case .carbohydrates: "Carbohydrates"; case .fat: "Fat"; case .fibre: "Fiber"; case .water: "Water"; case .weight: "Weight" } }
+    private func summaryTitle(_ metric: ProgressMetric) -> String { isDailyRange ? metricTitle(metric) : "Average \(metricTitle(metric))" }
+    private var isDailyRange: Bool { if case .today = viewModel.selectedRange { true } else { false } }
     private func formatted(_ value: Double, metric: ProgressMetric) -> String { metric == .calories ? NutritionFormatter.energy(value) : NutritionFormatter.macro(value) }
     private func chartColor(for metric: ProgressMetric) -> Color { switch metric { case .protein: AppColors.accent; case .carbohydrates: AppColors.warning; case .fat: AppColors.fat; case .fibre: AppColors.success; default: AppColors.secondaryText } }
 }

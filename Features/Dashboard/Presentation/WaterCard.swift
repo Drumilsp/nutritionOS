@@ -34,7 +34,7 @@ struct WaterCard: View {
         }
         .padding(16)
         .frame(maxWidth: .infinity, alignment: .leading)
-        .background(Color(.secondarySystemGroupedBackground))
+        .background(AppColors.surface)
         .clipShape(RoundedRectangle(cornerRadius: 8))
     }
 

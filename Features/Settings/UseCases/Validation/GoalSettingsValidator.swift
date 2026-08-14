@@ -28,6 +28,15 @@ struct GoalSettingsValidator {
             errors.append(.invalidGoal)
         }
 
+        let lowerBound = goalSettings.energyBalanceLowerBound
+        let upperBound = goalSettings.energyBalanceUpperBound
+        if (lowerBound == nil) != (upperBound == nil)
+            || lowerBound.map({ !$0.isFinite }) == true
+            || upperBound.map({ !$0.isFinite }) == true
+            || (lowerBound != nil && upperBound != nil && lowerBound! > upperBound!) {
+            errors.append(.invalidGoal)
+        }
+
         return errors.isEmpty ? .success : .failure(errors)
     }
 

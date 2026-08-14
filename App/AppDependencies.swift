@@ -82,7 +82,7 @@ struct AppDependencies {
 
     func makeProgressViewModel() -> ProgressViewModel {
         ProgressViewModel(
-            getProgressSummaryUseCase: GetProgressSummaryUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
+            getProgressSummaryUseCase: GetProgressSummaryUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository, settingsRepository: settingsRepository),
             getNutritionTrendsUseCase: GetNutritionTrendsUseCase(dailyLogRepository: dailyLogRepository, weightRepository: weightRepository),
             getConsistencyScoreUseCase: GetConsistencyScoreUseCase(dailyLogRepository: dailyLogRepository),
             getTodayImpactUseCase: GetTodayImpactUseCase(dailyLogRepository: dailyLogRepository),
@@ -110,6 +110,7 @@ struct AppDependencies {
             updateDisplayPreferencesUseCase: UpdateDisplayPreferencesUseCase(settingsRepository: settingsRepository),
             updateUserProfileUseCase: UpdateUserProfileUseCase(settingsRepository: settingsRepository),
             exportAppDataUseCase: ExportAppDataUseCase(foodRepository: foodRepository, mealRepository: mealRepository, dailyLogRepository: dailyLogRepository, weightRepository: weightRepository, settingsRepository: settingsRepository),
+            importLibraryJSONUseCase: ImportLibraryJSONUseCase(foodRepository: foodRepository, mealRepository: mealRepository),
             resetLocalDataUseCase: ResetLocalDataUseCase(foodRepository: foodRepository, mealRepository: mealRepository, dailyLogRepository: dailyLogRepository, weightRepository: weightRepository, settingsRepository: settingsRepository),
             getAppInfoUseCase: GetAppInfoUseCase()
         )

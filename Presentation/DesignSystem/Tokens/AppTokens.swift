@@ -67,10 +67,10 @@ enum AppIcons {
     static let energy = "bolt.fill"
     static let remaining = "target"
     static let balance = "scale.3d"
-    static let carbohydrates = "circle.hexagongrid.fill"
-    static let fat = "drop.fill"
+    static let carbohydrates = "circle.grid.2x2.fill"
+    static let fat = "drop.circle.fill"
     static let water = "drop.fill"
-    static let protein = "leaf.fill"
+    static let protein = "fork.knife"
     static let empty = "tray"
     static let close = "xmark"
 }

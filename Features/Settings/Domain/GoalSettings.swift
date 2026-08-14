@@ -15,6 +15,8 @@ final class GoalSettings: Identifiable {
     let id: UUID
     var goalType: GoalType
     var energyBalanceTarget: EnergyBalanceTarget
+    var energyBalanceLowerBound: Double?
+    var energyBalanceUpperBound: Double?
     var goalCalculationMode: GoalCalculationMode
     var activityLevel: ActivityLevel
     var dailyProteinGoal: Double
@@ -31,6 +33,8 @@ final class GoalSettings: Identifiable {
         id: UUID = UUID(),
         goalType: GoalType,
         energyBalanceTarget: EnergyBalanceTarget,
+        energyBalanceLowerBound: Double? = nil,
+        energyBalanceUpperBound: Double? = nil,
         goalCalculationMode: GoalCalculationMode,
         activityLevel: ActivityLevel,
         dailyProteinGoal: Double,
@@ -44,6 +48,8 @@ final class GoalSettings: Identifiable {
         self.id = id
         self.goalType = goalType
         self.energyBalanceTarget = energyBalanceTarget
+        self.energyBalanceLowerBound = energyBalanceLowerBound
+        self.energyBalanceUpperBound = energyBalanceUpperBound
         self.goalCalculationMode = goalCalculationMode
         self.activityLevel = activityLevel
         self.dailyProteinGoal = dailyProteinGoal

@@ -17,6 +17,8 @@ final class GoalSettingsEntity {
     var id: UUID
     var goalTypeRawValue: String
     var energyBalanceTargetRawValue: String
+    var energyBalanceLowerBound: Double?
+    var energyBalanceUpperBound: Double?
     var goalCalculationModeRawValue: String
     var activityLevelRawValue: String
     var dailyProteinGoal: Double
@@ -33,6 +35,8 @@ final class GoalSettingsEntity {
         id: UUID,
         goalTypeRawValue: String,
         energyBalanceTargetRawValue: String,
+        energyBalanceLowerBound: Double?,
+        energyBalanceUpperBound: Double?,
         goalCalculationModeRawValue: String,
         activityLevelRawValue: String,
         dailyProteinGoal: Double,
@@ -46,6 +50,8 @@ final class GoalSettingsEntity {
         self.id = id
         self.goalTypeRawValue = goalTypeRawValue
         self.energyBalanceTargetRawValue = energyBalanceTargetRawValue
+        self.energyBalanceLowerBound = energyBalanceLowerBound
+        self.energyBalanceUpperBound = energyBalanceUpperBound
         self.goalCalculationModeRawValue = goalCalculationModeRawValue
         self.activityLevelRawValue = activityLevelRawValue
         self.dailyProteinGoal = dailyProteinGoal

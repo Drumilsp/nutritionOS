@@ -103,7 +103,7 @@ struct DashboardView: View {
             }
             .padding(20)
         }
-        .background(Color(.systemGroupedBackground))
+        .background(AppColors.background)
         .refreshable {
             await viewModel.refresh()
         }

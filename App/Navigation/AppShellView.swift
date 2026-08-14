@@ -57,7 +57,7 @@ struct AppShellView<TodayContent: View, ProgressContent: View, QuickLogContent: 
                         sheetDestination = .quickLog
                     }
                     .padding(.trailing, AppSpacing.lg)
-                    .padding(.bottom, AppSpacing.xs)
+                    .padding(.bottom, AppSpacing.lg)
                     .transition(.scale.combined(with: .opacity))
                 }
             }

@@ -34,6 +34,8 @@ struct UpdateGoalSettingsUseCase {
             id: goalSettings.id,
             goalType: goalSettings.goalType,
             energyBalanceTarget: goalSettings.energyBalanceTarget,
+            energyBalanceLowerBound: goalSettings.energyBalanceLowerBound,
+            energyBalanceUpperBound: goalSettings.energyBalanceUpperBound,
             goalCalculationMode: goalSettings.goalCalculationMode,
             activityLevel: goalSettings.activityLevel,
             dailyProteinGoal: goalSettings.dailyProteinGoal,

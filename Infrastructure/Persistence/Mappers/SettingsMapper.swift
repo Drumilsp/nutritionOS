@@ -57,6 +57,8 @@ enum SettingsMapper {
             id: entity.id,
             goalType: GoalType(rawValue: entity.goalTypeRawValue) ?? .maintainWeight,
             energyBalanceTarget: EnergyBalanceTarget(rawValue: entity.energyBalanceTargetRawValue) ?? .maintain,
+            energyBalanceLowerBound: entity.energyBalanceLowerBound,
+            energyBalanceUpperBound: entity.energyBalanceUpperBound,
             goalCalculationMode: GoalCalculationMode(rawValue: entity.goalCalculationModeRawValue) ?? .automatic,
             activityLevel: ActivityLevel(rawValue: entity.activityLevelRawValue) ?? .lightlyActive,
             dailyProteinGoal: entity.dailyProteinGoal,
@@ -74,6 +76,8 @@ enum SettingsMapper {
             id: goalSettings.id,
             goalTypeRawValue: goalSettings.goalType.rawValue,
             energyBalanceTargetRawValue: goalSettings.energyBalanceTarget.rawValue,
+            energyBalanceLowerBound: goalSettings.energyBalanceLowerBound,
+            energyBalanceUpperBound: goalSettings.energyBalanceUpperBound,
             goalCalculationModeRawValue: goalSettings.goalCalculationMode.rawValue,
             activityLevelRawValue: goalSettings.activityLevel.rawValue,
             dailyProteinGoal: goalSettings.dailyProteinGoal,
@@ -89,6 +93,8 @@ enum SettingsMapper {
     static func apply(_ goalSettings: GoalSettings, to entity: GoalSettingsEntity) {
         entity.goalTypeRawValue = goalSettings.goalType.rawValue
         entity.energyBalanceTargetRawValue = goalSettings.energyBalanceTarget.rawValue
+        entity.energyBalanceLowerBound = goalSettings.energyBalanceLowerBound
+        entity.energyBalanceUpperBound = goalSettings.energyBalanceUpperBound
         entity.goalCalculationModeRawValue = goalSettings.goalCalculationMode.rawValue
         entity.activityLevelRawValue = goalSettings.activityLevel.rawValue
         entity.dailyProteinGoal = goalSettings.dailyProteinGoal

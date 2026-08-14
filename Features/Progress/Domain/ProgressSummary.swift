@@ -3,6 +3,8 @@ import Foundation
 struct ProgressSummary {
     let cards: [MetricSummaryCard]
     let energyBalance: EnergyBalanceAvailability
+    let historyDays: [ProgressHistoryDay]
+    let hasEnergyBalanceTargetRange: Bool
 }
 
 enum EnergyBalanceAvailability {
