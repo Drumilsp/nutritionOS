@@ -90,10 +90,6 @@ xcodebuild test \
 - Reusable design system tokens and SwiftUI components
 - Tested domain, repository, use-case, persistence, and HealthKit mapping logic
 
-## Resume Summary
-
-**Nutri — Offline-First iOS Nutrition Tracker**  
-Built a SwiftUI nutrition tracking app with SwiftData persistence, reusable food/meal libraries, daily macro and water logging, progress analytics, JSON import/export, and optional HealthKit integration. Designed a feature-based clean architecture with repository boundaries, domain validation, immutable log snapshots, and automated tests for core nutrition and persistence flows.
 
 ## Notes
 
