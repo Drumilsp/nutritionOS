@@ -11,3 +11,10 @@ xcuserdata/
 # SwiftPM
 .swiftpm/
 .build/
+
+# Local/project notes and import samples
+nutri-foods-meals-corrected.json
+Documentation/AI/
+Documentation/Architecture/GitWorkflow.md
+Documentation/Architecture/FounderEdition.md
+Documentation/Architecture/EngineeringStandards.md
