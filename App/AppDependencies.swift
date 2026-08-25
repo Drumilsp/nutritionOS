@@ -130,15 +130,6 @@ struct AppDependencies {
         )
     }
 
-    func makeFoodDetailViewModel() -> FoodDetailViewModel {
-        FoodDetailViewModel(
-            getFoodDetailUseCase: GetFoodDetailUseCase(foodRepository: foodRepository),
-            favoriteFoodUseCase: FavoriteFoodUseCase(foodRepository: foodRepository),
-            archiveFoodUseCase: ArchiveFoodUseCase(foodRepository: foodRepository),
-            duplicateFoodUseCase: DuplicateFoodUseCase(foodRepository: foodRepository),
-            deleteFoodUseCase: DeleteFoodUseCase(foodRepository: foodRepository)
-        )
-    }
 
     func makeFoodEditorViewModel(food: Food, isEditingExistingFood: Bool) -> FoodEditorViewModel {
         FoodEditorViewModel(
@@ -163,15 +154,6 @@ struct AppDependencies {
         )
     }
 
-    func makeMealDetailViewModel() -> MealDetailViewModel {
-        MealDetailViewModel(
-            getMealDetailUseCase: GetMealDetailUseCase(mealRepository: mealRepository),
-            favoriteMealUseCase: FavoriteMealUseCase(mealRepository: mealRepository),
-            archiveMealUseCase: ArchiveMealUseCase(mealRepository: mealRepository),
-            duplicateMealUseCase: DuplicateMealUseCase(mealRepository: mealRepository),
-            deleteMealUseCase: DeleteMealUseCase(mealRepository: mealRepository)
-        )
-    }
 
     func makeMealEditorViewModel(meal: Meal, isEditingExistingMeal: Bool) -> MealEditorViewModel {
         MealEditorViewModel(
@@ -233,7 +215,4 @@ struct AppDependencies {
         )
     }
 
-    func makeHealthSyncViewModel() -> HealthSyncViewModel {
-        HealthSyncViewModel(syncHealthDataUseCase: SyncHealthDataUseCase(healthRepository: healthRepository, weightRepository: weightRepository, dailyLogRepository: dailyLogRepository))
-    }
 }

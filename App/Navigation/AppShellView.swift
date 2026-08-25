@@ -89,7 +89,7 @@ struct AppShellView<TodayContent: View, ProgressContent: View, QuickLogContent: 
         today: { AppPlaceholderScreen(tab: .today) },
         progress: { AppPlaceholderScreen(tab: .progress) },
         quickLog: { AppSheetPlaceholder(destination: .quickLog, onRoute: { _ in }, onDismiss: {}) },
-        settings: { ManageFoodsSettingsView() },
+        settings: { AppPlaceholderScreen(tab: .settings) },
         foodLibrary: { EmptyView() },
         mealLibrary: { EmptyView() }
     )
